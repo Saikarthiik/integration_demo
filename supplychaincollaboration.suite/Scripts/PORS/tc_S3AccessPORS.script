@@ -1,0 +1,10 @@
+﻿set universal testCaseName to "TD_2732_S3AccessPORS"
+"PORS/PORS_CommonHandlers".readTestData universal testCaseName
+"PORS/PORS_utilities".validateWhetherScreenIsOnDashBoardOrNot
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"PORS/PORS_CommonHandlers".S3AccessPORS  universal data.folderNames,universal data.year
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	--"SC2_CommonActions/sc2CommonHandlers".switchToPlanning
+	put "Done" into universal data.run_Status
+end repeat

@@ -1,0 +1,8 @@
+.DS_Store
+.timestamp
+*.suite/Results/
+/Results/
+SuiteInfo/
+/Resources/Test_Evidence/
+/AllscreenShots/
+/Resources/Reports/

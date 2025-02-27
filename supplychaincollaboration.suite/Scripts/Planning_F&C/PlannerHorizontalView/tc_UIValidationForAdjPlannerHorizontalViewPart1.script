@@ -1,0 +1,12 @@
+﻿#UIValidationInPlannerAdjHorizontalView
+set universal testcaseName to "TD_2118_UIValidationHorizontal"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase
+repeat number of items of universal data times
+	#UI Validation for Adj Planner Horizontal View Part 1
+	"Planning_F&C/PlannerHorizontalView/forecastHorizontal_commonHandlers".UIValidationForAdjPlannerHorizontalViewPart1 universal data.supplierName,universal data.partNumber,universal data.adjustmentPositiveValue
+	#navigating to the Dashboard
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

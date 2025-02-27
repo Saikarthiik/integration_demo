@@ -1,0 +1,383 @@
+﻿to addNewPartAndWorkWeekInUI partNumber,categoryInForecast,PlannerRemarks,AdjustmentPositiveValue,EscalationReason,ManagerEmail,FYIOnlyCheckBox,PORequiredCheckBox 
+	--smartUtil.setTextstyle "GrayText"
+	--"SC2_CommonActions/sc2CommonHandlers".navigateToForecast
+	smartUtil.validate "ADD NEW WORKWEEK","topLeftQuadrant"
+	
+	smartUtil.setCustomSearchRectangle"ADD NEW WORKWEEK",-10,-40,1500,40
+	--smartUtil.setTextstyle "Default"
+	smartUtil.clickText"Part Number","Custompart"
+	smartUtil.clickTextAtSpot"Part Number",0,20,"Custompart"
+	smartUtil.textField partNumber,"yes"
+	smartUtil.setCustomSearchRectangle "Part Number",-20,70,190,300,"Custompart"
+	wait 1
+	smartUtil.clickText partNumber,"Custompart"
+	smartUtil.setCustomSearchRectangle"ADD NEW WORKWEEK",-10,-40,1500,40
+	smartUtil.clickText"Weeks","Custompart"
+	smartUtil.validate "Weeks","Custompart"
+	smartUtil.clickTextAtSpot"Weeks",0,35,"Custompart"
+	smartUtil.readTextUsingText"Weeks",-5,5,100,50,"THTH"
+	log  global currLocVal 
+	put global currLocVal into  universal ProdWeek
+	log  universal ProdWeek
+	smartUtil.clickText "WORKWEEK","Custompart"
+	smartUtil.clickText "ADD NEW WORKWEEK","topLeftQuadrant"
+	smartUtil.setCustomSearchRectangle "ADD NEW WORKWEEK",-10,30,1600,400
+	--smartUtil.clickText"Part Number","Custompart"
+	smartUtil.clickText"Category","Custompart"
+	smartUtil.clickText categoryInForecast,"Custompart"
+	smartUtil.clickText"Planner Remark","Custompart"
+	smartUtil.textField PlannerRemarks,"Custompart"
+	(*smartUtil.clickText"Adj","Custompart"
+	--click text:"Adj",dpi:"250" 
+	smartUtil.textField AdjustmentPositiveValue,"Custompart"*)
+	wait 1
+	--set the TextStyle to {dpi:250}
+	--smartUtil.setCustomSearchRectangle "ADD NEW WORKWEEK",-10,30,1600,400
+	--smartUtil.clickText"Adj","Custompart"
+	smartUtil.clickTextAtSpot"ADD NEW WORKWEEK",600,80,"topLeftQuadrant"
+	smartUtil.textField AdjustmentPositiveValue,"Custompart"
+	set the TextStyle to  defult
+	smartUtil.clickText"Reason","Custompart"
+	smartUtil.clickText EscalationReason,"Custompart"
+	if ManagerEmail is not empty
+		smartUtil.clickText"Manager Email"
+		smartUtil.textField ManagerEmail
+	end if
+	if FYIOnlyCheckBox is not empty
+		smartUtil.clickText"FYI only"
+	end if
+	if PORequiredCheckBox is not empty
+		smartUtil.clickText"PO Required"
+	end if	
+	
+end  addNewPartAndWorkWeekInUI
+
+
+to approveOrRejectTheEscalationAsManager escalationStatus 
+	--"SC2_Login/logInAndLogout_commonHandlers".logoutToSC2 universal data.requesterName
+	"SC2_CommonActions/sc2CommonHandlers".LogonLegalNotice
+	"SC2_CommonActions/sc2CommonHandlers".readTestData universal testCaseName
+	repeat number of items of universal data times
+		set universal testData to item repeatIndex() of universal data
+		"SC2_Login/logInAndLogout_commonHandlers".launchURL
+		"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App universal data.manageruserName,universal data.managerPassWord
+	end repeat
+	"SC2_CommonActions/sc2CommonHandlers".openOutLook
+	"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal data.EmailSubjectOfPORequired&","&universal plannerRemark,"pdl-noreply"
+	"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.EmailSubjectOfPORequired,universal data.EmailInfoOfPORequired
+	--"SC2_CommonActions/sc2CommonHandlers".closeOutLook
+	smartUtil.validate "Take action against it by clicking on the below link","BH"
+	--smartUtil.validate "Take action against it by clicking on the below link","BH"
+	#Clicking on the link by taking hotspot
+	smartUtil.clickTextAtSpot"Take action against it by clicking on the below link",0,20
+	smartUtil.validate "Supply Chain Collaboration Portal - Planning","THTH"
+	wait 2
+	smartUtil.validate"Part Number"
+	smartUtil.clickText"Pending Approval","THTH"
+	smartUtil.clickText"Filter","THTH"
+	smartUtil.textField universal data.partNumber
+	smartUtil.clickTextAtSpot"F&C Escalation",-23,0,"HM"
+	if ImageFound(text:"APPROVE",searchRectangle:(screenPartition().SUT.("TH")))or if ImageFound(text:"REJECT",searchRectangle:(screenPartition().SUT.("TH")))
+		LogSuccess "Approve and Reject Buttons are Enabled"
+		smartUtil.validate"APPROVE","TH"
+	else
+		LogError "The Approve and Reject Buttons are not Enabled"
+	end if
+	(*smartUtil.clickText"APPROVE","TH"
+	smartUtil.clickTextAtSpot  universal data.partNumber,-45,0,"LH"*)
+	if escalationStatus is APPROVE
+		smartUtil.validate"APPROVE","THTH"
+		smartUtil.clickText"APPROVE","THTH"
+	end  if
+	if escalationStatus is REJECT
+		smartUtil.validate"REJECT","THTH"
+		smartUtil.clickText"REJECT","THTH"
+	end if
+end approveOrRejectTheEscalationAsManager
+
+to validateEscalationInPRPODailyPlan partNumber,week
+	smartUtil.clickText"Pre-Ship Automation","THTH"
+	smartUtil.clickText"PRPO","THTH"
+	--smartUtil.clickText"Search","topLeftQuadrant"
+	--smartUtil.textField  partNumber,"topLeftQuadrant"
+	--smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+	"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+	smartUtil.clickText"Supplier","LH"
+	smartUtil.validate "Filters","TH"
+	#Entering partnumber
+	"SC2_CommonActions/sc2CommonHandlers".selectPreference "Part Number", partNumber
+	smartUtil.clickText"Part Number","LH"
+	smartUtil.scrollTo "Submit","LH","5"
+	#Selecting week
+	smartUtil.clickTextAtSpot "Week From",260,25,"LH"
+	"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary week
+	smartUtil.clickTextAtSpot "Week To",260,25,"LH"
+	"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary week
+	#click on the submit button
+	smartUtil.clickText "Submit","LH"
+	smartUtil.completeScreenLoad
+	smartUtil.validate"Exception","TH"
+	smartUtil.clickTextAtSpot"Exception",22,90
+	smartUtil.validate"PRPO Exception","TH"
+	smartUtil.clickTextAtSpot"PRPO Exception",0,70
+	smartUtil.validate"Created Date","TH"
+	smartUtil.clickText"Back","LH"
+	smartUtil.clickText"Cancel","LH"
+	wait 2
+	ScrollWheelUp 10
+	wait 1
+	smartUtil.clicktext " Forecast & Commit","TH"
+	smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+	wait 2
+	#validate and click on forecast
+	smartUtil.clickText "Forecast","Custompart"
+	#click on Add new part 
+	wait 1
+	smartUtil.clickUsingImage "icons/AddNewOriPartNumber","topRightQuadrant"
+	#validate Add new work week page is opened
+	wait 3
+	smartUtil.validate "ADD NEW WORKWEEK","topLeftQuadrant"
+end validateEscalationInPRPODailyPlan
+
+to validatePlannerRemarkInUI partNumber,plannerRemark
+	wait 5
+	smartUtil.clickUsingImage"icons/SCCRefreshIcon","THTH"
+	smartUtil.clicktext "Forecast & Commit","TH"
+	smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+	#validate and click on forecast
+	wait 2
+	smartUtil.clickText "Forecast","Custompart"
+	wait 2
+	smartUtil.validate"View Type","THTH"
+	smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+	smartUtil.textField partNumber,"topLeftQuadrant"
+	smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"	
+	#clicking part extend icon and verifying material icon is displayed
+	wait 5
+	smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+	wait 5
+	smartUtil.completeScreenLoad
+	set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+	--set categoryList to ["SYSTEM","FORECAST"]
+	--repeat with each item plannerRemarkValue of plannerremarkList
+	repeat with each item CategoryValues of categoryList
+		"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+		if plannerRemark is universal data.PlannerRemark_Above1500k then
+			wait 2
+			log CategoryValues
+			"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+			smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+			TypeText controlKey,a,c
+			put RemoteClipboard() into universal plannerRemarkInUI
+			if universal plannerRemarkInUI is universal data.PlannerRemark_Above1500k
+				LogSuccess "Planner Remark is Updated with 1500k characters in the"&&CategoryValues
+			else
+				LogWarning "Planner Remark is Not Updated with 1500k characters in the"&&CategoryValues
+				
+			end if
+			smartUtil.clickUsingImage "icons/collapceAll","THTH"
+		else if  plannerRemark is universal data.PlannerRemark_Below1500k then
+			log CategoryValues
+			"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+			smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+			TypeText controlKey,a,c
+			put RemoteClipboard() into universal plannerRemarkInUI
+			if universal plannerRemarkInUI is universal data.PlannerRemark_Below1500k
+				LogSuccess "Planner Remark is Updated with  Less than 1500k characters in the "&&CategoryValues
+			else
+				LogError "Planner Remark is Not Updated with  Less than 1500k characters in the "&&CategoryValues
+			end if
+			smartUtil.clickUsingImage "icons/collapceAll","THTH"
+		end if
+	end repeat
+	
+end validatePlannerRemarkInUI
+
+to escalationProcess category,PlannerRemark,Plannerremarkvalue
+	smartUtil.validate"ITEM NO","LHLH"
+	if Plannerremarkvalue contains "Above"
+		smartUtil.setCustomSearchRectangle"ITEM NO",-200,0,80,100,"LHLH"
+	else
+		smartUtil.setCustomSearchRectangle"ITEM NO",-200,0,80,100,"LHLH"
+	end if
+	wait 2
+	"SC2_CommonActions/sc2CommonHandlers".escalationTab category,universal data.AdjustmentPositiveValue, universal data.EscalationReason, PlannerRemark,universal data.ManagerEMail,universal data.checkBoxText	
+	smartUtil.clicktext "Forecast & Commit","TH"
+	smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+	#validate and click on forecast
+	smartUtil.clickText "Forecast","Custompart"
+	wait 2
+	smartUtil.validate"View Type","THTH"
+	smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+	smartUtil.textField universal data.partNumber,"topLeftQuadrant"
+	smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+	wait 3
+	--smartUtil.setCustomSearchRectangle"ITEM NO",-200,0,80,100,"LHLH"
+	smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+	wait 5
+	smartUtil.completeScreenLoad
+	smartUtil.validate"ITEM NO","LHLH"
+	if Plannerremarkvalue contains "Above"
+		smartUtil.setCustomSearchRectangle"ITEM NO",-200,0,80,100,"LHLH"
+	else
+		smartUtil.setCustomSearchRectangle"ITEM NO",-200,0,80,100,"LHLH"
+		--smartUtil.setCustomSearchRectangle"ITEM NO",-220,100,100,150,"LHLH"
+	end if
+	--smartUtil.setCustomSearchRectangle"ITEM NO",-200,0,80,100,"LHLH"
+	smartUtil.clickUsingImage "icons/escalationIcon","Custompart"
+	#Escalation Submission
+	wait 3
+	--smartUtil.validate "Escalation","LH"
+	smartUtil.setCustomSearchRectangle"Escalation",-60,-80,700,850,"VM"
+	wait 3
+	smartUtil.validate"View All","Custompart"
+	smartUtil.clickText"View All","Custompart"
+	--smartUtil.validate"Escalation","Custompart"
+	wait 5
+	smartUtil.setCustomSearchRectangle"Escalation",-60,-80,700,850,"VM"
+	set the TextStyle to { contrast:"On", contrastColor:"#4AD77B", contrastTolerance:"45", dpi:"144"}
+	smartUtil.clickText category,"Custompart"
+	wait 5
+	set the TextStyle to default
+	smartUtil.doubleClickTextAtSpot"Remarks",0,20,"Custompart"
+	wait 0.5
+	TypeText controlKey,c
+	put  RemoteClipboard() into universal plannerRemarkInUI 
+	set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+	if PlannerRemark is universal data.PlannerRemark_Above1500k then
+		if universal plannerRemarkInUI is universal data.plannerRemark_1500k
+			LogSuccess "Planner Remark is Updated with 1500k characters in the"&&category
+		else
+			LogError "Planner Remark is Not Updated with 1500k characters in the Application"&&category
+		end if
+	else
+		
+		if universal plannerRemarkInUI is universal data.PlannerRemark_Below1500k
+			LogSuccess "Planner Remark is Updated with  Less than 1500k characters in the"&&category
+		else
+			LogError "Planner Remark is Not Updated with  Less than 1500k characters in the "&&category
+		end if
+		
+	end if
+	--smartUtil.setCustomSearchRectangle"Escalation",-60,-200,700,1200
+	smartUtil.clickText"Back","LH"
+	smartUtil.clickText"Cancel","LH"
+	wait 2
+	smartUtil.clickText"View Type","THTH"
+end escalationProcess
+
+to plannerRemarkIncreaseValidation plannerRemark,Plannerremarkvalue 
+	--set plannerremarkList to[universal data.PlannerRemark_Above1500k,universal data.PlannerRemark_Below1500k]
+	smartUtil.clicktext " Forecast & Commit","TH"
+	smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+	#validate and click on forecast
+	smartUtil.clickText "Forecast","Custompart"
+	wait 2
+	smartUtil.validate"View Type","THTH"
+	smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+	smartUtil.textField universal data.partNumber,"topLeftQuadrant"
+	smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"	
+	#clicking part extend icon and verifying material icon is displayed
+	wait 5
+	smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+	set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+
+	repeat with each item CategoryValues of categoryList
+		
+		if Plannerremarkvalue is "Above"
+			"review&Commit_F&C/ForeCast/foreCast_utilities".escalationProcess CategoryValues,plannerRemark ,Plannerremarkvalue
+		else 
+			"review&Commit_F&C/ForeCast/foreCast_utilities".escalationProcess  CategoryValues,plannerRemark,,Plannerremarkvalue
+		end if
+	end repeat
+	
+end plannerRemarkIncreaseValidation
+
+to exportFileAndRaiseEscaltionInAddNewWorkWeek plannerRemark
+	smartUtil.clickUsingImage "icons/AddNewOriPartNumber","topRightQuadrant"
+	"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+	smartUtil.clickUsingImage"icons/exportInForecastView","topRightQuadrant"
+	Try
+		smartUtil.validateWithoutTry "File Processed Successfully","TH"	
+	Catch 
+		log "File processed pop up not showing in the UI.Hence moving for the next step "
+	End try
+	#Opening the Excel file from the Dowloads tab
+	excelFileInteractions.openExcelFromDownloads universal data. supplierName
+	if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+		TypeText altKey,"Y"
+	else
+		log "Jabil Adjustment excel sheet opened"
+	end if
+	wait 1
+	(* more than 1500 characters for the adjustment of the 4 categories*)
+	#Editing the Exported Excel values with More then 1500 charecters
+	"Planning_F&C/ForeCast/Planning_foreCast_utilities".raiseEscaltionFromAddNewWorkWeekByExporting "4",universal data.AdjustmentPositiveValue,universal data.EscalationReason,plannerRemark,universal data.FYIOnlyvalue
+	#After Editing the Excel Saving the Excel and Closing the Excel
+	excelFileInteractions.closeFileByclickinOnSave
+	wait 1
+	#Tab Switching 
+	Typetext controlKey,tabKey
+	#Import the Excel File From the Dowloads 
+	excelFileInteractions.importExcelIntoApplication universal data.supplierName
+	if ImageFound(text:"Save", waitFor:2,searchRectangle:(screenPartition().SUT.("THTH"))) then
+		smartUtil.clickText"Save","THTH"
+		wait 2
+		smartUtil.completeScreenLoad
+		smartUtil.clickUsingImage"icons/SCCRefreshIcon","THTH"
+		smartUtil.clicktext "Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.clickText "Forecast","Custompart"
+		wait 2
+		smartUtil.validate"View Type","THTH"
+		smartUtil.clickUsingImage "icons/filterIcon","LHLH"
+		"SC2_CommonActions/sc2CommonHandlers".selectPreference"Part Number",universal partNumber
+		smartUtil.clickText"Part Number","LHLH"
+		smartUtil.scrollTo "Submit","LH","2"
+		smartUtil.clickTextAtSpot "Week From",258,25,"LH"
+		"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary  universal ProdWeek
+		smartUtil.clickTextAtSpot "Week To",258,25,"LH"
+		"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary  universal ProdWeek
+		#click on the submit button
+		If ImageFound(text:"Submit", waitFor:1)
+			click FoundImageLocation()
+		End If
+		wait 2
+		smartUtil.validate "ITEM NO","LHLH"
+		smartUtil.clickUsingImage"icons/ItemExpandIcon","LHLH"
+		smartUtil.completeScreenLoad
+		set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+		--repeat with each item plannerRemarkValue of plannerremarkList
+		repeat with each item CategoryValues of categoryList
+			"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+			if plannerRemark is universal data.PlannerRemark_Above1500k then
+				wait 2
+				"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+				smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+				TypeText controlKey,a,c
+				put RemoteClipboard() into universal plannerRemarkInUI
+				if universal plannerRemarkInUI is not universal data.PlannerRemark_Above1500k
+					LogSuccess "Planner Remark is Updated with 1500k characters in the"&&CategoryValues
+				else
+					LogWarning "Planner Remark is Not Updated with 1500k characters in the Application"
+				end if
+				smartUtil.clickUsingImage "icons/collapceAll","THTH"
+			else if  plannerRemark is universal data.PlannerRemark_Below1500k then
+				"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+				smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+				TypeText controlKey,a,c
+				put RemoteClipboard() into universal plannerRemarkInUI
+				if universal plannerRemarkInUI is universal data.PlannerRemark_Below1500k
+					LogSuccess "Planner Remark is Updated with  Less than 1500k characters in the "&&CategoryValues
+				else
+					LogError "Planner Remark is Not Updated with  Less than 1500k characters in the "&&CategoryValues
+				end if
+				smartUtil.clickUsingImage "icons/collapceAll","THTH"
+			end if
+		end repeat
+	else 
+		LogSuccess "Save Button is not Enabled due to Planner Remark cannot exceed 1500 characters Error in the UI"
+	end if
+end exportFileAndRaiseEscaltionInAddNewWorkWeek
+

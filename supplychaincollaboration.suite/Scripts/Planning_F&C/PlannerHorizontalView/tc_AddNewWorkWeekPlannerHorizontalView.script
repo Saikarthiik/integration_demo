@@ -1,0 +1,10 @@
+﻿#Add New WW (Planner Horizontal View - Adj)
+set universal testcaseName to "TD_2111_AddNewWW"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase
+repeat number of items of universal data times
+	"Planning_F&C/PlannerHorizontalView/forecastHorizontal_commonHandlers".AddNewWorkWeekPlannerHorizontalView universal data.supplierName, universal data.partNumber,universal data.categoryInForecast,universal data.PlannerRemarks,universal data.AdjustmentPositiveValue,universal data.EscalationReason
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

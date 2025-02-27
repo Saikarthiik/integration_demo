@@ -1,0 +1,17 @@
+﻿# Mass Upload and UI update adj in Planner Horizontal View (Add New WW) Part 2
+set universal testcaseName to "TD_2442_massUploadAddNewWW"
+#Reading the Test Data
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+#Checking  for the Dashboard 
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+#Validating the Control Phase
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	# Mass Upload and UI update adj in Planner Horizontal View (Add New WW) Part 2
+	"Planning_F&C/PlannerHorizontalView/forecastHorizontal_commonHandlers".massUploadPHViewAddNewWWPart2
+	#Click On the Dashboard
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	#After Complition of the Test Case Updated the Run Status as Done
+	put "Done" into universal data.run_Status
+end repeat

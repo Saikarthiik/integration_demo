@@ -1,0 +1,11 @@
+﻿-- SO View exported file checking 1 
+set universal testcaseName to "TD_2586_ SOViewExportedFile2"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"Planning_F&C/ForeCast/foreCast_commonHandlers". SOViewExportedFileChecking_Two universal data.fileName
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

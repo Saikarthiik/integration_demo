@@ -1,0 +1,11 @@
+﻿--SOViewUIChecking1 
+set universal testcaseName to "TD_2584_SOViewUICheckingTwo"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1,universal data.controlPhase2
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"Planning_F&C/ForeCast/foreCast_commonHandlers".SOViewUICheckingTwo 
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

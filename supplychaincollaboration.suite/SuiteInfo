@@ -1,0 +1,9 @@
+﻿{EPVersionNumber = 202501180346; RunPostSelectionScript = YES; Schedules = (); ScriptMetaData = {}; SuiteEncodedTextKey = ">AMk/648_T\"q@]H%"; SuiteVariables = "{
+ adjValue:10,
+ baseURL:@\"http://sccprod:8000\",
+ instanceId:@\"7aa7963e-34f5-49ec-920b-805b0409f359\",
+ screenShotCount:2520,
+ screenShotFolder:@\"C:/Users/ambimitt/Desktop/SC2-new/supplychaincollaboration.suite/Allsc\" \\
+                  @\"reenShots//01-20-25/03-40-PM\",
+ task_instance_id:@\"7b0a729d-7aa1-4c29-918e-e46decaf34ac\"
+}"; helpedSuitesInfo = (); helperSuitesInfo = (); }

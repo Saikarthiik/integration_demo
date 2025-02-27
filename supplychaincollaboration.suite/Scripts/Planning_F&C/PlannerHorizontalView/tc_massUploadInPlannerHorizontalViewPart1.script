@@ -1,0 +1,10 @@
+﻿set universal testcaseName to "TD_2120_massUploadInPHV1"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"Planning_F&C/PlannerHorizontalView/forecastHorizontal_commonHandlers".massUploadInPlannerHorizontalViewPart1 universal data.withOriSupplierName,universal data.oriWithPartNumber,universal data.withOriWeek,universal data.WithOricat,universal data.withOutOriSupplierName,universal data.oriWithoutPartNumber,universal data.WithoutOriWeek,universal data.WithOutOricat
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

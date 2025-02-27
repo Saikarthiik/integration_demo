@@ -1,0 +1,11 @@
+﻿set universal testcaseName to "TD_1954_submitEscalationRequest"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"review&Commit_F&C/ForeCast/foreCast_commonHandlers".submitEscalationRequestFYIManagerOnly universal data.partNumber,universal data.categoryInForecast,universal data.EscalationReason,universal data.ManagerEMail,universal data.checkBoxText
+	log universal data.checkBoxText
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

@@ -1,0 +1,10 @@
+﻿set universal testCaseName to "TD_2807_setPreferencesPORS"
+"PORS/PORS_CommonHandlers".readTestData universal testCaseName
+"PORS/PORS_utilities".validateWhetherScreenIsOnDashBoardOrNot
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	--"SC2_Login/logInAndLogout_commonHandlers".launchURL
+	"PORS/PORS_CommonHandlers".setPreferencesExportedFilePORS universal data.profileName,universal data.preferenceOne,universal data.userName,universal data.passWord,universal data.preferenceOneValue,universal data.preferenceTwo,universal data.preferenceTwoValue,universal data.columnNameInExportedFile
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

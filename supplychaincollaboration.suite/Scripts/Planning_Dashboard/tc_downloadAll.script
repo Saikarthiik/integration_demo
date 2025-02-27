@@ -1,0 +1,12 @@
+﻿set universal testCaseName to "TD_1787_DownloadAll"
+
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testCaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"Planning_Dashboard/dashBoard_commonHandlers".downloadAllAndVerifyTheFileInListOfDownloads
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+end repeat
+
+

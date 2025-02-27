@@ -1,0 +1,35 @@
+{
+    URLparameters = (
+	{
+	    checkedNumber = <*BY>;
+	    param = sort;
+	    showCheckedNumber = <*BY>;
+	    value = "-id";
+	},
+	{
+	    checkedNumber = <*BY>;
+	    param = limit;
+	    showCheckedNumber = <*BY>;
+	    value = 50000;
+	},
+	{
+	    checkedNumber = <*BY>;
+	    param = "task_instance_id";
+	    showCheckedNumber = <*BY>;
+	    value = "[[task_instance_id]]";
+	}
+    );
+    authenticationType = None;
+    httpVerb = GET;
+    oauth1Token = "";
+    password = "";
+    requestBody = "";
+    requestBodyFormat = "Form Url Encoded";
+    requestHeaders = "<![CDATA[authorization:bearer [[accessToken]]
+]]>";
+    requests = "";
+    testResults = "";
+    testScript = "";
+    url = "[[baseURL]]/ai/runs?sort=-id&limit=50000&task_instance_id=[[task_instance_id]]";
+    userName = "";
+}

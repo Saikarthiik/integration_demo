@@ -1,0 +1,260 @@
+﻿
+# Scenarios:
+--SC2PortalLoginSPM
+--downloadAllSPMSupplierProfileMaintenance
+--validationOfAllTheMenusOfSPM
+--dashboardMenuValidationSPM
+
+
+to readTestData
+	Params SheetName
+	"SC2_CommonActions/sc2CommonHandlers".setUpScreenShotPath
+	set universal data to empty
+	#Typetext Enterkey
+	wait 0.9
+	if imagefound(text:"Logon Legal Notice",waitfor:5,LowResolutionMode:"Yes")
+		click [200,300]
+		Typetext Enterkey		
+	else
+		log "Logon Legal Notice not required to this connected SUT"
+		
+	end if
+	repeat 3 times
+		click [200,300]
+		wait 2
+	end repeat
+	(*set myExcelDB to {type: "excel",file:ResourcePath("SCC_TestDataFile.xlsx"),name:SheetName,writable:"Yes"} 
+	set universal data to the records of myExcelDB where run_Status is "yes"*)
+	if ConnectionInfo().Status is "Connected"
+		put ConnectionInfo().username into global User_Name
+		set global sutID to ConnectionInfo().ServerID
+	else
+		throw "Error","SUT not connected"
+	end if
+	split global User_Name by "\"
+	put item 2 of global User_Name into global ExcelUserName
+	log "User : "&global ExcelUserName
+	set global DataFilePath to "C:\AutomationResources\SCC\"&global ExcelUserName&"_SCC_SPM_TestDataFile.xlsx"
+	--set global DataFilePath to "C:\AutomationResources\SCC_QA\"&global ExcelUserName&"_SCC_TestDataFile.xlsx"
+	set myExcelDB to {type: "excel",file:global DataFilePath,name:SheetName,writable:"Yes"} 
+	set universal data to the records of myExcelDB where run_Status is "yes"
+	if universal data is empty then 
+		logerror " Run Status is -Done No Data found to continue with Next Step"
+		exit all
+	end if
+	"SC2_CommonActions/sc2CommonHandlers".SUTInfo
+	if universal data.SC2ApplicationURL is "https://qa.collabportal.keysight.com/login"
+		set data.environment to "Test"
+	else if  universal data.SC2ApplicationURL is "https://collabportal.keysight.com/login"
+		set data.environment to "Prod"
+	else
+		LogError "Bot is not operating in the correct Environment and Execution type"
+		exit all
+	end if
+	set data.jira_project_name to universal data.Jira_Project_Name
+	set data.jira_key to universal data.Jira_Key
+	set data.execution_type to universal data.Execution_Type
+	log"{ eggplant_data_sync : " &data&"}"
+end readTestData
+
+#SC2PortalLoginSPM
+to SC2PortalLoginSPM userName,passWord
+	if ImageFound(text:"Supply Chain Collaboration",searchRectangle:(screenPartition().SUT.("THTH")))
+		LogSuccess "The Application is in the SPM Module"
+		smartUtil.validate"Supply Chain Collaboration","THTH"
+		set validationList to ["Dashboard","Menu","Administration","Business Configuration","Transaction History"]
+		smartUtil.listOfValidations "Supply Chain Collaboration",-500,0,1500,1000,validationList,"THTH"
+	else
+		LogError"The Application is not in the SPM Module"
+	end if
+end SC2PortalLoginSPM
+
+###downloadAllSPM
+to downloadAllSPMSupplierProfileMaintenance menu,subMenu,tertiaryMenu
+	set universal invalidDwonloadFunctionalitySubmenu to empty
+	set universal validDwonloadFunctionalitySubmenu to empty
+	set universal noExportFileMenu to empty  
+	set universal noExportIconMenu to empty
+	smartUtil.clickText"Dashboard","THTH"
+	##Deleting all the Files from the Download Folder
+	"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+	--set tertiaryMenus to["Supplier Profile","Supplier Contact Maintenance"]
+	repeat with each tertiaryMenusvalue of tertiaryMenu
+		"SPM/SPM_utilities".downloadAndValidateSPM menu,subMenu,tertiaryMenusvalue,"Supplier Name"
+	end repeat
+	if   number of items of universal invalidDwonloadFunctionalitySubmenu>0
+		LogError " The list of Menus has Total Number of items  are Not same in the Application and Exported file  are"&&universal invalidDwonloadFunctionalitySubmenu
+	else
+		LogSuccess " The list of Menus has Total Number of items same in the Application and Exported file  are"&&universal validDwonloadFunctionalitySubmenu
+	end if
+	if number of items of  universal  noExportIconMenu>0
+		LogError "The menus listed below are not have export icon to check the download functionality"&&universal noExportIconMenu
+	else
+		LogSuccess"The menus listed below are  have export icon to check the download functionality"&& universal exportIconMenu
+	end if
+end downloadAllSPMSupplierProfileMaintenance
+
+
+
+(*validationOfAllTheMenusSPM*)
+to validationOfAllTheMenusOfSPM headers,submenuofMenuvalue,supplierProfileMaintenanceOfMenu,submenuofTransactionHistory,supplierProfileMaintenanceOfTransactionHistory
+	##Setting Up the Console Errors to empty
+	set universal consoleErrorMenus to empty
+	set universal ConsoleMessage to empty
+	set  universal noConsoleErrorMenus to empty
+	###The Execution will Starts with the Headers it will repeat with the Each header value and navigate to the Desider SubMenu and SubMenuofSubMenu and Check for the Console Errors in the Application
+	repeat with each headersValue of headers
+		Log headersValue
+		if headersValue is "Menu"
+			put 	submenuofMenuvalue into submenuofMenuvalue
+			put supplierProfileMaintenanceOfMenu into thereemenuvalue
+		else if headersValue is "Transaction History" 
+			put submenuofTransactionHistory into submenuofMenuvalue
+			put supplierProfileMaintenanceOfTransactionHistory into thereemenuvalue
+		else 
+			smartUtil.clickText headersValue,"THTH"
+			"WPO/WPO_utilities".errorValidationInConsole headersValue
+			Next repeat
+		end if
+		repeat with each subMenu of submenuofMenuvalue
+			repeat with each subMenuOfSubMenu of thereemenuvalue 
+				"SPM/SPM_utilities".naviagteToTheMutipulemenues headersValue,subMenu,subMenuOfSubMenu
+				"WPO/WPO_utilities".errorValidationInConsole subMenuOfSubMenu
+			end repeat
+		end repeat 
+	end repeat
+	##Logs the Console Error menus
+	###If the number of items on the ConsoleErrors are Greater than the 0 it will Log the Error Message else Logs the Success Message
+	if number of items of universal consoleErrorMenus >0
+		LogError "The menus listed below have detected console errors:"&&universal consoleErrorMenus
+	else
+		--LogSuccess"The menus in the application function without any console errors."
+		LogSuccess "The menus listed below are Console Error free "&&universal noConsoleErrorMenus
+	end if
+end validationOfAllTheMenusOfSPM
+
+
+
+####
+to dashboardMenuValidationSPM
+	--setting alll the Universal variables to Empty
+	set universal consoleErrorMenus to empty
+	set universal noConsoleErrorMenus to empty
+	set universal invalidDataFoundReports to empty
+	set universal invalidNoRecordFoundWithOutData to empty
+	set universal validNoRecordFoundWithOutData to empty
+	set universal invalidNoRecordFoundWithData to empty
+	set universal validNoRecordFoundWithData to empty
+	##Checking Errors in the Console Window in the Login Page
+	"SC2_Login/logInAndLogout_commonHandlers".launchURL
+	"PORS/PORS_utilities".errorValidationInConsole"","Login Page"
+	--"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App universal data.userName,universal data.passWord
+	"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App universal data.userName,universal data.passWord
+	##Sets the Defualt Module in the Application
+	"SPM/SPM_utilities".validateWhetherScreenIsOnDashBoardOrNot universal data.titleofModule,universal data.moduleName,universal data.userName,universal data.passWord
+	"WPO/WPO_utilities".errorValidationInConsole"Dashboard"
+	#####Checking No Record Found 
+	###The Execution will Starts with the Headers it will repeat with the Each header value and navigate to the Desider SubMenu and SubMenuofSubMenu and Check for the Console Errors in the Application
+	####Validating the Data
+	set  dataType to ["withOutData","withData"]
+	repeat with each dataTypevalue of dataType
+		if dataTypevalue is "withOutData"
+			LogSuccess "Checking No Record found Senario without data"
+		else if dataTypevalue is "withData"
+			LogSuccess "Checking No Record found Senario with data"
+		end if
+		repeat with each headersValue of universal data.headers
+			if headersValue is "Menu"
+				put universal data.submenuofMenuvalue into submenuofMenuvalue
+				put universal data.supplierProfileMaintenanceOfMenu into thereemenuvalue
+			end if
+			repeat with each subMenu of submenuofMenuvalue
+				repeat with each subMenuOfSubMenu of universal data.supplierProfileMaintenanceOfMenu
+					if subMenuOfSubMenu is "Supplier Profile"
+						put universal data.noDataSupplierProfilePreferenceName into prefernceNames 
+					else if subMenuOfSubMenu is "Supplier Contact Maintenance"
+						put universal data.noDataSupplierContactMaintenancePreferenceName into  prefernceNames 
+					else if subMenuOfSubMenu is "Supplier Categorization Record"
+						put universal data.noDataSupplierCategorizationRecordPreferenceName into prefernceNames
+						--log universal data.SupplierContactMaintenancePreferenceName
+					end if
+					"SPM/SPM_utilities".naviagteToTheMutipulemenues headersValue,subMenu,subMenuOfSubMenu
+					wait 3
+					smartUtil.clickUsingImage "icons/filterIcon","LHLH"
+					wait 5
+					repeat with each prefernceNamesValue of prefernceNames
+						if prefernceNamesValue is "Supplier Name"
+							put universal data.noDatasupplierName into preferencedata
+						else if prefernceNamesValue is "Category"
+							put universal data.noDataCategory into preferencedata
+						else if prefernceNamesValue is "Process"
+							put universal data.noDataprocess into preferencedata
+						else if prefernceNamesValue is "Subprocess"
+							put universal data.noDatasubProcess into preferencedata
+						else if prefernceNamesValue is "Commodity"
+							put universal data.noDataSCRCommodity into preferencedata
+						end if
+						if dataTypevalue is "withData"
+							--LogSuccess "Application is Checking with the with data "
+							smartUtil.setCustomSearchRectangle"Filter",-10,20,2000,400,"LHLH"
+							set the TextStyle = ""
+							smartUtil.clickText"Reset","RHRH"
+						else if  dataTypevalue is "withOutData"
+							--LogSuccess "Application is Checking with the withoutdata "
+							repeat with preferencenamedata of prefernceNamesValue
+								"SPM/SPM_utilities".selectPreference preferencenamedata,preferencedata
+								smartUtil.setCustomSearchRectangle"Filter",-10,20,2000,200,"LHLH"
+								smartUtil.clickText prefernceNamesValue,"CustomPart"
+							end repeat
+						end if
+					end repeat
+					smartUtil.clickText"Apply","RH"
+					if dataTypevalue is "withOutData"
+						if ImageFound(text:"No results found",searchRectangle:(screenPartition().SUT.("fullScreen")))
+							LogSuccess "Application is Working as expected with"&&prefernceNames&& "in "&&subMenuOfSubMenu
+							insert  subMenuOfSubMenu into  universal  validNoRecordFoundWithOutData
+						else
+							LogError"Application is not woeking as Excepeted  with"&&prefernceNames&& "in "&&subMenuOfSubMenu
+							"WPO/WPO_utilities".errorValidationInConsole subMenuOfSubMenu
+							insert subMenuOfSubMenu into   universal invalidNoRecordFoundWithOutData 
+						end  if
+					else if dataTypevalue is "withData"
+						if ImageFound(text:"No results found",searchRectangle:(screenPartition().SUT.("fullScreen")))
+							LogError"Application is not woeking as Excepeted  with"&&prefernceNames&& " in "&&subMenuOfSubMenu
+							"WPO/WPO_utilities".errorValidationInConsole subMenuOfSubMenu
+							insert subMenuOfSubMenu into  universal invalidNoRecordFoundWithData
+						else
+							LogSuccess "Application is Working as expected  with"&&prefernceNames&& " in "&&subMenuOfSubMenu
+							insert subMenuOfSubMenu into   universal validNoRecordFoundWithData
+						end  if
+					end if
+				end repeat 
+				wait 1
+				smartUtil.clickUsingImage "icons/filterIcon","LHLH"
+			end repeat
+		end repeat
+	end repeat
+	
+	if number of items of universal consoleErrorMenus>0
+		LogError"The Menus which has console Errors are"&&universal consoleErrorMenus
+	else
+		--LogSuccess "The Menus which has no Console Errors are "&&universal noConsoleErrorMenus 
+		LogSuccess"All the menus are  Console Error Free"
+	end if
+	if number of items of  universal invalidNoRecordFoundWithOutData>0
+		LogError"The Menus which has invalid data without data"&& universal invalidNoRecordFoundWithOutData
+	else
+		LogSuccess"The Menus which has valid data without data "&& universal validNoRecordFoundWithOutData
+	end if
+	if number of items of universal  invalidNoRecordFoundWithData>0
+		LogError "The Menus which has invalid data with data"&& universal invalidNoRecordFoundWithData
+	else
+		LogSuccess "The Menus which has valid data with data"&& universal validNoRecordFoundWithData
+		
+	end if
+end dashboardMenuValidationSPM
+
+
+
+
+

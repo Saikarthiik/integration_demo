@@ -1,0 +1,10 @@
+﻿#F&C escalation update should consider about pending qty as well in Vertical View
+set universal testcaseName to "TD_2090_PORequiredAfter5pm"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1
+repeat number of items of universal data times
+	"review&Commit_F&C/ForeCast/foreCast_commonHandlers".forecastEscalationWithPORequiredAfter5pmMYT universal data.supplierName,universal data.partNumber
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

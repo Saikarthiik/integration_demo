@@ -1,0 +1,9 @@
+﻿set universal testCaseName to "TD_2741_S3AccessWPO"
+"WPO/WPO_CommonHandlers".readTestData universal testCaseName
+"WPO/WPO_utilities".validateWhetherScreenIsOnDashBoardOrNot
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"WPO/WPO_CommonHandlers".S3AccessWPO universal data.archivalReportFolderNames, universal data.validationFolderName
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

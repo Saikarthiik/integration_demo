@@ -1,0 +1,29 @@
+{
+    URLparameters = (
+	{
+	    checkedNumber = <*BY>;
+	    param = "test_config_id";
+	    showCheckedNumber = <*BY>;
+	    value = "[[test_config_id]]";
+	},
+	{
+	    checkedNumber = <*BY>;
+	    param = limit;
+	    showCheckedNumber = <*BY>;
+	    value = 500;
+	}
+    );
+    authenticationType = None;
+    httpVerb = GET;
+    oauth1Token = "";
+    password = "";
+    requestBody = "";
+    requestBodyFormat = "Form Url Encoded";
+    requestHeaders = "<![CDATA[authorization:bearer [[accessToken]] 
+]]>";
+    requests = "";
+    testResults = "";
+    testScript = "";
+    url = "[[baseURL]]/ai/testconfigtasks?test_config_id=[[test_config_id]]&limit=500";
+    userName = "";
+}

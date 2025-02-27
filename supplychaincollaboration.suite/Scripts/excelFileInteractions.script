@@ -1,0 +1,738 @@
+﻿to handle enableEditing  //Clicking on the Enable Edit button in Excel Workbook 
+	try
+		if ImageFound(text:"Enable Editing",SearchRectangle:screenPartition().SUT.("THTH"),caseSensitive:true,waitfor:20) then
+			Click FoundImageLocation()
+			Log "Now the Excel Workbook is in Editing Mode."
+		else 
+			Log "The Excel Workbook is already in Editing Mode."
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end enableEditing
+
+to handle findTextInWorksheet word  //Find text in worksheet by passing a word entire cell content by passing a word 
+	try
+		TypeText controlKey,"f"
+		wait 0.5
+		TypeText controlKey,"a"
+		TypeText backspace
+		wait 0.5
+		TypeText word
+		wait 0.5
+		TypeText altKey,"t"
+		wait 0.5
+		TypeText altKey,"o"
+		wait 0.5
+		TypeText altKey,"f"
+		wait 0.5
+		TypeText altKey,"o"
+		wait 0.5
+		TypeText altKey,"t"
+		wait 0.5
+		TypeText altKey,f4
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end findTextInWorksheet
+
+
+to handle findTextInExcel word  //Find text in worksheet by passing a word entire cell content by passing a word 
+	try
+		TypeText controlKey,"f"
+		wait 0.5
+		TypeText controlKey,"a"
+		TypeText backspace
+		wait 1
+		TypeText word
+		TypeText altKey,"f"
+		wait 0.5
+		TypeText altKey,f4
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end findTextInExcel
+to handle findTextInACell word  //Find text in a cell by matching entire cell content by passing a word 
+	try
+		TypeText controlKey,"f"
+		wait 0.5
+		TypeText controlKey,"a"
+		TypeText backspace
+		wait 0.5
+		TypeText altKey,"t"
+		set area to the SearchRectangle
+		set the SearchRectangle to []
+		put ImageLocation(text:"Find and Replace") into frPopUpLocation
+		set the SearchRectangle to [[frPopUpLocation.x-40,frPopUpLocation.y+10],[frPopUpLocation.x+400,frPopUpLocation.y+235]]
+		--	if not ImageFound(imageName:"matchCellCheckbox", waitFor:10) then Typetext altKey,"o"		
+		set the SearchRectangle to area
+		TypeText altKey,"t"
+		wait 0.5
+		TypeText word
+		TypeText altKey,"f"
+		wait 0.5
+		TypeText altKey,f4
+		wait 0.5
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end findTextInACell
+
+to handle copyaCellValue //Copy a cell value by selecting the above cell as a refernce
+	try
+		TypeText downArrow
+		TypeText f2
+		TypeText controlKey,"a"
+		TypeText controlKey,"c"
+		put  RemoteClipboard() into global value
+		return global value
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end copyaCellValue
+
+to handle copyValueFromExcel fieldNames,xCoordinate,yCoordinate,searchArea  //Copy a value from a cell by passing x,y coordinates and field name as refernce and search area
+	try
+		if (searchArea is not empty) then set the SearchRectangle to screenPartition().SUT.(searchArea) else set the SearchRectangle to [[0*1920,0.20*1080],[1*1920,.46*1080]]
+		"CommonUtilities/excelFileInteractions".findTextInFile {word:fieldNames}by name		
+		wait 0.5		
+		DoubleClick text:fieldNames,preferDictionarywords:"off",ignoreSpaces:"Yes",ignoreNewLines:"Yes",LowResolutionMode:"Yes", dpi:"144",hotspot:[xCoordinate,yCoordinate],waitfor:35,caseSensitive:true,EnhanceLocalContrast:"Yes"
+		DoubleClick text:fieldNames,preferDictionarywords:"off",ignoreSpaces:"Yes",ignoreNewLines:"Yes",LowResolutionMode:"Yes",dpi:"144",hotspot:[xCoordinate,yCoordinate],waitfor:35,caseSensitive:true,EnhanceLocalContrast:"Yes"
+		wait 0.5
+		TypeText controlKey,homeKey
+		TypeText controlKey,shiftKey,endKey
+		TypeText controlKey,"c"
+		put  RemoteClipboard() into value
+		set the SearchRectangle to []
+		return value 
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end copyValueFromExcel
+
+to handle copyFristRowData   //Copy entire 1st row data and return the value
+	try
+		"CommonUtilities/CommonHandlers".clickImage {image:"excelFristRowSelector",area:"TopLeftQuadrant",waitTime:"30"}by name
+		wait 1
+		TypeText controlKey,"c"
+		put RemoteClipboard() into RowData
+		return RowData
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end copyFristRowData
+
+to handle applyFiltersForEntireRow //Apply Filters for entire row by selecting the row first
+	try
+		TypeText shiftKey,spacebar
+		TypeText controlKey,shiftKey,"l"
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end applyFiltersForEntireRow
+
+to handle openFilterDropDownAndSearchByWord filterValue  //Filter the column by passing a filtering word
+	try
+		TypeText altKey,downArrow
+		TypeText "e"
+		TypeText filterValue,return
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end openFilterDropDownAndSearchByWord 
+
+to handle greterthanFilter value   //Apply greterthan filter by passing a value
+	try
+		TypeText altKey,downArrow,"f","g"
+		TypeText value,return
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end greterthanFilter 
+
+to handle equalsFilter value   //Apply equals filter by passing a value
+	try
+		TypeText altKey,downArrow,"f","e"
+		TypeText value,return
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end equalsFilter 
+
+to handle containsFilter value   //Apply contains filter by passing a value
+	try
+		TypeText altKey,downArrow,"f","a"
+		TypeText value,return
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end containsFilter 
+
+to handle beginsWithFilter value   //Apply begins filter by passing a value
+	TypeText altKey,downArrow,"f","i"
+	TypeText value,return
+end beginsWithFilter 
+
+to handle endsWithFilter value  //Apply end filter by passing a value
+	try
+		TypeText altKey,downArrow,"f","t"
+		TypeText value,return
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end endsWithFilter 
+
+to handle clearFiltersForColumn //Remove filters for a column 
+	try
+		TypeText altKey,downArrow,"d"
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end clearFiltersForColumn
+
+to handle removeAllFilterValuesForWorkbook  //Remove all filters for the entier workbook
+	try
+		TypeText altKey,"a","c"
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end removeAllFilterValuesForWorkbook
+
+to handle zoomWorkbook zoomPercentage  //Zooming the workbook by passing zoom percentage 
+	try
+		TypeText altKey,"v"
+		TypeText "z"
+		TypeText zoomPercentage,return
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end zoomWorkbook
+
+to handle autoWidthForEntireWorkbook  //Auto width for enitre workbook
+	try
+		TypeText controlKey,"a"
+		TypeText altKey,"h"
+		TypeText "o"
+		TypeText "i"
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end autoWidthForEntireWorkbook
+
+to handle autoHeightForEntireWorkbook  //Auto Height for enitre workbook 
+	try
+		TypeText controlKey,"a"
+		TypeText altKey,"h"
+		TypeText "o"
+		TypeText "a"
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end autoHeightForEntireWorkbook
+
+to handle closeFileBySave  //Close the workbook by saving the data
+	try
+		TypeText controlKey,"s"
+		wait  3
+		TypeText altKey,f4
+		if imagefound(5,text:"Do you want")
+			typetext return
+			Typetext controlKey,w
+			Typetext Altkey,F4
+		end if
+		
+	Catch theException
+		
+		smartUtil.errorCapture theException
+	End try
+end closeFileBySave
+
+to handle closeFileByclickinOnSave    //Close the workbook by not saving the data
+	try
+		wait 1
+		typetext controlKey,s
+		wait 2
+		KeyDown altKey
+		wait 1
+		TypeText altKey,f4
+		KeyUp altKey
+		if imageFound(text:"Save",searchRectangle:(screenPartition().SUT.("Center")),waitfor:10) then
+			wait 2
+			KeyDown altKey		
+			TypeText altKey,"S"
+			wait 1
+			KeyUp altKey
+			wait 2
+		end if
+		--smartUtil.completeScreenLoad
+		if  imagefound(text:"Merge & Center",searchRectangle:(screenPartition().SUT.("THTH")),waitfor:10) and not ImageFound(text:"chrome", waitFor:10) then 
+			--Typetext controlKey,w
+			Typetext Altkey,F4
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end closeFileByclickinOnSave
+
+to getTheCountFromExcel columnName
+	--typetext controlKey,j
+	wait 0.6
+	--smartUtil.navigateAndMouseAction "celestica","production", "fullScreen","", DoubleClick
+	wait 3
+	--smartUtil.clickText "production","LH"
+	--smartUtil.clickText "Cid Mapped Part Number","LH"
+	if ImageFound(text:"Cid",searchRectangle:(screenPartition().SUT.("center")),waitFor:2)
+		smartUtil.clickText "Cid","LHLH"
+	else
+		--smartUtil.validate columnName,"THTH"
+		smartUtil.clickText columnName
+	end if 
+	typetext controlKey,a
+	wait 0.6
+	typetext altKey,a,j
+	wait 0.6
+	
+	(*Typetext controlKey,a
+	Typetext altKey,h,o,a,h,o,i*)
+	#findTextInACell columnName
+	wait 1
+	Click [1267,678]
+	wait 2
+	--excelFileInteractions.findTextInWorksheet"PO#"
+	smartUtil.clickText columnName,"THTH"
+	--smartUtil.validate columnName,"LH"
+	wait 2
+	typetext controlKey,shiftkey,downArrow
+	wait 2
+	typetext controlKey,c
+	wait 3
+	put RemoteClipboard() into global countAfterCheckingDuplicates
+	--log global countAfterCheckingDuplicates
+	replace every occurrence of newline in global countAfterCheckingDuplicates with ","
+	log (number of items of global countAfterCheckingDuplicates)-1
+	set universal countFromExcel to(number of items of global countAfterCheckingDuplicates-1)
+	log universal countFromExcel
+	
+end getTheCountFromExcel
+
+
+to handle getExcelRowsLength filePath, sheetName
+
+	set myExcelData to (filePath)
+	set workBookExcel to workbook(myExcelData)
+	set worksheetExcel to worksheet(workBookExcel,sheetName)
+	set Global rowData to worksheetExcel.cellRange(rowNum)
+	log Global rowData
+	put cellRange(3) of worksheetExcel into firstRow -- Assigns a list of lists containing the values of row 1 to the firstRow variable
+	log firstRow
+	set rowCount to JSONValue(firstRow)
+	log rowCount
+	put worksheetExcel.cellRange ("A3", "A10") into columnsBasic --creates a list of lists for a range of cells
+	log columnsBasic
+	put cellRange("E:E") of worksheetExcel into columnsBasic -- using colons, create a list of lists for a range of columns
+	LOG item 10 of columnsBasic
+	LOG last item of columnsBasic
+	log length of columnsBasic
+	put number of items of cellRange("H") of worksheetExcel into rowLength
+	
+end getExcelRowsLength
+
+# Edit the Excel cell value
+to handle editExcelCellvalue
+
+	(*typetext controlKey,j
+	wait 3
+	smartUtil.navigateAndMouseAction "Planner","Planner", "THTH","", DoubleClick
+	wait 1
+	if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+		TypeText altKey,"Y"
+	else
+		log "Planner Adjustment excel sheet opened"
+	end if
+	smartUtil.completeScreenLoad*)
+	smartUtil.validate "ORG","LH"
+	smartUtil.clickText"COE","TH"
+	##Expand all the Columns in the Excel
+	TypeText controlKey,a
+	TypeText altKey,h,o,a,h,o,i
+	#Copy part Number from the Excel
+	excelFileInteractions.findTextInExcel"Ori Part Number"
+	Typetext downArrow
+	Typetext controlKey,c
+	put RemoteClipboard() into universal oriPartNumber
+	delete newline from universal oriPartNumber
+	log universal oriPartNumber
+	#Copy work week from the Excel
+	excelFileInteractions.findTextInExcel"Prod Week"
+	Typetext downArrow
+	Typetext controlKey,c
+	put RemoteClipboard() into universal prodWeek
+	delete newline from universal prodWeek
+	log universal prodWeek
+	##Entering the Adj value in the Work week
+	excelFileInteractions.findTextInExcel"Adj"
+	Typetext downArrow
+	reset random
+	put random(1, 20) into universal adj
+	log universal adj
+	smartUtil.textField universal adj
+	##Enter the Adj reason
+	excelFileInteractions.findTextInExcel"Adj Reason"
+	Typetext downArrow
+	smartUtil.textField universal data.reasonValue
+	###Enter the Remark
+	excelFileInteractions.findTextInExcel"Planner Remark"
+	Typetext downArrow
+	smartUtil.textField universal data.remark
+	
+	(*smartUtil.clickTextAtSpot "ori Part Num",0,50,"TH"
+	TypeText controlKey,c
+	log RemoteClipboard()
+	put  RemoteClipboard() into  universal oriPartNumber
+	log universal oriPartNumber
+	
+	smartUtil.navigateAndMouseAction "Final","","RH","",Doubleclick,-30,50
+	smartUtil.navigateAndMouseAction "Final","","RH","",Doubleclick,-30,50
+	smartUtil.textField  universal data.adjValue
+	smartUtil.navigateAndMouseAction "Final","","RH","",click,60,50
+	smartUtil.textField "Production yield"
+	smartUtil.navigateAndMouseAction "Plan Details","","RH","",doubleClick,-80,92
+	smartUtil.navigateAndMouseAction "Plan Details","","RH","",doubleClick,-80,92
+	TypeText controlKey,c
+	log RemoteClipboard()
+	
+	put RemoteClipboard() into universal prodWeek
+*)
+	
+	excelFileInteractions.closeFileBySave
+	wait 1
+	if ImageFound(text:"Clipboard",waitFor:5,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+		TypeText altKey,f4
+	else
+		log "Excel closed"
+		
+	end if
+	wait 2
+	smartUtil.validate "Download","topLeftQuadrant"
+	smartUtil.clickText "Download","topLeftQuadrant"
+	smartUtil.closeTab
+end editExcelCellvalue
+# import Execel and verify the user received a email notification on file import successfully
+to importExcelAndVerifyEmail
+
+	smartUtil.clickUsingImage "icons/importInForecastView","topRightQuadrant"
+	wait 3
+	smartUtil.clickText "Downloads","LH"
+	smartUtil.validate "Planner", "LH"
+	smartUtil.navigateAndMouseAction "Planner","","LH","",DoubleClick
+	smartUtil.validate "Planning", "TH"
+	
+	"SC2_CommonActions/sc2CommonHandlers".checkEmail
+	TypeText controlKey,tab
+	
+end importExcelAndVerifyEmail
+
+# rename the file and upload
+to renameFileAndUpload
+	smartUtil.clicktext " Forecast & Commit","TH"
+	smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+	#validate and click on forecast
+	smartUtil.clickText "Forecast","Custompart"
+	
+	smartUtil.clickUsingImage "icons/importInForecastView","topRightQuadrant"
+	wait 3
+	smartUtil.clickText "Downloads","LH"
+	wait 2
+	smartUtil.clickText "Planner", "LH"
+	typetext	 F2
+	-------------
+	put now into global  fileName
+	log  global fileName
+	delete every  occurrence of <":"> in global  fileName
+	delete every  occurrence of <"-"> in global  fileName
+	delete every  occurrence of <" "> in global  fileName
+	delete the last 5 characters of global fileName 
+	log global  fileName
+	----------
+	smartUtil.textField global  fileName
+	wait 1
+	TypeText controlKey,a
+	TypeText controlKey,c
+	log RemoteClipboard()
+	put RemoteClipboard() into universal reNamedFileName
+	log universal reNamedFileName
+	wait 3
+	smartUtil.clickText "Name", "LH"
+	wait 2
+	TypeText escapeKey
+	--DoubleClick text:"TestData"
+	
+	(*	
+	smartUtil.clickText "Downloads","LH"
+	
+	wait 3
+	smartUtil.clickTextAtSpot "File name",100,0,"LH"
+	TypeText controlKey,a
+	TypeText backspace
+	smartUtil.textField "TestData"
+	smartUtil.clickTextAtSpot "File name",100,0,"LH"
+	TypeText controlKey,a
+	TypeText controlKey,c
+	log RemoteClipboard()
+	put RemoteClipboard() into universal reNamedFileName
+	log universal reNamedFileName
+	wait 3
+	smartUtil.clickText "Open","center"*)
+end renameFileAndUpload
+
+
+(***Edit the Excel cell values***)
+
+to handle editExcelMassCellvalue
+	wait 3
+	excelFileInteractions.openExcelFromDownloads universal data.supplierName
+	(*if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+		TypeText altKey,"Y"
+	else
+		log "Adjustment excel sheet opened"
+	end if*)
+	wait 4
+	smartUtil.validate"PartNumber","LHLH"
+	excelFileInteractions.findTextInWorksheet"PartNumber"
+	TypeText downArrow
+	TypeText controlKey,c
+	put  RemoteClipboard() into universal partNumber
+	delete newline from universal partNumber
+	log universal partNumber
+	excelFileInteractions.findTextInWorksheet"Prod Week"
+	TypeText downArrow
+	TypeText controlKey,c
+	put  RemoteClipboard() into universal prodWeek
+	delete newline from universal prodWeek
+	log universal prodWeek
+	excelFileInteractions.findTextInWorksheet"Prod Year"
+	TypeText downArrow
+	TypeText controlKey,c
+	put  RemoteClipboard() into universal prodYear
+	delete newline from universal prodYear
+	log universal prodYear
+	"Planning_F&C/PlannerHorizontalView/foreCast_utilities".insertValuesInCategory "NON-TAA Adjustment",universal data.adjValue,"1","NON-TAA Reason","CM process yield","NON-TAA Planner Remark","AM"
+	#storing partNumber in to one variable
+	#NON-TAA value adding
+	excelFileInteractions. closeFileByclickinOnSave
+	if ImageFound(text:"Clipboard",waitFor:5,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+		TypeText altKey,f4
+	else
+		log "Excel closed"
+	end if
+	smartUtil.validate "Download","topLeftQuadrant"
+	smartUtil.closeTab
+	excelFileInteractions.importExcelIntoApplication  universal data.supplierName
+end editExcelMassCellvalue
+
+(***Opening Downloadedfile***)
+
+
+to openExcelFromDownloads supplierName
+	if supplierName is not empty
+		
+		set  the TextStyle to {ignoreSpaces:Yes}
+		set the TextStyle to{textDifference:1,ignoreUnderscores:Yes}
+		typetext controlKey,j
+		wait 3
+		smartUtil.setCustomSearchRectangle"Download history",500,40,1500,200,"LHLH"
+		smartUtil.validate supplierName,"Custompart"
+		wait 3
+		smartUtil.clickText supplierName,"Custompart"
+	else
+		set  the TextStyle to {ignoreSpaces:Yes}
+		set the TextStyle to{textDifference:1,ignoreUnderscores:Yes}
+		typetext controlKey,j
+		wait 3
+		smartUtil.setCustomSearchRectangle"Today",-10,30,800,140,"VM"
+		smartUtil.clickUsingImage "icons/folderIcon","Custompart"
+		wait 2
+		TypeText functionkeys,f2
+		wait 1
+		TypeText  controlKey,a,c
+		put RemoteClipboard() into universal downloadedFileName
+		LogSuccess"File name:"&&universal downloadedFileName 
+		wait 1
+		TypeText returnKey
+		Typetext altKey,returnKey
+		smartUtil.clickTextAtSpot"Type of file",300,0
+		smartUtil.doubleClickTextAtSpot "Type of file",300,0
+		TypeText controlKey,c
+		put RemoteClipboard() into universal fileType
+		Log "Downloaded file Type is :" &&universal fileType
+		TypeText  escapeKey
+		if universal fileType  contains ".xlsx"
+			LogSuccess "The" &&universal downloadedFileName&&"file is in the xlsx format"
+		else
+			LogWarning"The" &&universal downloadedFileName&&"file is in the"&&universal fileType&&"format"
+		end if
+		TypeText returnKey
+	end if
+	--wait until ImageFound(text:"Merge",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+	waitfor 600,{text:"Merge",searchRectangle:(screenPartition().SUT.("THTH")),DPI:144,ignoreNewLInes:on,IgnoreSpaces:on}
+	if ImageFound(text:"Merge",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:2)
+		
+		LogSuccess "The Excel File is opend"
+	else
+		LogError "The Excel file is not Opend"
+	end if
+	set the TextStyle to default
+end openExcelFromDownloads
+
+
+(***Importing data into excel***)
+to importExcelIntoApplication  supplierName
+	if ImageFound(image:"icons/importInForecastView",searchRectangle:(screenPartition().SUT.("topRightQuadrant")))
+		LogSuccess"Export Icon Found in the Application"
+		smartUtil.clickUsingImage "icons/importInForecastView","topRightQuadrant"
+		wait 3
+		smartUtil.clickText "Downloads","LH"
+		smartUtil.clickText supplierName, "LH"	
+		smartUtil.clickTextAtSpot"File name",100,0
+		TypeText controlKey,"a","c"
+		put  RemoteClipboard() into  universal fileId
+		smartUtil.navigateAndMouseAction supplierName,"","THTH","",DoubleClick
+	else
+		LogError "Export Icon Not Found in the Application"
+		
+	end if
+end importExcelIntoApplication
+
+
+(*Add new row in Excel*)
+to addNewRowIntoExcel
+	wait 3
+	excelFileInteractions.openExcelFromDownloads universal data.supplierName
+	log universal data.supplierName
+	(*if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+		TypeText altKey,"Y"
+	else
+		log "Jobil Adjustment excel sheet opened"
+	end if*)
+	wait 3
+	smartUtil.validate"PartNumber","LHLH"
+	smartUtil.navigateAndMouseAction "PartNumber",partNumber,"LH","",click,0,30
+	Typetext altKey,i,r
+	if universal data.supplierName is "Jabil" then 
+		put universal data.jabilNewPartNumber into universal data.NewPartNumber
+	end if
+	if universal data.supplierName is "Venture" then 
+		put universal data.ventureNewPartNumber into universal data.NewPartNumber
+	end if
+	if universal data.supplierName is "Celestica" then 
+		put universal data.celesticaNewPartNumber into  universal data.NewPartNumber
+	end if
+	log universal data.suppliername
+	Typetext universal data.NewPartNumber
+	TypeText tabKey
+	TypeText universal ProdWeek
+	TypeText tabKey
+	TypeText universal data.year
+	TypeText tabKey
+	TypeText  universal data.adjValue
+	TypeText tabKey
+	typetext "CM process yield"
+	typetext tabKey
+	typetext "AM"
+	smartUtil.clickText"PartNumber","LHLH"
+	excelFileInteractions. closeFileByclickinOnSave
+	if ImageFound(text:"Clipboard",waitFor:5,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+		TypeText altKey,f4
+	else
+		log "Excel closed"
+	end if
+	smartUtil.validate "Download","topLeftQuadrant"
+	smartUtil.closeTab
+	excelFileInteractions. importExcelIntoApplication universal data. supplierName
+	log universal data.NewPartNumber
+	if ImageFound(text:"Save",searchRectangle:(screenPartition().SUT.("THTH")))
+		smartUtil.clickText"Save"
+	end if
+	if ImageFound(text:"Duplicates Records",searchRectangle:(screenPartition().SUT.("HM")))
+		LogError"Duplicates Records are created with the "&&universal data.NewPartNumber
+		smartUtil.clickText"Cancel","HM"
+		exit all
+	end if
+	if ImageFound(text:"Following records are having issue due to below reasons in remark column",searchRectangle:(screenPartition().SUT.("HM")))or ImageFound(text:"Rejected Records",searchRectangle:(screenPartition().SUT.("HM")))
+		LogError universal data.NewPartNumber&&"is Rejected Records"
+		smartUtil.clickText"Cancel","HM"
+		exit all
+	end if
+end addNewRowIntoExcel
+
+(***editExcelValuesOfExportedFromAddNewWorkWeek****)
+
+to editExcelValuesOfExportedDataFromAddNewWorkWeek AdjustmentPositiveValue, FYIOnlyvalue,PORequiredValue
+	if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+		TypeText altKey,"Y"
+	else
+		log "Jobil Adjustment excel sheet opened"
+	end if
+	wait 1
+	smartUtil.validate"PartNumber","LHLH"
+	excelFileInteractions.findTextInWorksheet"PartNumber"
+	TypeText downArrow
+	TypeText controlKey,c
+	put  RemoteClipboard() into universal partNumber
+	delete newline from universal partNumber
+	log universal partNumber
+	excelFileInteractions.findTextInWorksheet"Prod Week"
+	TypeText downArrow
+	TypeText controlKey,c
+	put  RemoteClipboard() into universal prodWeek
+	delete newline from universal prodWeek
+	log universal prodWeek
+	excelFileInteractions.findTextInWorksheet"Prod Year"
+	TypeText downArrow
+	TypeText controlKey,c
+	put  RemoteClipboard() into universal prodYear
+	delete newline from universal prodYear
+	log universal prodYear
+	put formattedTime("yyyy:MM:dd:HH:mm:ss") into universal plannerRemark
+	delete every occurrence of ":" in universal plannerRemark
+	log universal plannerRemark
+	"Planning_F&C/PlannerHorizontalView/foreCast_utilities".insertValuesInCategory "NON-TAA Adjustment",AdjustmentPositiveValue,"1","NON-TAA Reason","CM process yield","NON-TAA Planner Remark", universal plannerRemark
+	--TypeText controlKey,shiftKey,rightArrow
+	if FYIOnlyvalue is not empty
+	(*smartUtil.clickText"PartNumber","LH"
+		Click [1250,250]
+		smartUtil.clickTextAtSpot"FYI Only",0,20,"TRQ"
+		smartUtil.textField  FYIOnlyvalue*)
+		excelFileInteractions.findTextInWorksheet"FYI Only"
+		TypeText downArrow
+		smartUtil.textField  universal data.FYIOnlyvalue
+	end if
+	if PORequiredValue is not empty
+	(*Click [1250,250]
+		smartUtil.clickTextAtSpot"PO Required",0,20,"TH"
+		smartUtil.textField PORequiredValue 
+		Click [1250,250]*)
+		excelFileInteractions.findTextInWorksheet"PO Required"
+		TypeText downArrow
+		smartUtil.textField  universal data.PORequiredValue 
+	end if	
+end editExcelValuesOfExportedDataFromAddNewWorkWeek
+
+to closeFileByDontSave
+	try
+		TypeText controlKey,"s"
+		wait  5
+		if ImageFound(text:"yes", waitFor:5,searchRectangle:(screenPartition().SUT.("center")))
+			smartUtil.clickText "yes","center"
+		end if
+		TypeText altKey,f4
+		TypeText tab,returnkey
+		--TypeText altKey,f4
+	Catch theException
+		
+		smartUtil.errorCapture theException
+	End try
+end closeFileByDontSave
+
+
+

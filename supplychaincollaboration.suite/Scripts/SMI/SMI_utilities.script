@@ -1,0 +1,49 @@
+﻿to validateWhetherScreenIsOnDashBoardOrNot
+	Typetext enterKey
+	if ImageFound(text:"Dashboard", waitFor:universal pageWait,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+		wait 3
+		smartUtil.clickText"Dashboard","topLeftQuadrant"	
+		wait 4
+		
+		if ImageFound(text:"Supply Chain Collaboration - SMI",searchRectangle:(screenPartition().SUT.("THTH")))
+			LogSuccess "The Application is on the Dashboard continue with the next steps"
+		else
+			"SC2_CommonActions/sc2CommonHandlers".AppModuleSelector universal data.moduleName,universal data.titleofModule
+		end if
+		smartUtil.validate"Supply Chain Collaboration - SMI","topLeftQuadrant"	
+		
+	else
+		LogWarning "The Application is not on the Dashboard Page for Next Validations Hence, Login to the Application for Validations"
+		"SC2_Login/logInAndLogout_commonHandlers".launchURL
+		##Login to the Application
+		"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App universal data.userName,universal data.passWord
+		##Sets the Defualt Module in the Application
+		"SC2_CommonActions/sc2CommonHandlers".AppModuleSelector universal data.moduleName,universal data.titleofModule
+		##Validations on the Dashboard Page
+		--"PORS/PORS_CommonHandlers".SC2PortalLoginPORS	
+		LogSuccess " Loged into the Application  and the Application is on the Dashboard continue with the next steps"
+	end if
+end validateWhetherScreenIsOnDashBoardOrNot
+
+
+(*selectPreference in SMI Module*)
+to selectPreferenceInSMI Menu, Options
+	repeat with each item of Options
+		Repeat until ImageFound(text:Menu,searchRectangle:(screenPartition().SUT.("LHLH")))
+			ScrollWheelDown 4
+		End Repeat
+		put FoundImageLocation() into MenuLoc
+		Click FoundImageLocation()
+		put the number of items of Options into OptionsToSelect
+		put it into FirstItem	
+		smartUtil.setCustomSearchRectangle Menu,-40,10,350,280,"LH"
+		#smartUtil.validate FirstCharacter,CustomPart
+		if ImageFound(text:"Search",searchRectangle:(screenPartition().SUT.(CustomPart)))
+			smartUtil.clickText "Search",CustomPart
+			Typetext it
+			wait 4
+			typetext spacebar
+			Click the RemoteScreenSize*.5
+		end if
+	end repeat
+end selectPreferenceInSMI

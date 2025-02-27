@@ -1,0 +1,31 @@
+﻿set universal testCaseName to "TD_1906_SetPreference"
+
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testCaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	(*"SC2_Login/logInAndLogout_commonHandlers".launchURL "Chrome",universal testData.SC2ApplicationURL
+	
+	"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App, universal testData.userName,universal testData.passWord*)
+	
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Forecast & Commit","Forecast"	
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Forecast & Commit","Planner Horizontal View"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Forecast & Commit","KR Summary"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Forecast & Commit","IRP Summary"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Forecast & Commit","Planner Review"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Pre-Ship Automation","PRPO"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Pre-Ship Automation","SO View"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Non-ASCP Demand","New DDM Request"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Non-ASCP Demand","New NAD Request"
+	"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Non-ASCP Demand","Workbench"
+	#"Planning_Dashboard/dashBoard_commonHandlers".validateAllMenus "Non-ASCP Demand","Approval Workbench"
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	
+	put "Done" into universal testData.run_Status
+end repeat
+(*
+
+"SC2_Login/logInAndLogout_commonHandlers".logoutToSC2
+smartUtil.closeBrowser
+*)

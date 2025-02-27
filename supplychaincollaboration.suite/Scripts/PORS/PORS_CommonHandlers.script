@@ -1,0 +1,496 @@
+﻿
+# Scenarios:
+--SC2PortalLoginPORS
+--downloadAllPORS
+--setPreferencesPORS
+--dashboardMenuValidation
+--S3AccessPORS
+--setPreferencesExportedFilePORS
+
+to readTestData
+	Params SheetName
+	"SC2_CommonActions/sc2CommonHandlers".setUpScreenShotPath
+	set universal data to empty
+	#Typetext Enterkey
+	wait 0.9
+	if imagefound(text:"Logon Legal Notice",waitfor:5,LowResolutionMode:"Yes")
+		click [200,300]
+		Typetext Enterkey		
+	else
+		log "Logon Legal Notice not required to this connected SUT"
+		
+	end if
+	repeat 3 times
+		click [200,300]
+		wait 2
+	end repeat
+	(*set myExcelDB to {type: "excel",file:ResourcePath("SCC_TestDataFile.xlsx"),name:SheetName,writable:"Yes"} 
+	set universal data to the records of myExcelDB where run_Status is "yes"*)
+	if ConnectionInfo().Status is "Connected"
+		put ConnectionInfo().username into global User_Name
+		set global sutID to ConnectionInfo().ServerID
+	else
+		throw "Error","SUT not connected"
+	end if
+	split global User_Name by "\"
+	put item 2 of global User_Name into global ExcelUserName
+	log "User : "&global ExcelUserName
+	set global DataFilePath to "C:\AutomationResources\SCC\"&global ExcelUserName&"_SCC_PORS_TestDataFile.xlsx"
+	--set global DataFilePath to "C:\AutomationResources\SCC_QA\"&global ExcelUserName&"_SCC_TestDataFile.xlsx"
+	set myExcelDB to {type: "excel",file:global DataFilePath,name:SheetName,writable:"Yes"} 
+	set universal data to the records of myExcelDB where run_Status is "yes"
+	if universal data is empty then 
+		logerror " Run Status is -Done No Data found to continue with Next Step"
+		exit all
+	end if
+	"SC2_CommonActions/sc2CommonHandlers".SUTInfo
+	if universal data.SC2ApplicationURL is "https://qa.collabportal.keysight.com/login"
+		set data.environment to "Test"
+	else if  universal data.SC2ApplicationURL is "https://collabportal.keysight.com/login"
+		set data.environment to "Prod"
+	else
+		LogError "Bot is not operating in the correct Environment and Execution type"
+		exit all
+	end if
+	set data.jira_project_name to universal data.Jira_Project_Name
+	set data.jira_key to universal data.Jira_Key
+	set data.execution_type to universal data.Execution_Type
+	log "{ eggplant_data_sync : " &data&"}"
+end readTestData
+
+#SC2PortalLoginPORS
+to SC2PortalLoginPORS userName,passWord
+	if ImageFound(text:"Supply Chain Collaboration - PO Rescheduling",searchRectangle:(screenPartition().SUT.("THTH")))
+		LogSuccess "The Application is in the PORS Module"
+		smartUtil.validate"Supply Chain Collaboration - PO Rescheduling","TH"
+		set validationList to ["Dashboard","Menu","Help","Administration","Notifications","Charts","Archive Files","Activate Supplier"]
+		smartUtil.listOfValidations "PO Rescheduling",-500,0,1500,1000,validationList,"TH"
+	else
+		LogError"The Application is not i the PORS Module"
+	end if
+	--end if
+end SC2PortalLoginPORS
+
+
+to downloadAllPORS  userName,passWord,columnNameInExportedFile
+	##Navigate to the Purchase Order page by clicking on the Menu->Purchase Order
+	"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Menu","Purchase Order"
+	#Wait Until the Complete Page to be Loaded (Waiting up to Universal pagewait)
+	smartUtil.validate"Part Number","HM"
+	"SC2_CommonActions/sc2CommonHandlers".getTheTotalNumberOfItemsFromTheApplication
+	wait 0.5
+	--ScrollWheelUp 100
+	#Click on the Export Icon in the Application
+	smartUtil.clickUsingImage"PORS/exportIcon","THTH"
+	wait 1.5
+	--waitFor universal pageWait , text:"File Processed Successfully"
+	waitFor 120,{text:"File Processed Successfully",SearchRectangle:[778,108,1140,167]}--remove serach rect
+	##Loging  the Time Taken to Download the File
+	LogSuccess "Time taken to download the file is:"&&the result
+	##Validate the File Processed Successfully after Downloading the File
+	smartUtil.validate"File Processed Successfully","THTH"
+	#Open Excel file from the Downloads
+	"excelFileInteractions".openExcelFromDownloads
+	smartUtil.validate columnNameInExportedFile,"TH"
+	--excelFileInteractions.getTheCountFromExcel columnNameInExportedFile
+	Typetext controlKey,a
+	wait 0.5
+	Typetext altKey,h,o,a,h,o,i
+	wait 0.5
+	click[1088,464]
+	--"excelFileInteractions".findTextInWorksheet columnNameInExportedFile
+	"excelFileInteractions".findTextInWorksheet columnNameInExportedFile
+	wait 2
+	typetext controlKey,shiftkey,downArrow
+	wait 2
+	typetext controlKey,c
+	wait 3
+	put RemoteClipboard() into global countAfterCheckingDuplicates
+	--log global countAfterCheckingDuplicates
+	split global countAfterCheckingDuplicates by newline
+	put (number of items of global countAfterCheckingDuplicates-1) into  universal countFromExcel
+	log "Count: "&& universal countFromExcel
+	click[1088,464]
+	#closing excel file
+	excelFileInteractions.closeFileByclickinOnSave
+	Typetext controlKey,w
+	##Close the Downloads Page
+	smartUtil.clickText"Clear all","RHRH"
+	smartUtil.closeTab
+	#Asserting the count from the UI with the data present in the Excel file
+	if universal countFromExcel equal to universal countOfValuesFromAppliaction
+		LogSuccess "The Total Record count is Same in the Application and Exported File of"&&universal downloadedFileName 
+	else
+		LogError "The Total Record count is Not Same in the Application and Exported File of"&&universal downloadedFileName 
+	end if
+end downloadAllPORS
+
+
+to setPreferencesPORS profileName,preferences,preferenceName
+	##Selecting the Preferences in the UI to validate the Preferences
+	smartUtil.validate profileName,"topRightQuadrant"
+	smartUtil.clickTextAtSpot profileName,"-20","1","topRightQuadrant"
+	smartUtil.validate"Preference","TRQ"
+	#clicking on preference and Validating preference page is opened
+	smartUtil.clickText "Preference","topRightQuadrant"
+	smartUtil.validate "Setting Preference","topLeftQuadrant"
+	smartUtil.clickText"Reset","LHLH"
+	wait 1
+	##selecting the Preferences 
+	repeat with each item of preferences
+		"SC2_CommonActions/sc2CommonHandlers".selectPreferenceInPORS preferenceName,it 
+	end repeat
+	##Click ON Update Button to Update the Preferences
+	smartUtil.clickText"Update","LH"
+	#Validating the Success Pop up message
+	WaitFor 60, text:"Your preference has been updated"
+	smartUtil.validate"Your preference has been updated","THTH"
+	#Click on the Dashboard
+	smartUtil.clickText"Dashboard","THTH"
+	#Navigate to the Menu and Purchase Order page to validate the Preferences
+	"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Menu","Purchase Order"
+	smartUtil.validate"Filter","LHLH"
+	wait 2
+	smartUtil.clickUsingImage"PORS/filterIcon","LHLH"
+	smartUtil.setCustomSearchRectangle preferenceName,185,-50,600,50,"HM"
+	##Repeating with the each preference for validation 
+	repeat with each item of preferences
+		set the TextStyle to {DPI:144,contrast:on,textDifference:1}
+		if ImageFound(text:it,searchRectangle:(screenPartition().SUT.("HM")))
+			Logsuccess it&&"Found in the Preferences"
+			smartUtil.validate it,"Custompart"
+		else
+			LogError "The Application is Not Filtered with"&&it
+		end if
+	end repeat
+	set the TextStyle to default
+end setPreferencesPORS
+
+
+to dashboardMenuValidation userName,passWord,tails,organization,supplier
+	set universal totalLogErrorMessage to empty
+	##Checking Errors in the Console Window in the Login Page
+	"SC2_Login/logInAndLogout_commonHandlers".launchURL
+	"PORS/PORS_utilities".errorValidationInConsole"","Login Page"
+	--"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App universal data.userName,universal data.passWord
+	"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App universal data.userName,universal data.passWord
+	##Sets the Defualt Module in the Application
+	"SC2_CommonActions/sc2CommonHandlers".AppModuleSelector universal data.moduleName,universal data.titleofModule
+	(*##Checking Errors in the Dashboard page
+	"SC2_CommonActions/sc2CommonHandlers".switchToPORS*)
+	"PORS/PORS_utilities".errorValidationInConsole"","Dashboard page"
+	##Checking Errors in the Purchase Order page
+	"PORS/PORS_utilities".errorValidationInConsole"Menu",""
+	##Checking Errors in the Past Week Data
+	"PORS/PORS_utilities".errorValidationInConsole "Menu"," Past Week Data"
+	##Checking the Errors in the Transaction History
+	"PORS/PORS_utilities".errorValidationInConsole "Menu","Transaction History"
+	##Checking the Errors in the Keysight user
+	"PORS/PORS_utilities".errorValidationInConsole "Help","Keysight user"	
+	smartUtil.closeTab
+	##Checking the Errors in the External user
+	"PORS/PORS_utilities".errorValidationInConsole "Help","External user"
+	smartUtil.closeTab
+	"PORS/PORS_utilities".errorValidationInConsole "","Administation"
+	repeat with each item of universal data.tails
+		smartUtil.clickTextAtSpot it,400,-50,"TH"
+		--smartUtil.validate"Notification Details","TH"
+		"PORS/PORS_utilities".errorValidationInConsole it
+	end repeat
+	##If any screen is supposed to display records and if there are no records available to display, the screen should display 'NO RECORDS FOUND'. If the screen is blank then it is an issue and should be reported.
+	##Navigate to the Purchase Order and validate the NO RECORDS FOUND 
+	"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Menu","Purchase Order"
+	wait 2
+	smartUtil.clickUsingImage"PORS/filterIcon","LHLH"
+	smartUtil.setCustomSearchRectangle"Preferences",-20,20,1900,420
+	##Reset the Preference to validate the No data found scenario
+	smartUtil.clickText"Reset","Custompart"
+	#Select the valid Preference to Validate the No data found text
+	smartUtil.validate"Preferences","LHLH"
+	"SC2_CommonActions/sc2CommonHandlers".selectPreferenceInPORS"Organization",universal data.organization
+	"SC2_CommonActions/sc2CommonHandlers".selectPreferenceInPORS"Supplier", universal data.supplier
+	smartUtil.clickText"Apply"
+	wait until ImageFound(text:"Keysight",searchRectangle:(screenPartition().SUT.("BH")))
+	smartUtil.readTextUsingText"Keysight",-350,20,1500,250,"BH"
+	--log global currLocVal
+	smartUtil.setCustomSearchRectangle"Keysight",-350,40,1500,250,"BH"
+	if ImageFound(text:"No data found",searchRectangle:(screenPartition().SUT.("Custompart")))
+		LogSuccess "Successfully validated No data found with the"&&"" &&organization&&supplier&&"Selected Preference"
+		smartUtil.validate"No data found","Custompart"
+	else if global currLocVal is empty
+		"PORS/PORS_utilities".errorValidationInConsole"","Purchase Order"
+	else
+		LogError "Selected Preference has Some Data"
+		"PORS/PORS_utilities".errorValidationInConsole "","Purchase Order"
+	end if 
+	put number of items of universal totalLogErrorMessage into universal totalNumberOfErrors
+	if universal totalNumberOfErrors greater than 0
+		LogError "The list of Errors Captured in the Application are"&& universal totalLogErrorMessage
+	else
+		Logsuccess "The Application has No Errors in the Console Window"
+	end if
+end dashboardMenuValidation
+
+to  S3AccessPORS folderNames,year
+	#switch to PORS Module
+	--"SC2_CommonActions/sc2CommonHandlers".switchToPORS
+	wait 1
+	if ImageFound(text:"Archive Files",searchRectangle:(screenPartition().SUT.("HM")))
+		smartUtil.clickTextAtSpot"Archive Files",390,-50,"TH"
+		LogSuccess "Successfull Navigated to the Archival_Reports"
+		smartUtil.validate"Archival_Reports","HM"
+	else
+		LogError "Application is not in the Archival_Reports Page"
+		Exit all
+	end if
+	smartUtil.clickText"Archival_Reports","HM"
+	repeat with each folderName of  folderNames
+		##Checking for particular folder
+		smartUtil.setCustomSearchRectangle "Name",18,25,500,450,"HM"
+		if ImageFound(text:folderName,searchRectangle:(screenPartition().SUT.("Custompart")))
+			LogSuccess folderName&&"Folder found in the Archival_Reports"
+			smartUtil.validate folderName,"Custompart"
+			smartUtil.clickText folderName,"Custompart"
+			##Checking  for selected year folder
+			if ImageFound(text:year,searchRectangle:(screenPartition().SUT.("HM")))
+				LogSuccess"The"&&year&&"Folder found in the"&&it&&"Folder"
+				smartUtil.validate year,"HM"
+				smartUtil.clickText year,"HM"
+				##Checking for data Files in side the Year folders
+				smartUtil.setCustomSearchRectangle "Name",18,25,500,450,"HM"
+				--if ImageFound(text:folderName,searchRectangle:(screenPartition().SUT.("Custompart")))
+				if ImageFound(text:year,searchRectangle:(screenPartition().SUT.("Custompart")))
+					LogSuccess folderName&&"data file  found in"&&year&&"Folder"
+					smartUtil.validate folderName&"_History("&year,"HM"
+					##Checking the data file Size
+					smartUtil.readTextUsingText"Name",18,25,280,450,"HM"
+					split global currLocVal by newline
+					repeat with each item of global currLocVal
+						--doubleclick text: it,ignoreSpaces: Yes,hotspot:[858,8]
+						--smartUtil.setCustomSearchRectangle "Name",18,25,500,450,"HM"
+						set the TextStyle to {DPI:144,validCharacters:it,ignoreUnderscores:on,ignoreSpaces:on}
+						doubleclick (centerLeft of imageRectangle(text:it,searchRectangle:screenPartition().SUT.("Custompart"),ignoreUnderscores:Yes,ignoreSpaces:Yes,waitFor:universal pageWait))+[876,4]
+						Typetext controlkey,"c"
+						Log RemoteClipboard()
+						put  RemoteClipboard() into universal fileSize
+						if (universal fileSize=0)
+							LogError it&&"file size is 0 and the file has no data"
+						else
+							LogSuccess it&&"file has"&&universal fileSize&&"of data"
+						end if
+					end repeat
+					##checking the File Type
+					set the TextStyle to{dpi:144}
+					smartUtil.readTextUsingText"Name",10,20,500,350,"HM"
+					log global currLocVal
+					split global currLocVal by newline
+					put number of items of  global currLocVal into universal totalNumberOfFiles
+					put number of items of (each item of global currLocVal where each contains "cs") into universal totalNumberOfCSVFiles
+					if(universal totalNumberOfFiles=universal totalNumberOfCSVFiles)
+						LogSuccess "The"&& it&&"in the CSV Format and all the Files in the Application are in the CSV Format"
+						LogSuccess "The application is able to access the underlying S3 bucket successfully."
+						
+					else
+						LogError "The application is Not able to access the underlying S3 bucket successfully."
+						
+						LogError"The"&& it&&"are not in the CSV Format"
+					end if
+				else
+					LogError folderName&&"data file  not found the Selected year of "&&year			
+				end if
+				
+			else
+				LogWarning it&&"Folder not  found in side the Archival_Reports"
+			end if
+			--LogWarning folderName&&"Folder not  found in side the Archival_Reports"
+		end if
+		##Click on the back arrorw button 
+		smartUtil.clickUsingImage "PORS/backClickArrow","TLQ"
+		smartUtil.clickUsingImage "PORS/backClickArrow","TLQ"
+	end repeat
+	smartUtil.clickUsingImage "PORS/backClickArrow","TLQ"
+end S3AccessPORS
+
+
+to setPreferencesExportedFilePORS profileName,preferenceOne,userName,passWord,preferenceOneValue,preferenceTwo,preferenceTwoValue,columnNameInExportedFile
+	--"SC2_CommonActions/sc2CommonHandlers".switchToPORS
+	##Selecting the Preferences in the UI to validate the Preferences
+	smartUtil.validate profileName,"topRightQuadrant"
+	smartUtil.clickTextAtSpot profileName,"-20","1","topRightQuadrant"
+	smartUtil.validate"Preference","TRQ"
+	#clicking on preference and Validating preference page is opened
+	smartUtil.clickText "Preference","topRightQuadrant"
+	smartUtil.validate "Setting Preference","topLeftQuadrant"
+	##Resetting the preferences
+	smartUtil.clickText"Reset","LHLH"
+	##selecting the Preferences 
+	repeat with each item of preferenceOneValue
+		"SC2_CommonActions/sc2CommonHandlers".selectPreferenceInPORS preferenceOne,it 
+	end repeat
+	##Click ON Update Button to Update the Preferences
+	smartUtil.clickText"Update","LH"
+	#Validating the Success Pop up message
+	smartUtil.validate"Your preference has been updated","THTH"
+	##Logout 
+	--"SC2_CommonActions/sc2CommonHandlers".readTestData "TD_1777_Login"
+	"SC2_Login/logInAndLogout_commonHandlers".logoutToSC2 profileName
+	##Login to the Application to check the Preferences is selected as per the Selection or not
+	--set universal testCaseName to "TD_1777_Login"
+	"SC2_CommonActions/sc2CommonHandlers".LogonLegalNotice
+	--"SC2_CommonActions/sc2CommonHandlers".readTestData universal testCaseName
+	--set universal testData to item repeatIndex() of universal data
+	"SC2_Login/logInAndLogout_commonHandlers".launchURL
+	"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App userName,passWord
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	----"SC2_CommonActions/sc2CommonHandlers".switchToPORS
+	#Navigate to the Menu and Purchase Order page to validate the Preferences
+	"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Menu","Purchase Order"
+	smartUtil.validate"Filter","LHLH"
+	wait 2
+	smartUtil.clickUsingImage"PORS/filterIcon","LHLH"
+	smartUtil.setCustomSearchRectangle preferenceOne,185,-50,600,50,"HM"
+	##Repeating with the each preference for validation 
+	repeat with each item of preferenceOneValue
+		set the TextStyle to {DPI:144,contrast:on,textDifference:1}
+		if ImageFound(text:it,searchRectangle:(screenPartition().SUT.("HM")))
+			Logsuccess it&&"Found in the Preferences"
+			smartUtil.validate it,"Custompart"
+		else
+			LogError "The Application is Not Filtered with"&&it
+		end if
+	end repeat
+	
+	set  preferenceList to["Org","Supplier"]
+	repeat with each item of preferenceList
+		if repeatindex() is 2
+			smartUtil.validate"Preferences","TH"
+			"SC2_CommonActions/sc2CommonHandlers".selectPreferenceInPORS universal data.preferenceTwo,universal data.preferenceTwoValue
+			smartUtil.clickText"Apply","HM"
+		end if
+		
+		##Reading the Total number of itemsfrom the Application
+		"SC2_CommonActions/sc2CommonHandlers".getTheTotalNumberOfItemsFromTheApplication
+		##Validating the Exported File Icon and Export the File and validate the data in the Exported File
+		if ImageFound( image:"PORS/exportIcon",searchRectangle:(screenPartition().SUT.("TH")))
+			LogSuccess"Export Icon is validted in the Application"
+			smartUtil.clickUsingImage "PORS/exportIcon","THTH"
+			Try
+				smartUtil.validateWithoutTry "File Processed Successfully","TH"
+				
+			Catch 
+				log "File processed pop up not showing in the UI.Hence moving for the next step "
+			End try
+		else
+			LogError"Export Icon is not visible in the Appliction"
+		end if
+		##Open Exported file from the Downloads page and get the Total number of items from the Exported file
+		--excelFileInteractions.openExcelFromDownloads"Buyer"
+		excelFileInteractions.openExcelFromDownloads
+		smartUtil.validate"Keysight Part","LHLH"
+		(*excelFileInteractions.findTextInWorksheet"Org"
+		moveTo the RemoteScreenSize*0
+		excelFileInteractions.getTheCountFromExcel "Org"
+		*)##Checkig the number of items in the Application and Expoted file are matching or not
+		Typetext controlKey,a
+		wait 0.5
+		Typetext altKey,h,o,a,h,o,i
+		wait 0.5
+		click[1088,464]
+		--"excelFileInteractions".findTextInWorksheet columnNameInExportedFile
+		"excelFileInteractions".findTextInWorksheet columnNameInExportedFile
+		wait 2
+		typetext controlKey,shiftkey,downArrow
+		wait 2
+		typetext controlKey,c
+		wait 3
+		put RemoteClipboard() into global countAfterCheckingDuplicates
+		--log global countAfterCheckingDuplicates
+		split global countAfterCheckingDuplicates by newline
+		--log (the number of items of global countAfterCheckingDuplicates)-1
+		--put countFromExcel to(number of items of global countAfterCheckingDuplicates-1)
+		put (number of items of global countAfterCheckingDuplicates-1) into  universal countFromExcel
+		log "Count: "&& universal countFromExcel
+		click[1088,464]
+		#closing excel file
+		excelFileInteractions.closeFileByclickinOnSave
+		Typetext controlKey,w
+		##Close the Downloads Page
+		smartUtil.clickText"Clear all","RHRH"
+		smartUtil.closeTab
+		if (universal countOfValuesFromAppliaction=universal countFromExcel)
+			LogSuccess "Items Count in the Application and Exported file of"&&universal downloadedFileName &&"are the Same"
+		else
+			LogError"The Preference Selected  in the Application is not Reflected in the Exported file hence the  number of items Count is not matching"
+		end if
+	end repeat 
+	##Login to the application to check the defult preference
+	"SC2_Login/logInAndLogout_commonHandlers".logoutToSC2 profileName
+	##Login to the Application to check the Preferences is selected as per the Selection or not
+	"SC2_CommonActions/sc2CommonHandlers".LogonLegalNotice
+	"SC2_Login/logInAndLogout_commonHandlers".launchURL
+	"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App userName,passWord
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	--"SC2_CommonActions/sc2CommonHandlers".switchToPORS
+	#Navigate to the Menu and Purchase Order page to validate the Preferences
+	"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Menu","Purchase Order"
+	smartUtil.validate"Filter","LHLH"
+	"SC2_CommonActions/sc2CommonHandlers".getTheTotalNumberOfItemsFromTheApplication
+	smartUtil.clickUsingImage "PORS/filterIcon","LHLH"
+	smartUtil.setCustomSearchRectangle preferenceOne,185,-50,600,50,"HM"
+	##Repeating with the each preference for validation 
+	repeat with each item of preferenceOneValue
+		set the TextStyle to {DPI:144,contrast:on,textDifference:1}
+		if ImageFound(text:it,searchRectangle:(screenPartition().SUT.("HM")))
+			Logsuccess it&&"Found in the Preferences"
+			smartUtil.validate it,"Custompart"
+		else
+			LogError "The Application is Not Filtered with"&&it
+		end if
+	end repeat
+	if ImageFound( image:"PORS/exportIcon",searchRectangle:(screenPartition().SUT.("TH")))
+		LogSuccess"Export Icon is validted in the Application"
+		smartUtil.clickUsingImage "PORS/exportIcon","THTH"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+			
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+	else
+		LogError"Export Icon is not visible in the Appliction"
+	end if
+	##Open Exported file from the Downloads page and get the Total number of items from the Exported file
+	excelFileInteractions.openExcelFromDownloads
+	Typetext controlKey,a
+	wait 0.5
+	Typetext altKey,h,o,a,h,o,i
+	wait 0.5
+	click[1088,464]
+	--"excelFileInteractions".findTextInWorksheet columnNameInExportedFile
+	"excelFileInteractions".findTextInWorksheet columnNameInExportedFile
+	wait 2
+	typetext controlKey,shiftkey,downArrow
+	wait 2
+	typetext controlKey,c
+	wait 3
+	put RemoteClipboard() into global countAfterCheckingDuplicates
+	--log global countAfterCheckingDuplicates
+	split global countAfterCheckingDuplicates by newline
+	--log (the number of items of global countAfterCheckingDuplicates)-1
+	--put countFromExcel to(number of items of global countAfterCheckingDuplicates-1)
+	put (number of items of global countAfterCheckingDuplicates-1) into  universal countFromExcel
+	log "Count: "&& universal countFromExcel
+	click[1088,464]
+	#closing excel file
+	excelFileInteractions.closeFileByclickinOnSave
+	Typetext controlKey,w
+	##Close the Downloads Page
+	smartUtil.clickText"Clear all","RHRH"
+	smartUtil.closeTab
+	##Checkig the number of items in the Application and Expoted file are matching or not
+	if (universal countOfValuesFromAppliaction=universal countFromExcel)
+		LogSuccess "Items Count in the Application and Exported file of"&&universal downloadedFileName &&"are the Same"
+	else
+		LogError"The Preference Selected  in the Application is not Reflected in the Exported file hence the  number of items Count is not matching"
+	end if
+end setPreferencesExportedFilePORS

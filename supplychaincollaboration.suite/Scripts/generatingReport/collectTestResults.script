@@ -1,0 +1,57 @@
+﻿Run "generatingReport/getDataFromDAIServer".reportExcelReading
+
+set  universal statusData to the records of universal myexceldb
+repeat with each item of universal statusData
+	set global LineData to the records of universal myexceldb where Count is repeatindex()
+	put global LineData.Run_ID into currentTestId
+	log "Current testId: "&currentTestId
+	
+	if currentTestId is ""
+		LogWarning "There is no testId available"
+	else
+		put currentTestId into testId
+		log "testId: "&testId
+		//get access token
+		RUN "generatingReport/GetAccessToken1"
+		put global accessToken into accessToken
+		put GetRunDetails().responsebody into Allresponses
+		put JSONValue(Allresponses) into testResponse
+		--log testResponse
+		put testResponse.items.duration into Runtime
+		put GetRunLog().responsebody into Allresponses1
+		put JSONValue(Allresponses1) into logResponse
+		put item 1 of testResponse.items into resultObj
+		if resultObj.teststatus is "FAILED"
+			put (each item of logResponse.items where each contains "LogError") into global testlogs
+			repeat with each item of global testlogs
+				insert (item counter() of global testlogs).message into global testlog
+			end repeat
+		else if  resultObj.teststatus is "ERROR"
+			put item (number of items of logResponse-2) of logResponse into errorStatusMsg
+			put errorStatusMsg.message into global testlog
+		end if
+		log global testlog
+		--implementation of getting browser and locale from log file
+		split global FailedStepUrlItem.message by "FailedStepURL"
+		put item 2 of global FailedStepUrlItem.message into FailedStepURL
+		delete first ":" in FailedStepURL
+		log FailedStepURL
+		put item 1 of testResponse.items into resultObj
+		log "-------------------------------"
+		log resultObj
+		put resultObj into global resultObj
+		log "=========run details==============="
+		log "Model name    : "&resultObj.modelname
+		log "Test case name: "&resultObj.testcase
+		log "Test status      : "&resultObj.teststatus
+		log global testlog
+		log FailedStepURL
+		set global LineData to the records of universal myexceldb where Count is repeatindex()
+		put resultObj.teststatus into global LineData.status
+		put global testlog into global LineData.FailedReason
+put splitUnits(Runtime seconds, "hrs","mins","secs",empty) into global LineData.Runtime
+		put "" into global testlog
+		put "" into global FailedStepUrlItem.message
+	end if
+	
+end repeat

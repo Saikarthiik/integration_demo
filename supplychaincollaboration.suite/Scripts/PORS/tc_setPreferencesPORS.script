@@ -1,0 +1,11 @@
+﻿set universal testCaseName to "TD_2698_setPreferencesPORS"
+"PORS/PORS_CommonHandlers".readTestData universal testCaseName
+"PORS/PORS_utilities".validateWhetherScreenIsOnDashBoardOrNot
+repeat number of items of  universal data times
+	set universal testData to item repeatIndex() of universal data
+	--"SC2_Login/logInAndLogout_commonHandlers".launchURL
+	"PORS/PORS_CommonHandlers".setPreferencesPORS universal data.profileName,universal data.preferences,universal data.preferenceName
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	--"SC2_CommonActions/sc2CommonHandlers".switchToPlanning
+	put "Done" into universal data.run_Status
+end repeat

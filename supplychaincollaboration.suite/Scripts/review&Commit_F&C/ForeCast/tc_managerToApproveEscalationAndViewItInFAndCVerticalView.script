@@ -1,0 +1,24 @@
+﻿##Before Running the2060 Test Case We need to Run the 1973- F&C Vertical View - Submit Escalation request to get manager approval Test Case
+##For Reading test data Using the 1973 data sheet
+##1973-- F&C Vertical View - Submit Escalation request to get manager approval
+##2060--Manager to approve escalation and view it in F&C Vertical View
+##No Time dependency
+##Test Data Must be Same in both 1973 and 2060 files
+##Updated the Code After the UI Change
+set universal testcaseName to "TD_1973_EscalationWithNoFYI"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+if universal data.status is "Pass" then
+	LogSuccess"Escalation is Raised with Manager Approval "
+	set universal testcaseName to "TD_2060_ApproveEscalation"
+	"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+	"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1
+	repeat number of items of universal data times
+		"review&Commit_F&C/ForeCast/foreCast_commonHandlers".managerToApproveEscalationAndViewItInFAndCVerticalView universal data.partNumber,universal data.categoryInForecast
+		"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+		"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+		put "Done" into universal data.run_Status
+		smartUtil.closeBrowser
+	end repeat
+else
+	LogError "Escalation is Not Raised with Manager Approval"
+end if

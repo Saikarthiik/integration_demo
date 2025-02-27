@@ -1,0 +1,2262 @@
+﻿# Scenario:
+#downloadAllCountValidation
+#observeFeatureChangeInForecastVerticalView
+#AddNewPartNewWorkWeekForForecastVerticalView
+#editOrDeleteQuantityInUI
+#massImportAdjInFAndCVerticalViewWithorWithoutRenaming
+#addNewPartNewWorkWeekForForecastVerticalViewExportImport
+#importExportValidationWithMissingData
+#KRSummarySystemToggle
+#KRSummaryKRFullViewToggle
+#KRSummaryViewSummaryChecking
+#IRPSummaryCheckingPart1
+#IRPSummaryCheckingPart2 
+#CMLoginDownloadAllCountValidation
+#F&CEscalationPRPO&ExceptionApprovalPageUIChecking
+#FCAndPRPOApprovalPageUIAndExportedFileChecking
+#SOViewUIChecking1 
+#SOViewUIChecking2 
+#SOViewExportedFileChecking1
+#plannerRemarksForTheAdjustmentInVerticalViewUI
+#plannersRemarksAdjustmentInTheExportedFileOfVerticalViewUI
+#plannersRemarksAdjustmentInverticalViewAddNewWWUI  
+#plannersRemarksAdjustmentInTheExportedFileOfAddNewWW
+to plannerRemarksForTheAdjustmentInVerticalViewUI supplierName,partNumber,PlannerRemark_Above1500k,PlannerRemark_Below1500k, AdjustmentPositiveValue,EscalationReason
+	try
+		#clicking on forecast and commit in the home page
+		"SC2_CommonActions/sc2CommonHandlers".navigateToForecast
+		wait 1
+		smartUtil.validate"View Type"
+		#clicking on Supplier name as per the Requirement
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"	
+		#entering part number and click on search icon
+		smartUtil.textField universal data.partNumber
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"		
+		wait 3
+		smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+		wait 2
+		#Giving the Planner remark text as less then 1500 and More then 1500 Charecters
+		set plannerremarkList to[universal data.PlannerRemark_Above1500k,universal data.PlannerRemark_Below1500k]
+		set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+		repeat with each item plannerRemarkValue of plannerremarkList
+			repeat with each item CategoryValues of categoryList
+				"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+				if plannerRemarkValue is universal data.PlannerRemark_Above1500k then
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+					--smartUtil.textField"Test","HM"
+					log "Insert more than 1500 characters in planner remarks "
+					smartUtil.textField universal data.PlannerRemark_Above1500k
+					wait 5
+					smartUtil.clickUsingImage"icons/saveIconInForecastAndCommit","THTH"
+					if ImageFound(text:"Updated successfully",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+						smartUtil.validate"Updated successfully","THTH"
+						LogSuccess "Updated Successfully"
+					else
+						LogWarning "Updated Sucessfully Continue with Validation"
+					end if
+					wait 2
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+					smartUtil.validate"icons/expandAll","THTH"
+					wait 2
+					"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+					wait 1
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+					TypeText controlKey,a,c
+					put RemoteClipboard() into universal plannerRemarkInUI
+					if universal plannerRemarkInUI is universal data.plannerRemark_1500k
+						LogSuccess "Planner Remark is Updated with 1500k characters in the"&&CategoryValues
+					else
+						LogError "Planner Remark is Not Updated with 1500k characters in the Application"
+					end if
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+				else if  plannerRemarkValue is universal data.PlannerRemark_Below1500k then
+					--smartUtil.clickTextAtSpot"PLANNER REMARK",0,200,"HM"
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+					log "Insert less than 1500 characters in planner remarks "
+					smartUtil.textField universal data.PlannerRemark_Below1500k
+					wait 5
+					smartUtil.clickUsingImage"icons/saveIconInForecastAndCommit","THTH"
+					if ImageFound(text:"Updated successfully",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+						smartUtil.validate"Updated successfully","THTH"
+						LogSuccess "Updated Successfully"
+					else
+						LogWarning "Updated Sucessfully Continue with Validation"
+					end if
+					wait 2
+					--smartUtil.validate"Updated successfully","THTH"
+					wait 2
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+					wait 1
+					smartUtil.validate"icons/expandAll","THTH"
+					wait 2
+					"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+					wait 1
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+					TypeText controlKey,a,c
+					put RemoteClipboard() into universal plannerRemarkInUI
+					if universal plannerRemarkInUI is universal data.PlannerRemark_Below1500k
+						LogSuccess "Planner Remark is Updated with  Less than 1500k characters in the"&&CategoryValues
+					else
+						LogError "Planner Remark is Not Updated with  Less than 1500k characters in the "&&CategoryValues
+					end if
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+				end if
+			end repeat
+		end repeat
+		wait 5
+		LogSuccess "successfully validated the Planner remark adjustment in the Planner Vertical View, ensuring it works correctly for both remarks with more than 1500 characters and those with fewer than 1500 characters. "
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end plannerRemarksForTheAdjustmentInVerticalViewUI
+
+
+
+
+to plannersRemarksAdjustmentInTheExportedFileOfVerticalViewUI supplierName,partNumber,PlannerRemark_Above1500k,PlannerRemark_Below1500k, AdjustmentPositiveValue,EscalationReason
+	try
+		#clicking on forecast and commit in the home page
+		"SC2_CommonActions/sc2CommonHandlers".navigateToForecast
+		wait 1
+		smartUtil.validate"View Type"
+		#clicking on Supplier name as per the Requirement
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"	
+		#entering part number and click on search icon
+		smartUtil.textField universal data.partNumber
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"		
+		wait 3
+		#Giving the Planner Remark as 1500 charecters and More then 1500 charecters in the Exported File and validate
+		"Planning_F&C/ForeCast/Planning_foreCast_utilities".exportFileAndRaiseEscaltion universal data.AdjustmentPositiveValue,universal data.PlannerRemark_Above1500k
+		"Planning_F&C/ForeCast/Planning_foreCast_utilities".exportFileAndRaiseEscaltion universal data.AdjustmentPositiveValue,universal data.PlannerRemark_Below1500k
+		LogSuccess "successfully validated the Planner remark adjustment in the Planner Vertical View Exported File, ensuring it works correctly for both remarks with more than 1500 characters and those with fewer than 1500 characters. "
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+	
+end plannersRemarksAdjustmentInTheExportedFileOfVerticalViewUI
+
+to plannersRemarksAdjustmentInverticalViewAddNewWWUI supplierName,partNumber,PlannerRemark_Above1500k,PlannerRemark_Below1500k, AdjustmentPositiveValue,EscalationReason
+
+	try
+		#clicking on forecast and commit in the home page
+		"SC2_CommonActions/sc2CommonHandlers".navigateToForecast
+		wait 1
+		smartUtil.validate"View Type"
+		#clicking on Supplier name as per the Requirement
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"	
+		#entering part number and click on search icon
+		smartUtil.textField universal data.partNumber
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+		#Giving the Planner Remark as 1500 charecters and More then 1500 charecters in the Add New Work week in the UI
+		log " Insert more than 1500 characters in planner remarks for the escalation in vertical view Add new WW UI for all the 4 categories"
+		log "Insert less than 1500 characters in planner remarks for the adjustment in vertical view Add new WW UI for all the 4 categories"
+		set plannerremarkList to [universal data.PlannerRemark_Above1500k,universal data.PlannerRemark_Below1500k]
+		set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+		repeat with each item plannerRemarkValue of plannerremarkList
+			repeat with each item CategoryValues of categoryList
+				smartUtil.clickUsingImage "icons/AddNewOriPartNumber","topRightQuadrant"
+				"Planning_F&C/ForeCast/Planning_foreCast_utilities".raiseEscalationInAddNewWorkWeek universal data.partNumber,CategoryValues,plannerRemarkValue,universal data.AdjustmentPositiveValue,universal data. EscalationReason
+				"Planning_F&C/ForeCast/Planning_foreCast_utilities".validateEscalationCategoryWise universal data.partNumber,CategoryValues,plannerRemarkValue
+				ScrollWheelUp 10
+			end repeat
+		end repeat
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+	
+end plannersRemarksAdjustmentInverticalViewAddNewWWUI
+
+to plannersRemarksAdjustmentInTheExportedFileOfAddNewWW supplierName,partNumber,PlannerRemark_Above1500k,PlannerRemark_Below1500k, AdjustmentPositiveValue,EscalationReason
+
+	try 
+		#clicking on forecast and commit in the home page
+		"SC2_CommonActions/sc2CommonHandlers".navigateToForecast
+		wait 1
+		smartUtil.validate"View Type"
+		#clicking on Supplier name as per the Requirement
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"	
+		#entering part number and click on search icon
+		smartUtil.textField universal data.partNumber
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+		log "Exporting the file from the Add new work week and entering the values in the Excel"
+		"review&Commit_F&C/ForeCast/foreCast_utilities".exportFileAndRaiseEscaltionInAddNewWorkWeek universal data.PlannerRemark_Above1500k
+		log "Validating the Planner Remark values by entering more then 1500k charecters in the Excel"
+		"review&Commit_F&C/ForeCast/foreCast_utilities".exportFileAndRaiseEscaltionInAddNewWorkWeek universal data.PlannerRemark_Below1500k
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end plannersRemarksAdjustmentInTheExportedFileOfAddNewWW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(** 
+@HandlerName: downloadAllCountValidation
+@Author: Ambika Mitta
+@Version : 0.1
+@Modified Reason (if):
+**)
+##This handler will complete the full functionality of validating the "Download All" count in the Planner vertical view.
+to downloadAllCountValidation
+	try 
+		#getting suppliedname and filetype from the test data
+		set supplierName to universal testData.supplier_Name
+		set fileType to universal testData.fileType
+		#validating sc2 home page
+		smartUtil.validate "Supply Chain Collaboration Portal"
+		wait 4
+		#clicking on Dashboard
+		smartUtil.clickText "Dashboard","topLeftQuadrant"
+		wait 4
+		#clicking on Download all and verify the choose supplier to download pop up appear
+		smartUtil.setTextstyle "DownloadAll"
+		smartUtil.clickText "Download All","topRightQuadrant"
+		smartUtil.setTextstyle "Default"
+		smartUtil.setTextstyle "GrayText"
+		smartUtil.validate " Choose Supplier to Download "
+		smartUtil.setTextstyle "Default"
+		#validate and select supllier Name
+		smartUtil.clickText "Select an Supplier", "Center"
+		smartUtil.validate supplierName,"Center"
+		smartUtil.clickText supplierName,"Center"
+		#validate and select file type
+		smartUtil.validate "Select an Filetype", "Center"
+		smartUtil.clickText "Select an Filetype", "Center"
+		smartUtil.validate fileType,"Center"
+		smartUtil.clickText fileType,"Center"
+		#clicking on download
+		smartUtil.clickTextAtSpot "Cancel",150,0,"BH"
+		#validating success message
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+			smartUtil.clicktext " Forecast & Commit","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+			smartUtil.clicktext " Forecast & Commit","TH"
+			
+		End try
+		#validating and click on forecast and commit
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		smartUtil.validate "Forecast","Custompart"
+		smartUtil.clickText "Forecast","Custompart"
+		#validating and click supplier
+		smartUtil.validate supplierName,"TH"
+		smartUtil.validate "Supplier","TH"
+		smartUtil.clickText "Supplier","TH"
+		smartUtil.validate "Filters","TH"
+		set supp to ImageRectangle(text:"Supplier Name")
+		set the SearchRectangle to [supp.left + 380,supp.top-30,supp.right+1600,supp.bottom+20]
+		put ReadText([supp.left + 380,supp.top-30,supp.right+1600,supp.bottom+20],ignoreNewLines:yes) into global suppTxt
+		log  global suppTxt
+		smartUtil.clickText "Supplier Name","TH"
+		smartUtil.setCustomSearchRectangle "Supplier Name", -50,10,350,250
+		smartUtil.clickText "Celestica Electronics","Custompart"
+		smartUtil.clickText "Supplier Name","TH"
+		smartUtil.validate " Jabil Circuit Sdn Bhd ","Custompart"
+		smartUtil.clickText " Jabil Circuit Sdn Bhd ","Custompart"	
+		smartUtil.clickText "Supplier Name","TH"
+		smartUtil.validate "Venture Electronics","Custompart"
+		smartUtil.clickText "Venture Electronics","Custompart"
+		#validating supplier names with expected data
+		wait 4
+		ScrollWheelDown 5
+		smartUtil.validate"DMP/NDMP","LH"
+		smartUtil.setCustomSearchRectangle "DMP/NDMP", 400,-30,1000,30
+		if ImageFound(image:"icons/supplierNameClose",searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:10) then smartUtil.clickUsingImage"icons/supplierNameClose","Custompart"
+		wait 4
+		set the SearchRectangle to empty
+		# de select the weeks if any weeks are selected
+		set week to ImageRectangle(text:"week To")	
+		set the SearchRectangle to [week.left + 299,week.top+4,week.right+446,week.bottom+58]
+		put ReadText( [week.left + 299,week.top+4,week.right+446,week.bottom+58],ignoreNewLines:yes) into global weeks
+		#Deselect the weeks if any are currently selected
+		if ImageFound(text:"W") then
+			smartUtil.clickUsingImage "icons/crossMark","BH"
+		else
+			log "No other filters applied other than the CM name"
+		end if
+		wait 4
+		"SC2_CommonActions/sc2CommonHandlers".getTS "white"
+		smartUtil.clickText "Submit","BH"
+		"SC2_CommonActions/sc2CommonHandlers".getTS "default"
+		smartUtil.setCustomSearchRectangle "Supplier", -40,10,400,100
+		smartUtil.validate supplierName,"Custompart"
+		smartUtil.clickText supplierName,"Custompart"
+		smartUtil.validate supplierName,"Custompart"
+		set the SearchRectangle to empty
+		typetext pageDown
+		wait 3
+		If  ImageFound(text:"Items",contrast:true,ignoreSpaces:On,ignorenewlines:On,searchRectangle:(screenPartition().SUT.("BH")),waitFor:10) then 
+			Log "Items per page displayed in the UI"
+		End If
+		# read count Of Values From Application
+		wait 3
+		set count to ImageRectangle(text:"Items",contrast:true,ignoreSpaces:On,ignorenewlines:On)
+		set the SearchRectangle to [count.left + 250,count.top-4,count.right+250,count.bottom+3]
+		log count.left + 250,count.top-4,count.right+250,count.bottom+3
+		put ReadText( [count.left + 240,count.top-4,count.right+250,count.bottom+3],ignoreNewLines:yes) into global countOfValuesFromAppliaction
+		log global countOfValuesFromAppliaction
+		wait 3
+		#smartUtil.scrollToUp "Forecast"
+		ScrollWheelUp 10
+		#clicking on dashboar
+		smartUtil.clickText "Dashboard","topLeftQuadrant"
+		wait 10
+		#clicking on Download All Notification and navigate to list of download page
+		smartUtil.clickTextAtSpot "Download All Notification",358,-40,"BH"
+		smartUtil.validate "List of Downloaded Files","TH"
+		smartUtil.clickTextAtSpot "Action",0,50,"RH"
+		#validate and open downloaded excel file form the downloads
+		smartUtil.validate "celestica","TRQ"
+		wait 3
+		excelFileInteractions.openExcelFromDownloads"celestica"
+		excelFileInteractions.getTheCountFromExcel "Product"
+		#closing excel file
+		excelFileInteractions.closeFileByclickinOnSave
+		smartUtil.closeTab
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		log universal countFromExcel
+		#Asserting the count from the UI with the data present in the Excel file
+		assert global countOfValuesFromAppliaction is (universal countFromExcel)
+		set the SearchRectangle to empty
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end downloadAllCountValidation 
+
+to observeFeatureChangeInForecastVerticalView
+	try
+		#populate variables with test data from excel
+		set supplierName to universal testData.supplierName
+		set categoryInForecast to universal testData.categoryInForecast
+		#validate and click on forecast and commit
+		smartUtil.clicktext " Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.validate "Forecast","Custompart"
+		smartUtil.clickText "Forecast","Custompart"
+		WaitFor 5, text:"View Type"
+		#smartUtil.clickText supplierName,"topLeftQuadrant"
+		wait 4
+		typetext pageDown
+		wait 4
+		smartUtil.validate "Best Practice", "bottomHalf"
+		typetext pageUp
+		wait 4
+		smartUtil.clickUsingImage "icons/expandAll","topRightQuadrant"
+		wait 4
+		smartUtil.validate "Best Practice", "Center"
+		--smartUtil.clickText "OK", "Center"
+		Click text:"OK"
+		wait 2
+		smartUtil.clickUsingImage"icons/refresh","browserRefresh"
+		WaitFor 5, text:"View Type"
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		#selecting the category to be expanded based on the user's requirements
+		if categoryInForecast is "NON-TAA" then 
+			smartUtil.clickUsingImage "categories/Non_TAA","Center", 
+			WaitFor 4, text:"Best Practice"
+			smartUtil.validate "Best Practice", "Center"
+			--smartUtil.clickText "OK","Center"
+			Click text:"OK"
+			
+		else if categoryInForecast is "TAA" then 
+			smartUtil.clickUsingImage "categories/TAA","Center", 
+			WaitFor 4, text:"Best Practice"
+			smartUtil.validate "Best Practice", "Center"
+			--smartUtil.clickText "OK","Center"
+			Click text:"OK"
+			
+		else if categoryInForecast is "SYSTEM" then 
+			smartUtil.clickUsingImage "icons/hardBook","Center"
+			WaitFor 4, text:"Best Practice"
+			smartUtil.validate "Best Practice", "Center"
+			--smartUtil.clickText "OK","Center"
+			Click text:"OK"
+		else if categoryInForecast is "FORECAST" then 
+			smartUtil.clickUsingImage "categories/forecast","Center"
+			WaitFor 4, text:"Best Practice"
+			smartUtil.validate "Best Practice", "Center" 
+			--smartUtil.clickText "OK","Center"
+			Click text:"OK"
+		end if	
+		
+		"SC2_CommonActions/sc2CommonHandlers".settingPreferences universal data.partNumber,universal data.week,universal data.week
+		wait 5
+		smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+		--set the SearchRectangle to global SearchRect
+		wait 4
+		if ImageFound(image:"icons/materialIconOfItem",searchRectangle:(screenPartition().SUT.("HM"))) then
+			moveto"icons/materialIconOfItem"
+			wait 2
+			set the TextStyle to default
+			smartUtil.validate "Navigate to SO View", "HM"
+			wait 2
+			--smartUtil.clickUsingImage"icons/materialIconOfItem","HM"
+			smartUtil.clickUsingImage "icons/materialIconOfItem","HM"
+			wait 3
+			smartUtil.clickText "Demand Category","Center"
+			wait 2
+			smartUtil.validate "Switch to SO View", "Center"
+			wait 3
+			smartUtil.clickText universal data.categoryInForecast,"Center"
+			--smartUtil.clickText "OK","Center"
+			Click text:"OK"
+		else
+			log "Error: Icon 'Navigate to SO View' is not found."
+		end if
+		wait 6
+		--smartUtil.validate"icons/navigateToFnC","TH" --"topRightQuadrant"
+		if ImageFound(image:"icons/navigateToFnC",searchRectangle:(screenPartition().SUT.("TH")))
+			LogSuccess"Navigate Forecast and Commit  Icon is Found on the Application"
+		else
+			LogError"Navigate Forecast and Commit  Icon is Found on the Application"
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end observeFeatureChangeInForecastVerticalView
+
+to AddNewPartNewWorkWeekForForecastVerticalView partNumber,dropDown,drpValue,week,adjValue,reasonValue,remark,weekFromInKRSummary,weekToInKRSummary
+
+	try
+		#validate and click on forecast and commit
+		"SC2_CommonActions/sc2CommonHandlers".navigateToForecast
+		wait 1
+		smartUtil.validate"View Type"
+		#clicking on Supplier name as per the Requirement
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		#click on Add new part 
+		wait 2
+		smartUtil.clickUsingImage "icons/AddNewOriPartNumber","topRightQuadrant"
+		#validate Add new work week page is opened
+		#Fill the all the required values for add new work sheet
+		"review&Commit_F&C/ForeCast/foreCast_utilities".addNewPartAndWorkWeekInUI universal data.partNumber,universal data.categoryInForecast,universal data.PlannerRemarks,universal data.AdjustmentPositiveValue,universal data.EscalationReason
+		smartUtil.validate"Save","THTH"
+		smartUtil.clickText"Save","THTH"
+		Try 
+			smartUtil.validateWithoutTry"Successfully Created","THTH"
+		catch
+			log "Pop up not visible continue the Next Steps"
+		end try
+		split universal ProdWeek by "/"
+		put item 1 of universal ProdWeek into universal Week
+		log  universal Week
+		#searching and validating newly added part number in forecast page
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+		#entering part number and click on search icon
+		smartUtil.textField partNumber
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"
+		#validate and click on forecast and commit
+		#partNumber,weekFrom,weekTo,categoryInForecast,adjValue,verification
+		"SC2_CommonActions/sc2CommonHandlers".krSummaryAdjvalueVerification universal data.partNumber,universal Week,universal Week,universal data.categoryInForecast,universal data.AdjustmentPositiveValue
+		smartUtil.setCustomSearchRectangle "ORI", 300,10,400,200,"LH"
+		--smartUtil.validate universal data.AdjustmentPositiveValue,"customPart"
+		if ImageFound(text: universal data.AdjustmentPositiveValue,searchRectangle:(screenPartition().SUT.("HM")))
+			LogSuccess  universal data.AdjustmentPositiveValue&&"Value is Updated"
+		else
+			LogError universal data.AdjustmentPositiveValue&&"Value is not Updated"
+		end if
+		smartUtil.clicktext " Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.clickText "Forecast","Custompart"
+		#verifying forecast page is opened
+		wait 4
+		smartUtil.clickText"Supplier","LH"
+		"SC2_CommonActions/sc2CommonHandlers".selectPreference "Part Number", universal data.partNumber
+		smartUtil.clickText"Part Number","LH"
+		smartUtil.scrollTo"Submit","5"
+		smartUtil.clickTextAtSpot "Week From",262,25,"LH"
+		"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary universal Week
+		smartUtil.clickTextAtSpot "Week To",262,25,"LH"
+		"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary universal Week
+		#click on the submit button
+		If ImageFound(text:"Submit", waitFor:1)
+			click FoundImageLocation()
+		End If
+		--smartUtil.validate universal data.partNumber,"LHLH"
+		wait 5
+		smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+		"SC2_CommonActions/sc2CommonHandlers".selectCategory universal data.categoryInForecast
+		smartUtil.setCustomSearchRectangle"PLANNER REMARK",-100,100,250,150,"HM"
+		--smartUtil.validate universal data.PlannerRemarks,"Custompart"
+		if ImageFound(text:universal data.PlannerRemarks,searchRectangle:(screenPartition().SUT.("Custompart")))
+			LogSuccess "Planner Remark"&&universal data.PlannerRemarks&&"is Updated in the UI"
+		else
+			LogError "Planner Remark"&&universal data.PlannerRemarks&&"is Not Updated in the UI"
+		end if
+		smartUtil.readTextUsingText"PLANNER REMARK",-100,100,250,150,"HM"
+		log global currLocVal 
+		put global currLocVal into universal plannerRemark
+		log universal plannerRemark
+		Assert that universal plannerRemark is universal data.PlannerRemarks
+		LogSuccess"Successfully created a new part number for part"&&universal data.partNumber&&"in the Forecast Plan for work week"&&universal Week&&". The newly added part is now visible in the KR Summary."
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end AddNewPartNewWorkWeekForForecastVerticalView
+
+to editOrDeleteQuantityInUI supplierName,partNumber,weekFromInKRSummary,weekToInKRSummary,categoryInForecast,week,reasonValue
+	try 
+		repeat 2 times
+			#clicking on Forecast & Commit menu
+			smartUtil.clicktext " Forecast & Commit","TH"
+			smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+			#validate and click on forecast
+			smartUtil.clickText "Forecast","Custompart"
+			wait 2
+			smartUtil.validate "View type","topLeftQuadrant"
+			"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName supplierName
+			smartUtil.clickUsingImage "icons/filterIcon","LHLH"
+			smartUtil.completeScreenLoad
+			smartUtil.validate"Filters","LHLH"
+			"SC2_CommonActions/sc2CommonHandlers".selectPreference"Part Number",partNumber
+			smartUtil.clickText"Supply Chain","THTH"
+			smartUtil.scrollTo"Submit","10"
+			smartUtil.clickTextAtSpot "Week From",262,25,"LH"
+			"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary weekFromInKRSummary
+			smartUtil.clickTextAtSpot "Week To",262,25,"LH"
+			"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary weekToInKRSummary
+			smartUtil.clickText"Submit","LHLH"
+			#clicking part extend icon and verifying material icon is displayed
+			smartUtil.validate partNumber,"LHLH"
+			Wait 5
+			smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+			wait 1
+			"SC2_CommonActions/sc2CommonHandlers".selectCategory  categoryInForecast
+			wait 1
+			smartUtil.clickTextAtSpot week,330,0,"LH"
+			TypeText controlKey,"a"
+			if repeatindex() is 1 then
+				#selecting an adjacent value and adding 1 to the existing value
+				TypeText controlKey,"c"
+				put RemoteClipboard() into  universal adjValue
+				smartUtil.textField universal adjValue+1
+				smartUtil.clickText"ITEM NO","LHLH"
+				--smartUtil.validate"Input required","HM"
+				set the TextStyle to empty
+				if ImageFound(text:"Input required",waitFor:5,searchRectangle:(screenPartition().SUT.("VM")), ignoreNewlines:on, ignorespaces:on)
+					smartUtil.clickUsingImage"icons/FCVViewAdjReasonDropDown","HM"
+					wait 1
+					smartUtil.validate reasonValue
+					smartUtil.clickText reasonValue
+				else if ImageFound(text:"Prod",waitFor:2,searchRectangle:(screenPartition().SUT.("HM")), ignoreNewlines:on, ignorespaces:on)
+					smartUtil.validate "Prod",Custompart
+					smartUtil.clickUsingImage "icons/adjReasonInputDropdown","Custompart"
+					smartUtil.validate reasonValue,"Custompart"
+					smartUtil.clickText reasonValue,"Custompart"
+				else
+					throw "Adj Reason dropdown value not available"
+				end if
+				#click on save icon
+				set the TextStyle to empty
+				smartUtil.clickUsingImage "icons/saveIconInForecastAndCommit","topRightQuadrant"
+				Typetext pageUp
+				smartUtil.clicktext" Forecast & Commit","TH"
+				smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+				#validating and click on KR Summary
+				smartUtil.clickText "KR Summary","Custompart"
+				set the SearchRectangle to empty
+				smartUtil.completeScreenLoad
+				#click on supplier and validating Filters is opened
+				smartUtil.clickUsingImage "icons/filterIcon","LHLH"
+				smartUtil.completeScreenLoad
+				smartUtil.validate"Filters","LHLH"
+				smartUtil.scrollTo "Submit","LH","2"
+				#select the required Item number from part number dropdown
+				"SC2_CommonActions/sc2CommonHandlers".selectPreference "Part Number",partNumber
+				smartUtil.clickText "Submit","LH"
+				#selecting from and to week
+				smartUtil.clickTextAtSpot "Week From",250,25,"LH"
+				"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary weekFromInKRSummary
+				smartUtil.clickTextAtSpot "Week To",250,25,"LH"
+				"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary weekToInKRSummary
+				#click on the submit button
+				smartUtil.clickText "Submit","LH"
+				if ImageFound(text:"ORI PART",searchRectangle:(screenPartition().SUT.("LHLH")))
+					LogSuccess "The Filter with Part Number and Work week Selected in the UI"
+				end if
+				#validating the KR value 
+				wait 2
+				smartUtil.setCustomSearchRectangle"ORI", 290,10,390,200,"LH"
+				#verifying updated adj value in KR summary
+				smartUtil.validate universal adjValue+1,"customPart"
+			end if
+		end repeat
+		#updating adj value as 0
+		smartUtil.completeScreenLoad
+		smartUtil.textField "0"
+		#Verifying that adj reason dropdown should not be available
+		smartUtil.completeScreenLoad
+		set the TextStyle to  {dpi:144}
+		smartUtil.readTextUsingText"Week "&weekFromInKRSummary,900,-25,650,25,"LHLH"
+		put  global currLocVal into  global reason
+		log global reason
+		assert global reason not equal to "Input required"
+		#clicking on save icon after make the adj value as 0
+		smartUtil.clickUsingImage "icons/saveIconInForecastAndCommit","topRightQuadrant"
+		#verifying success message after saving the part
+		smartUtil.validate "Updated Successfully","TH"
+		set the TextStyle to default
+		Typetext pageUp
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+	
+end editOrDeleteQuantityInUI
+
+
+(*massImportAdjInFAndCVerticalViewWithorWithoutRenaming*)
+
+to massImportAdjInFAndCVerticalViewWithorWithoutRenaming partNumber,drpValue,supplierName,DMPName
+
+	try
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		#clicking on Forecast & Commit menu
+		smartUtil.clicktext " Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.clickText "Forecast","Custompart"
+		#searching and validating newly added part number in forecast page
+		smartUtil.completeScreenLoad
+		smartUtil.validate"View type","TH"
+		smartUtil.clickText"Supplier","LHLH"
+		"SC2_CommonActions/sc2CommonHandlers".selectPreference"Part Number",universal data.partNumber
+		smartUtil.clickText"Part Number","LHLH"
+		smartUtil.scrollTo"Submit","5"
+		smartUtil.clickText"Submit","LHLH"
+		smartUtil.completeScreenLoad
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		#smartUtil.validate "Downloading","topRightQuadrant"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		#edit the adjValue in the excel and get the edited week number
+		excelFileInteractions.openExcelFromDownloads universal data.supplierName
+		excelFileInteractions.editExcelCellvalue
+		# import the edited excel sheet and verify user received notification on file import successfully
+		smartUtil.completeScreenLoad
+		excelFileInteractions.importExcelIntoApplication universal data.supplierName
+		smartUtil.completeScreenLoad
+		"SC2_CommonActions/sc2CommonHandlers".openOutLook
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status started","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.uploadingEmailSubject,universal data.uploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status success","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.afterUploadingEmailSubject,universal data.afterUploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".closeOutLook
+		smartUtil.completeScreenLoad
+		TypeText controlKey,tabKey
+		#partNumber,weekFrom,weekTo,categoryInForecast,adjValue,verification
+		"SC2_CommonActions/sc2CommonHandlers".krSummaryAdjvalueVerification universal oriPartNumber,universal prodWeek,universal prodWeek,"NON-TAA" ,universal adj
+		smartUtil.completeScreenLoad
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		smartUtil.clicktext " Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.clickText "Forecast","Custompart"
+		smartUtil.completeScreenLoad
+		smartUtil.clickTextAtSpot "View type",-300,0,"topLeftQuadrant"
+		smartUtil.clickText"Supplier","LHLH"
+		"SC2_CommonActions/sc2CommonHandlers".selectPreference"Part Number",universal data.partNumber
+		smartUtil.clickText"Part Number","LHLH"
+		smartUtil.scrollTo"Submit","5"
+		smartUtil.clickText"Submit","LHLH"
+		smartUtil.completeScreenLoad
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+			
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		excelFileInteractions.openExcelFromDownloads universal data.supplierName
+		excelFileInteractions.editExcelCellvalue
+		excelFileInteractions.renameFileAndUpload
+		excelFileInteractions.importExcelIntoApplication universal reNamedFileName
+		log universal reNamedFileName
+		set the SearchRectangle to empty
+		###Checking the Emails 
+		"SC2_CommonActions/sc2CommonHandlers".openOutLook
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status started","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.uploadingEmailSubject,universal data.uploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status success","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.afterUploadingEmailSubject,universal data.afterUploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".closeOutLook
+		wait 2
+		TypeText controlKey,tabKey
+		#validating and click on KR Summary
+		"SC2_CommonActions/sc2CommonHandlers".krSummaryAdjvalueVerification universal oriPartNumber,universal prodWeek,universal prodWeek,"NON-TAA",universal adj
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end massImportAdjInFAndCVerticalViewWithorWithoutRenaming
+
+(**addNewPartNewWorkWeekForForecastVerticalViewExportImport
+**)
+
+to addNewPartNewWorkWeekForForecastVerticalViewExportImport partNumber, categoryInForecast
+	try
+		# deleting all the iteams from the download folder
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		#clicking on Forecast & Commit menu
+		smartUtil.clicktext " Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.clickText "Forecast","Custompart"
+		wait until ImageFound(text:"View Type",wait :2)
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		#click on Add new part 
+		wait 1
+		if ImageFound(image:"icons/AddNewOriPartNumber",searchRectangle:(screenPartition().SUT.("topRightQuadrant")))
+			smartUtil.validateImage"icons/AddNewOriPartNumber","topRightQuadrant"
+			smartUtil.clickUsingImage "icons/AddNewOriPartNumber","topRightQuadrant"
+			#validate Add new work week page is opened
+			wait 3
+			smartUtil.validate "ADD NEW WORKWEEK","topLeftQuadrant"
+			#cliking on the export for Downloading the file
+			if ImageFound(image:"icons/exportInForecastView",searchRectangle:(screenPartition().SUT.("topRightQuadrant")))
+				LogSuccess"Export Icon Found to Validate the Export and Import Functionality in the Application"
+				smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+				#smartUtil.validate "Downloading","topRightQuadrant"
+				Try
+					smartUtil.validateWithoutTry "File Processed Successfully","TH"
+				Catch 
+					log "File processed pop up not showing in the UI.Hence moving for the next step "
+				End try
+				#edit the adjValue in the excel 
+				excelFileInteractions.editExcelMassCellvalue
+				(**verification of ForecastSummary Adj value in Forcast &KRSummary& IRPSummary**)
+				smartUtil.clickText"Save","TH"
+				--smartUtil.validate"Succussfully Created","THTH"
+				smartUtil.completeScreenLoad
+				wait 5
+				"SC2_CommonActions/sc2CommonHandlers".forecastAdjValueVerification universal partNumber,universal ProdWeek,universal ProdWeek,"NON-TAA",universal data.adjvalue 
+				"SC2_CommonActions/sc2CommonHandlers".krSummaryAdjvalueVerification  universal partNumber,universal prodWeek,universal prodWeek,"NON-TAA",universal data.adjvalue 
+				"SC2_CommonActions/sc2CommonHandlers".irpSummaryAdjValueVerification universal partNumber,universal prodWeek,universal prodWeek,"NON-TAA",universal data.adjvalue 
+				log universal ProdWeek
+			else
+				LogError "Export Icon Not Found in the Application"
+			end if
+		else
+			LogError "Add Ori Part Icon Not Found to Add new Work Week in the Application"
+		end if
+		
+		#####Step-2 ##############
+		
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		smartUtil.clicktext " Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.clickText "Forecast","Custompart"
+		#click on Add new part
+		wait 4
+		if ImageFound(image:"icons/AddNewOriPartNumber",searchRectangle:(screenPartition().SUT.("topRightQuadrant")))
+			smartUtil.validateImage"icons/AddNewOriPartNumber","topRightQuadrant"
+			smartUtil.clickUsingImage "icons/AddNewOriPartNumber","topRightQuadrant"
+			#validate Add new work week page is opened
+			smartUtil.validate "ADD NEW WORKWEEK","topLeftQuadrant"
+			#cliking on the export for Downloading the file
+			if ImageFound(image:"icons/exportInForecastView",searchRectangle:(screenPartition().SUT.("topRightQuadrant")))
+				LogSuccess"Export Icon Found to Validate the Export and Import Functionality in the Application"
+				smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+				
+				Try
+					smartUtil.validateWithoutTry "File Processed Successfully","TH"
+				Catch 
+					log "File processed pop up not showing in the UI.Hence moving for the next step "
+				End try
+				(**Verification of newly  Added PartNumber and AdjValue in Forecast & KRSummary &IRPSummary**)
+				"excelFileInteractions".addNewRowIntoExcel
+				smartUtil.completeScreenLoad
+				wait 5
+				"SC2_CommonActions/sc2CommonHandlers".forecastAdjValueVerification universal data.NewPartNumber,universal prodWeek,universal prodWeek,"NON-TAA",universal data.adjvalue
+				"SC2_CommonActions/sc2CommonHandlers". krSummaryAdjvalueVerification universal data.NewPartNumber,universal prodWeek,universal prodWeek,"NON-TAA",universal data.adjvalue 
+				"SC2_CommonActions/sc2CommonHandlers".irpSummaryAdjValueVerification universal data.NewPartNumber,universal prodWeek,universal prodWeek,"NON-TAA",universal data.adjvalue
+			else
+				LogError "Export Icon Not Found in the Application"
+			end if
+		else
+			LogError "Add Ori Part Icon Not Found to Add new Work Week in the Application"
+		end if
+		LogSuccess "New Work Week of"&&universal ProdWeek&& "has been created with the Part Number of"&universal partNumber
+		LogSuccess universal data.NewPartNumber&&"is Created with the Work Week of"&&universal ProdWeek
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end  addNewPartNewWorkWeekForForecastVerticalViewExportImport
+
+(***Validating the Forecastview with Missing data --Missing Columns,Missing Rows,Invalidata,Changing the Original and final Quantityvalues
+***)
+to importExportValidationWithMissingData supplierName
+
+	try
+		#Step1-Deleting the coloumns of F&C vertical view mass import 
+		log "validating that import the data with the missing Columns"
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		#clicking on Forecast & Commit menu
+		smartUtil.clicktext " Forecast & Commit","TH"
+		smartUtil.setCustomSearchRectangle "Forecast & commit", -50,10,200,300
+		#validate and click on forecast
+		smartUtil.clickText "Forecast","Custompart"
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName supplierName
+		wait 3
+		#validate Add new work week page is opened
+		smartUtil.clickText"Supplier","LHLH"
+		"SC2_CommonActions/sc2CommonHandlers".selectPreference"Part Number",universal data.partNumber
+		smartUtil.clickText"Part Number","LHLH"
+		smartUtil.scrollTo"Submit","5"
+		smartUtil.clickText"Submit","LHLH"
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		excelFileInteractions.openExcelFromDownloads supplierName
+		if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+			TypeText altKey,"Y"
+		else
+			log  supplierName&&"Adjustment excel sheet opened"
+		end if
+		wait 1
+		smartUtil.clickText"Adj","TH"
+		TypeText controlKey,spacebar
+		typetext controlkey,"-"
+		excelFileInteractions. closeFileByclickinOnSave
+		if ImageFound(text:"Clipboard",waitFor:5,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+			TypeText altKey,f4
+		else
+			log "Excel closed"
+		end if
+		smartUtil.validate "Download","topLeftQuadrant"
+		TypeText controlKey,tab
+		excelFileInteractions.importExcelIntoApplication supplierName
+		--"SC2_CommonActions/sc2CommonHandlers".emailVerification "TD_1953_importExportValidation","Columnmissing"
+		"SC2_CommonActions/sc2CommonHandlers".openOutLook
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status fail","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.CMEmailSub,universal data.CMEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".closeOutLook
+		TypeText controlKey,tab
+		########################
+		#Step2-Deleting the rows of F&C vertical view mass import 
+		log "validating that import the data with the missing Rows"
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		wait 2
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		wait 1
+		#smartUtil.validate "Downloading","topRightQuadrant"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		wait 1
+		excelFileInteractions.openExcelFromDownloads universal data.supplierName
+		if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+			TypeText altKey,"Y"
+		else
+			log  universal data.supplierName&&"Adjustment excel sheet opened"
+		end if
+		wait 2
+		smartUtil.clickText"COE","TH"
+		##Expand all the Columns in the Excel
+		TypeText controlKey,a
+		wait 1
+		TypeText altKey,h,o,a,h,o,i
+		
+		#Copy part Number from the Excel
+		excelFileInteractions.findTextInExcel"Ori Part Number"
+		Typetext downArrow
+		wait 0.5
+		Typetext controlKey,c
+		put RemoteClipboard() into universal partNumber
+		delete newline from universal partNumber
+		log universal partNumber
+		#Copy work week from the Excel
+		excelFileInteractions.findTextInExcel"Prod Week"
+		Typetext downArrow
+		wait 0.5
+		Typetext controlKey,c
+		put RemoteClipboard() into universal prodWeek
+		delete newline from universal prodWeek
+		log universal prodWeek
+		##Entering the Adj value in the Work week
+		excelFileInteractions.findTextInExcel"Adj"
+		Typetext downArrow
+		reset random
+		put random(1, 20) into universal adj
+		smartUtil.textField universal adj
+		##Enter the Adj reason
+		excelFileInteractions.findTextInExcel"Adj Reason"
+		Typetext downArrow
+		smartUtil.textField universal data.reasonValue
+		###Enter the Remark
+		excelFileInteractions.findTextInExcel"Planner Remark"
+		Typetext downArrow
+		smartUtil.textField universal data.remark
+		smartUtil.navigateAndMouseAction "ORG","","LH","",Click,0,60
+		typetext shiftKey,downArrow
+		typetext  shiftKey,downArrow
+		typetext controlKey,shiftKey,rightArrow
+		typetext controlKey,shiftKey,rightArrow
+		typetext controlKey,"-"
+		excelFileInteractions. closeFileByclickinOnSave
+		if ImageFound(text:"Clipboard",waitFor:5,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+			TypeText altKey,f4
+		else
+			log "Excel closed"
+		end if
+		smartUtil.validate "Download","topLeftQuadrant"
+		TypeText controlKey,tab
+		excelFileInteractions.importExcelIntoApplication supplierName
+		#Email Verification
+		"SC2_CommonActions/sc2CommonHandlers".openOutLook
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file started to process ","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.RMUploadingEmailSub,universal data.RMUploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status success ","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.RMAfterUploadingEmailSub,universal data.RMAfterUploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".closeOutLook
+		TypeText controlKey,tab
+		############Step3###################
+		log "validating that import the data with the Invalid data"
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		wait 3
+		#smartUtil.validate "Downloading","topRightQuadrant"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		wait 1
+		excelFileInteractions.openExcelFromDownloads supplierName
+		if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+			TypeText altKey,"Y"
+		else
+			log  supplierName&&"Adjustment excel sheet opened"
+		end if
+		wait 1
+		smartUtil.clickTextAtSpot"Adj Reaso",0,40,"TH"
+		TypeText controlKey,"c"
+		smartUtil.clickTextAtSpot "Final",-70,20,"TH"
+		Typetext controlKey,"v"
+		smartUtil.clickTextAtSpot"Original",0,20,"TH"
+		TypeText controlKey,"c"
+		smartUtil.clickTextAtSpot"Adj Reaso",0,20,"TH"
+		Typetext controlKey,"v"
+		excelFileInteractions.closeFileByclickinOnSave
+		if ImageFound(text:"Clipboard",waitFor:5,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+			TypeText altKey,f4
+		else
+			log "Excel closed"
+		end if
+		smartUtil.validate "Download","topLeftQuadrant"
+		TypeText controlKey,tab
+		excelFileInteractions.importExcelIntoApplication universal data.supplierName
+		#Email Verification
+		--"SC2_CommonActions/sc2CommonHandlers".emailVerification "TD_1953_importExportValidation","missmatchdata"
+		"SC2_CommonActions/sc2CommonHandlers".openOutLook
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status started","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.uploadingEmailSub,universal data.uploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",data file status fail","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.afterUploadingmissmatchdataEmailSub,universal data.afterUploadingmissmatchdataEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".closeOutLook
+		TypeText controlKey,tab
+		################Step4##########################
+		log "validating that import the data with the change in the original and final quantity of data"
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		#smartUtil.validate "Downloading","topRightQuadrant"
+		wait 1
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		wait 6
+		excelFileInteractions.openExcelFromDownloads universal data.supplierName
+		if ImageFound(text:"already open",waitFor:2,searchRectangle:(screenPartition().SUT.("center")))
+			TypeText altKey,"Y"
+		else
+			log  supplierName&&"Adjustment excel sheet opened"
+		end if
+		wait 1
+		smartUtil.clickTextAtSpot"Original",0,20,"TH"
+		smartUtil.textField universal adj
+		smartUtil.clickTextAtSpot"Final",0,20,"TH"
+		smartUtil.textField universal adj
+		smartUtil.clickText"Final","TH"
+		excelFileInteractions. closeFileByclickinOnSave
+		if ImageFound(text:"Clipboard",waitFor:5,searchRectangle:(screenPartition().SUT.("topLeftQuadrant")))
+			TypeText altKey,f4
+		else
+			log "Excel closed"
+		end if
+		smartUtil.validate "Download","topLeftQuadrant"
+		TypeText controlKey,tab
+		excelFileInteractions.importExcelIntoApplication universal data.supplierName
+		--"SC2_CommonActions/sc2CommonHandlers".emailVerification "TD_1953_importExportValidation","originalAndFinalvaluesmissmatch"
+		#Email Verification
+		"SC2_CommonActions/sc2CommonHandlers".openOutLook
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",file status started","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.uploadingEmailSub,universal data.uploadingEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".searchForItemInOutLook universal fileId&",data file status fail","Forecast /Adjustment"
+		"SC2_CommonActions/sc2CommonHandlers".validationofEmail universal data.afterUploadingvaluesmissmatchEmailSub,universal data.afterUploadingvaluesmissmatchEmailInfo
+		"SC2_CommonActions/sc2CommonHandlers".closeOutLook
+		TypeText controlKey,tab
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end importExportValidationWithMissingData
+
+(*plannerRemarksCharacterLimitIncrease*)
+to plannerRemarksCharacterLimitIncrease supplierName,partNumber,PlannerRemark_Above1500k,PlannerRemark_Below1500k, AdjustmentPositiveValue,EscalationReason
+	
+	try
+		#clicking on forecast and commit in the home page
+		"SC2_CommonActions/sc2CommonHandlers".navigateToForecast
+		wait 1
+		smartUtil.validate"View Type"
+		#clicking on Supplier name as per the Requirement
+		"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"	
+		#entering part number and click on search icon
+		smartUtil.textField universal data.partNumber
+		smartUtil.clickUsingImage "icons/ForeCastAndCommitSearchIcon","topLeftQuadrant"		
+		wait 3
+		smartUtil.clickUsingImage "icons/ItemExpandIcon","LHLH"
+		wait 2
+		#Giving the Planner remark text as less then 1500 and More then 1500 Charecters
+		set plannerremarkList to[universal data.PlannerRemark_Above1500k,universal data.PlannerRemark_Below1500k]
+		set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+		repeat with each item plannerRemarkValue of plannerremarkList
+			repeat with each item CategoryValues of categoryList
+				"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+				if plannerRemarkValue is universal data.PlannerRemark_Above1500k then
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+					--smartUtil.textField"Test","HM"
+					log "Insert more than 1500 characters in planner remarks "
+					smartUtil.textField universal data.PlannerRemark_Above1500k
+					wait 5
+					smartUtil.clickUsingImage"icons/saveIconInForecastAndCommit","THTH"
+					if ImageFound(text:"Updated successfully",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+						smartUtil.validate"Updated successfully","THTH"
+						LogSuccess "Updated Successfully"
+					else
+						LogWarning "Updated Sucessfully Continue with Validation"
+					end if
+					wait 2
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+					smartUtil.validate"icons/expandAll","THTH"
+					wait 2
+					"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+					wait 1
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,140,"HM"
+					TypeText controlKey,a,c
+					put RemoteClipboard() into universal plannerRemarkInUI
+					if universal plannerRemarkInUI is universal data.plannerRemark_1500k
+						LogSuccess "Planner Remark is Updated with 1500k characters in the"&&CategoryValues
+					else
+						LogError "Planner Remark is Not Updated with 1500k characters in the Application"
+					end if
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+				else if  plannerRemarkValue is universal data.PlannerRemark_Below1500k then
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,200,"HM"
+					log "Insert less than 1500 characters in planner remarks "
+					smartUtil.textField universal data.PlannerRemark_Below1500k
+					wait 5
+					smartUtil.clickUsingImage"icons/saveIconInForecastAndCommit","THTH"
+					if ImageFound(text:"Updated successfully",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+						smartUtil.validate"Updated successfully","THTH"
+						LogSuccess "Updated Successfully"
+						
+					else
+						LogWarning "Updated Sucessfully Continue with Validation"
+					end if
+					wait 2
+					--smartUtil.validate"Updated successfully","THTH"
+					wait 2
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+					wait 1
+					smartUtil.validate"icons/expandAll","THTH"
+					wait 2
+					"SC2_CommonActions/sc2CommonHandlers".selectCategory CategoryValues
+					wait 1
+					smartUtil.clickTextAtSpot"PLANNER REMARK",0,200,"HM"
+					TypeText controlKey,a,c
+					put RemoteClipboard() into universal plannerRemarkInUI
+					if universal plannerRemarkInUI is universal data.PlannerRemark_Below1500k
+						LogSuccess "Planner Remark is Updated with  Less than 1500k characters in the"&&CategoryValues
+					else
+						LogError "Planner Remark is Not Updated with  Less than 1500k characters in the "&&CategoryValues
+					end if
+					smartUtil.clickUsingImage "icons/collapceAll","THTH"
+				end if
+			end repeat
+		end repeat
+		wait 5
+		#Giving the Planner Remark as 1500 charecters and More then 1500 charecters in the Exported File and validate
+		"Planning_F&C/ForeCast/Planning_foreCast_utilities".exportFileAndRaiseEscaltion universal data.AdjustmentPositiveValue,universal data.PlannerRemark_Above1500k
+		"Planning_F&C/ForeCast/Planning_foreCast_utilities".exportFileAndRaiseEscaltion universal data.AdjustmentPositiveValue,universal data.PlannerRemark_Below1500k
+		------------Step2----------------
+		--------Step-3-----------------
+		#Giving the Planner Remark as 1500 charecters and More then 1500 charecters in the Add New Work week in the UI
+		log " Insert more than 1500 characters in planner remarks for the escalation in vertical view Add new WW UI for all the 4 categories"
+		log "Insert less than 1500 characters in planner remarks for the adjustment in vertical view Add new WW UI for all the 4 categories"
+		set plannerremarkList to [universal data.PlannerRemark_Above1500k,universal data.PlannerRemark_Below1500k]
+		set categoryList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+		repeat with each item plannerRemarkValue of plannerremarkList
+			repeat with each item CategoryValues of categoryList
+				smartUtil.clickUsingImage "icons/AddNewOriPartNumber","topRightQuadrant"
+				"Planning_F&C/ForeCast/Planning_foreCast_utilities".raiseEscalationInAddNewWorkWeek universal data.partNumber,CategoryValues,plannerRemarkValue,universal data.AdjustmentPositiveValue,universal data. EscalationReason
+				"Planning_F&C/ForeCast/Planning_foreCast_utilities".validateEscalationCategoryWise universal data.partNumber,CategoryValues,plannerRemarkValue
+			end repeat
+		end repeat
+		--------------------Step-4--------------------------
+		(*Export the Add New WW template*)
+		#Exporting the file from the Add new work week and entering the values in the Excel
+		#Validating the Planner Remark values by entering more then 1500k charecters in the Excel
+		log "Exporting the file from the Add new work week and entering the values in the Excel"
+		"review&Commit_F&C/ForeCast/foreCast_utilities".exportFileAndRaiseEscaltionInAddNewWorkWeek universal data.PlannerRemark_Above1500k
+		log "Validating the Planner Remark values by entering more then 1500k charecters in the Excel"
+		"review&Commit_F&C/ForeCast/foreCast_utilities".exportFileAndRaiseEscaltionInAddNewWorkWeek universal data.PlannerRemark_Below1500k
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end plannerRemarksCharacterLimitIncrease
+
+(*KRSummarySystemToggle*)
+to KRSummarySystemToggle
+	#Reading the Current Work Week From the Application
+	try
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","KR Summary"
+		smartUtil.clickText"TAA & NON-TAA","TH"
+		--smartUtil.clickText"TAA & NON-TAA","TH"
+		wait 10
+		#Reading current Work Week from the UI
+		smartUtil.readTextUsingText  "ORI PART",410,-50,433,-25,"LH"
+		delete  <nondigit> from global currLocVal
+		put global currLocVal into  universal currentWW
+		log universal currentWW
+		#Defult Work weeks of the KR Summary
+		put universal currentWW+11 into  universal defultWWofKRS
+		log universal defultWWofKRS
+		
+		if universal defultWWofKRS>52
+			put  universal defultWWofKRS-52 into   universal defultWWofKRS
+			log universal defultWWofKRS
+		else 
+			put   universal defultWWofKRS into  universal defultWWofKRS
+			log  universal defultWWofKRS
+		end if
+		
+		#Navigate to KR Summary and perform the  required Actions
+		if ImageFound(text:"KR Full-View",searchRectangle:(screenPartition().SUT.("THTH")))
+			log "The UI is in the KR Summary Page continue with the Next Steps"
+		else 
+			LogError "The UI is not in the KR SUmmary Page"
+			exit all
+		end if
+		smartUtil.setCustomSearchRectangle "View TAA & NON-TAA",190,-20,1000,60,"topLeftQuadrant"
+		smartUtil.validate"Hide SYSTEM/HARDBOOK","Custompart"
+		#Validating the KR Full View Toggle and check the Application in the Defult View
+		if ImageFound(image:"icons/toggleOff",searchRectangle:(screenPartition().SUT.("Custompart")))
+			LogSuccess " The Hide SYSTEM/HARDBOOK Toggle is Off and it is in a default View"
+		else 
+			LogError "The Application is not in the KR Summary Page"
+		end if
+		wait 5
+		"SC2_CommonActions/sc2CommonHandlers".settingPreferences  universal data.partNumber,universal currentWW,universal defultWWofKRS
+		wait 5
+		set the TextStyle to {dpi:72}
+		smartUtil.setCustomSearchRectangle"Category",-50,20,150,180,"LHLH"
+		set  catList to ["NON-TAA","TAA","SYSTEM","FORECAST"]
+		smartUtil.listOfValidations "Category",-50,20,130,180,catList,"HM"
+		set the TextStyle to default
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		wait 60
+		excelFileInteractions.openExcelFromDownloads
+		set  catList to["NON-TAA","TAA","SYSTEM","FORECAST"]
+		smartUtil.listOfValidations "Category",-20,15,90,250,catList,"Custompart"
+		excelFileInteractions.closeFileByclickinOnSave
+		smartUtil.closeTab
+		smartUtil.clickText"Clear all","RHRH"
+		smartUtil.closeTab
+		smartUtil.setCustomSearchRectangle "View TAA & NON-TAA",190,-20,1000,60,"topLeftQuadrant"
+		smartUtil.clickUsingImage "icons/toggleOff","Custompart"
+		if ImageFound(image:"icons/toggleOn",searchRectangle:(screenPartition().SUT.("Custompart")))
+			set  systemHideCatList to["NON-TAA","TAA","FORECAST"]
+			smartUtil.listOfValidations "Category",-20,15,90,200,systemHideCatList,"Custompart"
+			smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+			---Waiting to File to be Export
+			wait 60
+			excelFileInteractions.openExcelFromDownloads
+			set  systemHideCatList to["NON-TAA","TAA","FORECAST"]
+			smartUtil.listOfValidations "Category",-20,15,90,150,systemHideCatList,"Custompart"
+			excelFileInteractions.closeFileByclickinOnSave
+			smartUtil.closeTab
+			smartUtil.clickText"Clear all","RHRH"
+			smartUtil.closeTab
+		else
+			LogError "The Hide SYSTEM/HARDBOOK Toggle is not in a default View "
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end KRSummarySystemToggle
+
+to KRSummaryKRFullViewToggle
+	#Navigate to KR Summary
+	try
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","KR Summary"
+		smartUtil.clickText"TAA & NON-TAA","TH"
+		wait 10
+		#Reading current Work Week from the UI
+		smartUtil.readTextUsingText  "ORI PART",410,-50,433,-25,"LH"
+		delete  <nondigit> from global currLocVal
+		put global currLocVal into  universal currentWW
+		log universal currentWW
+		#Defult Work weeks of the KR Summary
+		put universal currentWW+11 into  universal defultWWofKRS
+		--log universal defultWWofKRS
+		if universal defultWWofKRS>52
+			put universal defultWWofKRS-52 into  universal KRWorkWeek
+			log universal KRWorkWeek
+		else 
+			put universal defultWWofKRS into  universal KRWorkWeek
+			log  universal KRWorkWeek
+		end if
+		
+		if ImageFound(text:"KR Full-View",searchRectangle:(screenPartition().SUT.("THTH")))
+			log "The UI is in the KR Summary Page continue with the Next Steps"
+		else 
+			LogError "The UI is not in the KR SUmmary Page"
+			exit all
+		end if
+		wait 0.9
+		#Setting the Filters
+		"SC2_CommonActions/sc2CommonHandlers".settingPreferences universal data.partNumber,universal currentWW,universal KRWorkWeek
+		#Validating the KR Full View Toggle and check the Application in the Defult View
+		smartUtil.setCustomSearchRectangle"KR Full-View",-70,-20,0,30,"LHLH"
+		if ImageFound(image:"icons/toggleOff",searchRectangle:(screenPartition().SUT.("Custompart")))
+			--smartUtil.validate"icons/toggleOff","Custompart"
+			set global validationList to["BUFFER","OPTION"]
+			smartUtil.listOfNegativeValidations "KR Full-View",-50,200,1600,350,global validationList,"Custompart"
+			--LogSuccess "The Application is Filter with the Selected Part number and Work Week and data is displayed in the Application"
+			
+		else 
+			LogError "The Application is not Filtered with Selected Part number and Work Week  and data is Not Displayed in the Application"
+		end if
+		#Validating the KR Full View Toggle  after turn On and check the Application  View
+		smartUtil.setCustomSearchRectangle"KR Full-View",-70,-20,0,30,"LHLH"
+		smartUtil.clickUsingImage"icons/toggleOff","Custompart"
+		Click the RemoteScreenSize*.5 
+		wait 5
+		smartUtil.setCustomSearchRectangle"KR Full-View",-70,-20,0,30,"LHLH"
+		if ImageFound(image:"icons/toggleOn",searchRectangle:(screenPartition().SUT.("Custompart")))
+			smartUtil.listOfValidations "KR Full-View",-50,200,1600,350,global validationList,"Custompart"
+			smartUtil.clickUsingImage"icons/exportInForecastView","topRightQuadrant"
+			excelFileInteractions.openExcelFromDownloads
+			wait 5
+			smartUtil.clickText"Ori Part","TH"
+			#Expand the all in the Excel
+			TypeText controlKey,8
+			smartUtil.clickText"Demand","TH"
+			TypeText  controlKey,a
+			TypeText altKey,a,j
+			#Verify the Buffer and Buffer Options text in the Excel
+			excelFileInteractions.findTextInWorksheet"Total"
+			##Validating the Buffer and Buffer options in the Excel file
+			smartUtil.validate"Buffer","TH"
+			smartUtil.validate"Buffer Option","TH"
+			excelFileInteractions.findTextInExcel "Week"&&universal currentWW
+			##Expand all the rows in the Excel
+			TypeText controlKey,a
+			TypeText altKey,h,o,a,h,o,i
+			smartUtil.validate"Buffer","TH"
+			smartUtil.validate"Buffer Option","TH"
+			excelFileInteractions.closeFileByclickinOnSave
+			smartUtil.closeTab
+			smartUtil.clickText"Clear all","TRQ"
+			smartUtil.closeTab
+		else 
+			LogError"The KR Summary Full View Toggle is not Turned ON"
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end KRSummaryKRFullViewToggle
+
+(*KRSummaryViewSummaryChecking*)
+to KRSummaryViewSummaryChecking
+
+	try
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","KR Summary"
+		if ImageFound(text:"ORI PART",searchRectangle:(screenPartition().SUT.("LHLH")))
+			LogSuccess "The Application is KR Summary view"
+		else
+			"SC2_CommonActions/sc2CommonHandlers".navigateToSupplierName universal data.supplierName
+			wait Until ImageFound(text:"ORI PART",searchRectangle:(screenPartition().SUT.("LHLH")),waitFor:universal pageWait)
+			smartUtil.clickUsingImage "icons/productFamily","LHLH"
+		end if
+		smartUtil.validate"ORI PART","LHLH"
+		#Reading current Work Week from the UI
+		smartUtil.readTextUsingText  "ORI PART",410,-50,433,-25,"LH"
+		delete  <nondigit> from global currLocVal
+		put global currLocVal into  universal currentWW
+		log universal currentWW
+		#Defult Work weeks of the KR Summary
+		put universal currentWW+11 into  universal defultWWofKRS
+		log universal defultWWofKRS
+		if universal defultWWofKRS>52
+			put universal defultWWofKRS-52 into  universal KRWorkWeek
+			log universal KRWorkWeek
+		else 
+			put universal defultWWofKRS into  universal KRWorkWeek
+			log  universal KRWorkWeek
+		end if
+		smartUtil.validate  universal currentWW,"HM"
+		#validating the Current and Defult 12 ww in the KR Summary page
+		smartUtil.setCustomSearchRectangle"ORI PART",250,-50,1800,20
+		Repeat until ImageFound(text:"Week"&&universal KRWorkWeek,searchRectangle:(screenPartition().SUT.("Custompart")))
+			if ImageFound(text:"Week"&&universal KRWorkWeek,searchRectangle:(screenPartition().SUT.("Custompart")))
+				smartUtil.validate"Week"&&universal KRWorkWeek,"Custompart"
+				LogSuccess "Able to View KR Summary page with 12 Work Weeks"
+			else 
+				repeat 8 times
+					smartUtil.clickUsingImage "icons/rightScroll","bottomRightQuadrant"
+				end repeat
+				if repeatindex() > 15 then 
+					log "unable to View KR Summary Pge with 12 Work Weeks"
+					Exit repeat
+				end if
+			end if
+		End repeat
+		#Step--2--Sequence of order category in KR Summary page
+		"SC2_CommonActions/sc2CommonHandlers".settingPreferences  universal data.partNumber,universal currentWW,universal currentWW
+		wait 5
+		#set the categories in the List and validate with the UI Categories
+		set  global categoriesSequence to "NON-TAA"&newline&"TAA"&newline&"SYSTEM/HARDBOOK"&newline&"FORECAST"
+		set the TextStyle to {dpi:144}
+		smartUtil.readTextUsingText"Demand",-50,30,90,250,"LHLH"
+		log global currLocVal
+		if (global categoriesSequence is global currLocVal) then
+			logSuccess "Sequence of order category in KR Summary page for all item is NON-TAA, TAA, SYSTEM, FORECAST"
+		else
+			logError "Sequence of order category in KR Summary page is not Same"
+		end if
+		set the TextStyle to default
+		#Step-3
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","KR Summary"
+		smartUtil.validate"KR Full-View","THTH"
+		wait 3
+		"SC2_CommonActions/sc2CommonHandlers".settingPreferences  universal data.partNumber,universal currentWW,universal KRWorkWeek
+		Log "Delete All the Files from the Download Folder"
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		#Giving a wait to Download a file from the Application
+		wait 10
+		typetext controlKey,j
+		wait 3
+		--------
+		set the TextStyle to {dpi:250}
+		--excelFileInteractions.openExcelFromDownloads"KR"
+		excelFileInteractions.openExcelFromDownloads
+		set the TextStyle to default
+		wait 1
+		smartUtil.validate"ORG","TH"
+		#After Dwonloadin g the File validating the Cat List in the Exported file
+		set  catList to["NON-TAA","TAA","SYSTEM","FORECAST"]
+		smartUtil.listOfValidations "Demand",-20,15,100,250,catList,"Custompart"
+		smartUtil.clickText"Ori Part","TH"
+		#Expand the all in the Excel
+		--TypeText controlKey,8
+		smartUtil.clickText"Demand","TH"
+		Typetext controlKey,a
+		Typetext altKey,h,o,a,h,o,i
+		#Validating the categories Sequence
+		wait 2
+		excelFileInteractions.findTextInExcel"Week"&&universal currentWW
+		smartUtil.validate universal currentWW,"TH"
+		wait 1
+		excelFileInteractions.findTextInExcel"Week"&&universal KRWorkWeek
+		smartUtil.validate universal KRWorkWeek,"TH"
+		--excelFileInteractions.closeFileByclickinOnSave
+		excelFileInteractions.closeFileByclickinOnSave
+		smartUtil.closeTab
+		smartUtil.clickText"Clear all","RHRH"
+		smartUtil.closeTab
+		#Exporting the File from the Archive Files and validating the Cat List  and Work Weeks
+		smartUtil.clickText"Dashboard","topLeftQuadrant"
+		smartUtil.validate"System Time","topLeftQuadrant"
+		smartUtil.clickTextAtSpot"Archive Files",350,-50,50,0
+		wait Until ImageFound(text:"Celestica",searchRectangle:(screenPartition().SUT.("LHLH")),waitFor:universal pageWait)
+		smartUtil.clickText"Celestica","LHLH"
+		wait Until ImageFound(text:"kr_summary",searchRectangle:(screenPartition().SUT.("LH")),waitFor:universal pageWait)
+		smartUtil.clickText"kr_summary","LH"
+		smartUtil.completeScreenLoad
+		smartUtil.clickTextAtSpot"Name",-100,43,"LH"
+		if ImageFound(image:"icons/exportInForecastView",searchRectangle:(screenPartition().SUT.("topRightQuadrant")))
+			smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+			smartUtil.completeScreenLoad
+			wait 5
+			typetext controlKey,j
+			wait 3
+			excelFileInteractions.openExcelFromDownloads
+			set the TextStyle to default
+			set  catList to["NON-TAA","TAA","SYSTEM","FORE"]
+			smartUtil.listOfValidations "Demand",-20,15,90,200,catList,"Custompart"
+			excelFileInteractions.findTextInExcel"Week"&universal currentWW
+			if ImageFound(text:"Week"&universal currentWW)
+				LogSuccess "The Current Work Week "&universal currentWW &"is present in the Exported File"
+				smartUtil.validate universal currentWW,"TH"
+			else
+				LogError"The Exported File is not the Latest File"
+			end if
+			excelFileInteractions.findTextInExcel"Total","TH"
+			wait 1
+			excelFileInteractions.findTextInExcel "Week"&universal KRWorkWeek
+			set the TextStyle to {dpi:144,textDifference:1}
+			
+			if ImageFound(text:"Week"&universal KRWorkWeek,searchRectangle:(screenPartition().SUT.("LHLH")))
+				LogSuccess "The Current Work Week "&universal KRWorkWeek &"is present in the Exported File"
+				smartUtil.validate universal KRWorkWeek,"TH"
+			else
+				LogError"The Exported File is not the Latest File"
+			end if
+			set the TextStyle to default
+			--excelFileInteractions.closeFileByclickinOnSave
+			excelFileInteractions.closeFileByDontSave
+			smartUtil.closeTab
+			smartUtil.clickText"Clear all","RHRH"
+			smartUtil.closeTab
+		else
+			LogError "The ExportIcon is not visible"
+		end if
+		#Step--5
+		#Checking the Defult Work weeks in the Filter Bar 
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","KR Summary"
+		smartUtil.validate"KR Full-View","THTH"
+		wait Until ImageFound(text:"ORI PART",searchRectangle:(screenPartition().SUT.("LHLH")),waitFor:universal pageWait)
+		smartUtil.clickText "Supplier","LHLH"
+		smartUtil.validate "Filters","TH"
+		#Entering partnumber
+		smartUtil.scrollTo "Submit","LH","5"
+		set the TextStyle to {dpi:144,textDifference:1}
+		"SC2_CommonActions/sc2CommonHandlers".selectPreference "Part Number",universal data.partNumber
+		wait 1
+		smartUtil.clickText"Part Number","LH"
+		set the TextStyle to default
+		#"SC2_CommonActions/sc2CommonHandlers".unSelectAllSupplierNames "NDMP"
+		smartUtil.scrollTo "Submit","LH","2"
+		#Selecting week
+		if (universal currentWW is not equal to universal KRWorkWeek) then
+			smartUtil.clickTextAtSpot "Week From",250,25,"LH"
+			"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary universal currentWW
+		else 
+			LogError"KR Summary Work Week will have only 12 Work weeks"
+		end if
+		if (universal KRWorkWeek<=universal KRWorkWeek) then
+			smartUtil.clickTextAtSpot "Week To",250,25,"LH"
+			
+			"SC2_CommonActions/sc2CommonHandlers".selectWeekInKRSummary universal KRWorkWeek
+		else 
+			LogError"KR Summary Work Week will have only 12 Work weeks"
+		end if
+		#click on the submit button
+		If ImageFound(text:"Submit", waitFor:1)
+			click FoundImageLocation()
+		End If
+		if imageFound(text:"ORI PART",searchRectangle:(screenPartition().SUT.("LHLH")),waitFor:5)
+			LogSuccess "We are in the KR Summary Page Continue with the validation"
+		else
+			smartUtil.clickText"Supplier","topLeftQuadrant"
+			smartUtil.scrollTo"Submit","15"
+			smartUtil.clickText"Submit","LHLH"
+			wait 2
+		end if
+		(*Setting Up Some Defult Work week in the Filter Bar and Export the File From the Application and validate the Work weeks in the Exported File*)
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","KR Summary"
+		smartUtil.validate"KR Full-View","THTH"
+		wait Until ImageFound(text:"ORI PART",searchRectangle:(screenPartition().SUT.("LHLH")),waitFor:universal pageWait)
+		
+		"SC2_CommonActions/sc2CommonHandlers".settingPreferences universal data.partNumber,universal currentWW,universal KRWorkWeek-2
+		smartUtil.clickUsingImage "icons/exportInForecastView","topRightQuadrant"
+		wait 10
+		-------
+		typetext controlKey,j
+		wait 6
+		--set the TextStyle to {dpi:250}
+		excelFileInteractions.openExcelFromDownloads
+		set the TextStyle to default
+		smartUtil.validate"ORG","TH"
+		set  catList to["NON-TAA","TAA","SYSTEM","FORECAST"]
+		smartUtil.listOfValidations "Demand",-20,15,100,150,catList,"Custompart"
+		smartUtil.clickText"Ori Part","TH"
+		#Expand the all in the Excel
+		smartUtil.clickText"Demand","TH"
+		Typetext controlKey,a
+		Typetext altKey,h,o,a,h,o,i
+		#Validating the categories Sequence
+		wait 2
+		excelFileInteractions.findTextInExcel"Week "&universal currentWW
+		if ImageFound(text:"Week "&universal currentWW)
+			LogSuccess "The Current Work Week "&universal currentWW &"is present in the Exported File"
+			smartUtil.validate universal currentWW,"TH"
+		else
+			LogError"The Exported File is not Filterd with Given Work Week"
+		end if
+		excelFileInteractions.findTextInExcel"Total"
+		excelFileInteractions.findTextInExcel "Week "&universal KRWorkWeek-2
+		if ImageFound(text:"Week "&universal KRWorkWeek-2,searchRectangle:(screenPartition().SUT.("TH")))
+			LogSuccess "The Current Work Week "&universal KRWorkWeek-2 &"is present in the Exported File"
+			smartUtil.validate universal KRWorkWeek-2,"TH"
+		else
+			LogError"The Exported File is not Filterd with Given Work Week"
+		end if
+		excelFileInteractions.closeFileByDontSave
+		smartUtil.closeTab
+		smartUtil.clickText"Clear all","RHRH"
+		smartUtil.closeTab
+	Catch theException
+		smartUtil.errorCapture theException
+	End try
+end KRSummaryViewSummaryChecking
+
+
+#IRPSummaryCheckingPart1
+to IRPSummaryCheckingPart1
+	try
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","IRP Summary"
+		wait 2
+		if ImageFound(text:"IRP raw data",searchRectangle:(screenPartition().SUT.("TH")),waitFor:3)
+			LogSuccess "The Application is in the IRP Summary View"
+			set IRPtabs to["IRP raw data","IRP summary commit","IRP summary decommit"]
+			smartUtil.listOfValidations "Dashboard",-100,300,600,50,IRPtabs
+		else
+			LogError "The Application is not in the IRP Summary Page"
+			Exit  all
+		end if
+		log "Checking the IRP raw data tab"
+		set IRPTabList to ["IRP raw data","IRP summary commit"]
+		repeat with each IRPtab of IRPTabList
+			if repeatindex()>1 then
+				set dataTypeList to ["Monthly","Weekly"]
+				repeat with each dataType of dataTypeList
+					wait 2
+					smartUtil.clickText IRPtab
+					smartUtil.validate"View Type","TH"
+					smartUtil.setCustomSearchRectangle "ViewType",80,-20,200,20,"TH"
+					if ImageFound(text:"Monthly",searchRectangle:(screenPartition().SUT.("Custompart")))
+						LogSuccess IRPtab&" is in the Defult View and View Type has Monthly Filter"
+					else
+						LogWarning IRPtab&" is not in the Defult View"
+					end if
+					smartUtil.clickTextAtSpot"View Type",150,0,"TH"
+					smartUtil.clickText dataType,"TH"
+					wait 6
+					"SC2_CommonActions/sc2CommonHandlers".selectBUInIRPSummary
+					smartUtil.readTextUsingText"Supplier",550,-60,750,-20,"HM"
+					put  global currLocVal into universal currentMonthYear
+					log universal currentMonthYear
+					delete last 3 characters of  universal currentMonthYear
+					log universal currentMonthYear
+					if dataType is "Monthly" 
+						"SC2_CommonActions/sc2CommonHandlers".exportAndValidateDataInIRPSummary "IRP"&dataType,"CM", universal currentMonthYear,"Overall"
+						
+					else if dataType is "Weekly" then
+						
+						"SC2_CommonActions/sc2CommonHandlers".exportAndValidateDataInIRPSummary "IRP"&dataType,"CM","Week","Overall"
+						
+					end if
+				end repeat
+			else
+				smartUtil.clickText IRPtab
+				"SC2_CommonActions/sc2CommonHandlers".selectBUInIRPSummary
+				"SC2_CommonActions/sc2CommonHandlers".exportAndValidateDataInIRPSummary "IRP","COE",,"Total FORECAST Decommit"
+			end if
+		end repeat
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end IRPSummaryCheckingPart1
+
+
+##IRPSummaryCheckingPart2
+to IRPSummaryCheckingPart2 
+	try
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","IRP Summary"
+		if ImageFound(text:"IRP raw data",searchRectangle:(screenPartition().SUT.("TH")),waitFor:3)
+			LogSuccess "The Application is in the IRP Summary View"
+			set IRPtabs to["IRP raw data","IRP summary commit","IRP summary decommit"]
+			smartUtil.listOfValidations "Dashboard",-100,300,600,50,IRPtabs
+		else
+			LogError "The Application is not in the IRP Summary Page"
+			Exit  all
+		end if
+		log "Checking the IRP raw data tab"
+		set IRPTabList to ["IRP summary decommit"]
+		set dataTypeList to ["Monthly","Weekly"]
+		repeat with each IRPtab of IRPTabList
+			repeat with each dataType of dataTypeList
+				smartUtil.clickText IRPtab
+				smartUtil.validate"View Type","TH"
+				smartUtil.setCustomSearchRectangle "ViewType",80,-20,200,20,"TH"
+				if ImageFound(text:"Monthly",searchRectangle:(screenPartition().SUT.("Custompart")))
+					LogSuccess IRPtab&" is in the Defult View and View Type has Monthly Filter"
+				else
+					LogWarning IRPtab&" is not in the Defult View"
+				end if
+				smartUtil.clickTextAtSpot"View Type",150,0,"TH"
+				smartUtil.clickText dataType,"TH"
+				smartUtil.validate"Supplier","TH"
+				wait 6
+				"SC2_CommonActions/sc2CommonHandlers".selectBUInIRPSummary
+				smartUtil.readTextUsingText"Supplier",550,-60,750,-20,"HM"
+				put  global currLocVal into universal currentMonthYear
+				delete last 3 characters of  universal currentMonthYear
+				log universal currentMonthYear
+				if dataType is "Monthly" then
+					"SC2_CommonActions/sc2CommonHandlers".exportAndValidateDataInIRPSummary "IRP"&dataType&"DeCommit","CM", universal currentMonthYear ,"Overall"
+				else if dataType is "Weekly" then 
+					"SC2_CommonActions/sc2CommonHandlers".exportAndValidateDataInIRPSummary "IRP"&dataType&"DeCommit","CM","Week","Overall"
+				end if
+			end repeat
+		end repeat
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end IRPSummaryCheckingPart2
+
+to CMLoginDownloadAllCountValidation controlPhase,controlPhase1,businessUnits
+	try
+		#Validating the Control phase of the Application
+		smartUtil.clickText "Dashboard","topLeftQuadrant"
+		smartUtil.validate"Forecast Phase","TH"
+		wait 2
+		smartUtil.clickTextAtSpot"Forecast Phase",370,-50,"HM"
+		#Validating the control Phase
+		wait until ImageFound(text:"Supplier Name",searchRectangle:(screenPartition().SUT.("HM")))
+		if ImageFound(text:universal data.controlPhase,searchRectangle:(screenPartition().SUT.("TH")))
+			LogSuccess "The Supplier is in the "&&controlPhase&&"State Continue with the Next Steps"
+			
+		else if ImageFound(text:universal data.controlPhase1,searchRectangle:(screenPartition().SUT.("TH")))
+			LogSuccess "The Supplier is in the "&&controlPhase1&&"State Continue with the Next Steps"
+		else
+			LogError"Supplier is not in the Required Phase "
+			exit all
+		end if
+		#Navigating to the CM Commit 
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu"Forecast & Commit","CM Commit"
+		smartUtil.validate"View Type","THTH"
+		#Setting up the Fiters and Selecting all the Business Units in the Application and validating that all the Business are selected or not
+		smartUtil.clickUsingImage "icons/filterIcon","LHLH"
+		wait 4
+		smartUtil.validate"Filters","LHLH"
+		set BUList to businessUnits
+		smartUtil.setCustomSearchRectangle"Bussiness Unit Name",200,-10,1500,30,"LHLH"
+		repeat with each BUvalue of BUList
+			set the TextStyle to {dpi:144,caseSensitive:On}
+			if ImageFound(text:BUvalue,searchRectangle:(screenPartition().SUT.("CustomPart")))
+				LogSuccess BUvalue&&"is Selected"
+				if repeatindex() is number of items of businessUnits then LogSuccess"All bussiness Units are Selected"
+			else
+				repeat with each BUvalue of BUList
+					set the TextStyle to {dpi:144,caseSensitive:On}
+					"SC2_CommonActions/sc2CommonHandlers".selectPreference"Bussiness Unit Name",BUvalue
+					smartUtil.clickText"Filters","LHLH"
+					if repeatindex() is number of items of businessUnits then exit repeat 
+				end repeat
+				set the TextStyle to default
+				
+			end if
+		end repeat
+		smartUtil.scrollTo"Submit","LH"
+		smartUtil.clickText"Submit","LH"
+		set BUList to businessUnits
+		smartUtil.listOfValidations"Business Unit",75,-10,900,30,BUList,"TH"
+		LogSuccess"All the Business Units are Select in the Filter"	
+		wait 2
+		"SC2_CommonActions/sc2CommonHandlers".getTheTotalNumberOfItemsFromTheApplication
+		wait 3
+		smartUtil.clickText "Dashboard","topLeftQuadrant"
+		wait 2
+		smartUtil.clickText"Download All","TH"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		wait 5
+		#clicking on Download All Notification and navigate to list of download page
+		#Exporting the File Using the Download all Notification Tile
+		smartUtil.validate "Download All Notification","BH"
+		smartUtil.clickTextAtSpot "Download All Notification",358,-40
+		smartUtil.completeScreenLoad
+		smartUtil.validate "List of Downloaded Files","TH"
+		smartUtil.clickTextAtSpot "Action",0,50,"RH"
+		"excelFileInteractions".openExcelFromDownloads
+		Typetext controlKey,a
+		wait 0.5
+		Typetext altKey,h,o,a,h,o,i
+		wait 0.5
+		click[1088,464]
+		--"excelFileInteractions".findTextInWorksheet columnNameInExportedFile
+		"excelFileInteractions".findTextInWorksheet"Org"
+		wait 2
+		typetext controlKey,shiftkey,downArrow
+		wait 2
+		typetext controlKey,c
+		wait 3
+		put RemoteClipboard() into global countAfterCheckingDuplicates
+		--log global countAfterCheckingDuplicates
+		split global countAfterCheckingDuplicates by newline
+		put (number of items of global countAfterCheckingDuplicates-1) into  universal countFromExcel
+		log "Count: "&& universal countFromExcel
+		click[1088,464]
+		#closing excel file
+		excelFileInteractions.closeFileByclickinOnSave
+		Typetext controlKey,w
+		##Close the Downloads Page
+		smartUtil.clickText"Clear all","RHRH"
+		smartUtil.closeTab
+		#Asserting the count from the UI with the data present in the Excel file
+		if universal countFromExcel-1 equal to universal countOfValuesFromAppliaction
+			LogSuccess "The Total Record count is Same in the Application and Exported File of"&&universal downloadedFileName 
+		else
+			LogError "The Total Record count is Not Same in the Application and Exported File of"&&universal downloadedFileName 
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end CMLoginDownloadAllCountValidation
+
+to FCAndPRPOApprovalPageUIChecking CM,type,partNumber
+	try
+		if ImageFound(text:"Supply Chain Collaboration Portal",searchRectangle:(screenPartition().SUT.("TH")),waitfor:5)
+			LogSuccess "The Application is in the Dashboard "
+		else 
+			LogSuccess "The Application is Not in the Dashboard"
+			exit all
+		end if
+		#Navigate to the Escalation Approval Notifications Page
+		smartUtil.validate"Escalation Approval Notifications"
+		smartUtil.clickTextAtSpot"Escalation Approval Notifications",340,-40,"TH"
+		smartUtil.validate"Pending Approval","TH"
+		if ImageFound(text:"F&C Escalation",searchRectangle:(screenPartition().SUT.("LH")),waifor:5)or if ImageFound(text:"PRPO Exception",searchRectangle:(screenPartition().SUT.("LH")),waitFor:5)
+			LogSuccess "The Escalations have been Raised"
+		else
+			if ImageFound(text:"No records found",searchRectangle:(screenPartition().SUT.("HM")),waitFor:5)
+				LogWarning "The Escalations are not Raised Yet"
+				exit handler
+			end if
+		end if
+		#Validating the All functions in the Escalation Approval Notifications page
+		"SC2_CommonActions/sc2CommonHandlers".getTS "white"
+		set listOfFunctions to["ALL","Jabil","Venture","Filter","APPROVE","REJECT","Pending Approval"]
+		smartUtil.listOfValidations "Help",-1800,30,1000,100,listOfFunctions,"TH"
+		"SC2_CommonActions/sc2CommonHandlers".getTS "default"
+		if ImageFound(image:"icons/exportInForecastView",searchRectangle:(screenPartition().SUT.("TRQ")),waitFor:5) and ImageFound(image:"icons/SCCRefreshIcon",searchRectangle:(screenPartition().SUT.("TRQ")),waitfor:5) and ImageFound(image:"icons/defaultApproveButton",searchRectangle:(screenPartition().SUT.("TRQ")),waitFor:5) and ImageFound(image:"icons/defaultRejectButton",searchRectangle:(screenPartition().SUT.("TRQ")),waitFor:5) and ImageFound(image:"icons/defaultToggleIcon",searchRectangle:(screenPartition().SUT.("TRQ")),waitFor:5)
+			LogSuccess "The Application is in the Default View"
+		else
+			LogError "The Application is not in the Default View"
+		end if 
+		#checking whether all the CM are Selected as defult
+		smartUtil.setCustomSearchRectangle"Dashboard",-80,30,100,100,"LHLH"
+		if ImageFound(text:"All",searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+			LogSuccess "All Suppliers are Selected"
+		else
+			LogWarning "All Suppliers are not Selected"
+		end if
+		##Filter With the Supplier
+		smartUtil.clickTextAtSpot"Dashboard",0,80,"LHLH"
+		smartUtil.clickText"All","Custompart"
+		smartUtil.setCustomSearchRectangle"Dashboard",-110,50,180,250,"LHLH"
+		smartUtil.clickText universal data.supplierName,"Custompart"
+		smartUtil.clickText"Filter","TH"
+		if ImageFound(text:"Supplier Name",searchRectangle:(screenPartition().SUT.("HM")),waitFor:5)
+			smartUtil.setCustomSearchRectangle"Supplier Name",-40,40,100,1000,"LHLH"
+			if ImageFound(text:CM,searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+				LogSuccess "Filtered with the Valid Supplier Name"
+				smartUtil.validate CM,"Custompart"
+			else
+				LogWarning "No records found with"&CM
+			end if
+		else
+			LogWarning "No records found with"&CM
+		end if
+		smartUtil.clickTextAtSpot"Dashboard",0,80,"LHLH"
+		smartUtil.clickText"All","LHLH"
+		smartUtil.clickText"Filter","TH"
+		smartUtil.clickTextAtSpot"Dashboard",200,70,"LHLH"
+		smartUtil.setCustomSearchRectangle"Dashboard",110,50,325,200,"LHLH"
+		--set  type to "F&C Escalation"
+		smartUtil.clickText type,"Custompart"
+		smartUtil.clickText"Filter","TH"
+		if ImageFound(text:"Type",searchRectangle:(screenPartition().SUT.("HM")),waitFor:5)
+			smartUtil.setCustomSearchRectangle"Type",-20,40,110,1000,"HM"
+			if ImageFound(text:type,searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+				LogSuccess "Filtered with the"&type
+				smartUtil.validate type,"Custompart"
+				if ImageFound(text:"No records found",searchRectangle:(screenPartition().SUT.("HM")),waitFor:5) then LogWarning "No records found with "&type
+			end if
+		else
+			LogWarning "No records found with"&type
+		end if
+		smartUtil.clickTextAtSpot"Dashboard",200,70,"LHLH"
+		smartUtil.setCustomSearchRectangle"Dashboard",120,-50,325,150,"THTH"
+		Log EveryImageLocation(text:"All",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:5)
+		click item 1 of EveryImageLocation(text:"All",searchRectangle:(screenPartition().SUT.("THTH")))
+		wait 2
+		--smartUtil.clickText"Filter","TH"
+		##Checking the Filter Functionality
+		smartUtil.clickText"Filter","TH"
+		smartUtil.textField universal data.partNumber
+		smartUtil.setCustomSearchRectangle"PartNumber",-20,40,110,1000,"LHLH"
+		if ImageFound(text:universal data.partNumber,searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+			LogSuccess "Filtered with the"& universal data.partNumber
+			smartUtil.validate  universal data.partNumber,"Custompart"
+		else
+			LogWarning"Not Filtered with the"& universal data.partNumber
+		end if
+		smartUtil.clickText"Filter","TH"
+		smartUtil.textField ""
+		##Select one F&C Escalation records which with checkbox doesn't grey out
+		smartUtil.setCustomSearchRectangle"Type",-50,40,2000,800,"LHLH"
+		log EveryImageLocation(image:"icons/checkBoxIcon",searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+		click item 1 of EveryImageLocation(image:"icons/checkBoxIcon",searchRectangle:(screenPartition().SUT.("Custompart")),waotFor:5)
+		if ImageFound(image:"icons/approveIcon",searchRectangle:(screenPartition().SUT.("TRQ")),waitFor:5) and ImageFound(image:"icons/rejectIcon",searchRectangle:(screenPartition().SUT.("TRQ")),waitFor:5) and ImageFound(image:"icons/defaultHistoricalToggle",searchRectangle:(screenPartition().SUT.("TRQ")),waitFor:5)
+			LogSuccess "APPROVE  and REJECT button are Enabled and the Historical Toggle is Still not grey out "
+		else
+			if ImageFound(text:"No records found",searchRectangle:(screenPartition().SUT.("HM")),waitFor:5) then LogWarning "No records found"
+			LogWarning"APPROVE  and REJECT button are  Not Enabled and the Historical Toggle is Still not grey out "
+		end if
+		## Checking the Turn on Pending Approval toggle 
+		smartUtil.clickText"Pending Approval","THTH"
+		smartUtil.setCustomSearchRectangle"Status",-40,40,110,1000,"TH"
+		if ImageFound(text:"PENDING",searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+			smartUtil.validate"PENDING","Custompart"
+		else 
+			if ImageFound(text:"No records found",searchRectangle:(screenPartition().SUT.("HM")),waitFor:5) then LogWarning "No records found"
+		end if
+		
+		smartUtil.clickText"Pending Approval","THTH"
+		smartUtil.validate "icons/defaultToggleIcon","THTH"
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end FCAndPRPOApprovalPageUIChecking
+
+##FCAndPRPOApprovalPageUIAndExportedFileChecking
+to FCAndPRPOApprovalPageUIAndExportedFileChecking
+	try
+		#Validate that the Page is in the Dashboar or not
+		if ImageFound(text:"Supply Chain Collaboration Portal",searchRectangle:(screenPartition().SUT.("TH")),waitFor:5)
+			LogSuccess "The Application is in the Dashboard "
+		else 
+			LogError "The Application is Not in the Dashboard"
+			exit all
+		end if
+		#Navigate to the Escalation Approval Notifications Page
+		smartUtil.validate"Escalation Approval Notifications"
+		smartUtil.clickTextAtSpot"Escalation Approval Notifications",340,-40,"TH"
+		smartUtil.validate"Pending Approval","TH"
+		#Checking whether the Escalations are Raised or not if No Escalations or found the Script will Exit
+		if ImageFound(text:"F&C Escalation",searchRectangle:(screenPartition().SUT.("LH")),waitFor:5)or if ImageFound(text:"PRPO Exception",searchRectangle:(screenPartition().SUT.("LH")),waitFor:5)
+			LogSuccess "The Escalations have been Raised"
+		else
+			if ImageFound(text:"No records found",searchRectangle:(screenPartition().SUT.("HM")),waitFor:5)
+				LogWarning "The Escalations are not Raised Yet"
+				exit handler
+			end if
+		end if
+		smartUtil.setCustomSearchRectangle"Dashboard",-150,114,2000,180,"TH"
+		smartUtil.validate"Download","Custompart"
+		##Step--2
+		#Checking that all the Coulumns are same in the Exported file and Application
+		set validations to ["Type","Supplier Name","Part Number","Quantity","Work Week","Demand Type","Escalated Date","Reason","Remarks","Justification","Status","Escalated By","Download"]
+		smartUtil.readTextUsingText "Dashboard",-150,114,2000,180,"TH"
+		put global currLocVal into validationList
+		Replace every occurrence of newline with "," in validationList
+		repeat with each item of validationList
+			if it is item repeatIndex() of validations
+				--LogSuccess "Success "
+			else
+				set flag to 1
+				insert it into cloumnsNotInSequence
+			end if
+		end repeat
+		if flag is 1 
+			LogError" All the columns  are not in sequence"
+			Log cloumnsNotInSequence
+		else 
+			LogSuccess " All the columns  are in sequence"
+			
+		end if
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		smartUtil.clickUsingImage"icons/exportInForecastView","TRQ"
+		wait 6
+		set the TextStyle to {textDifference:2}
+		--excelFileInteractions.openExcelFromDownloads "PlanningManager"
+		excelFileInteractions.openExcelFromDownloads
+		set the TextStyle to default
+		if ImageFound(text:"Type",searchRectangle:(screenPartition().SUT.("LHLH")),waitFor:5)
+			LogSuccess "Able to export and open the excel File"
+		else 
+			LogError "The Excel file is not opend Yet"
+			exit all
+		end if
+		##Expand all the Rows and Colums in the Excel File
+		TypeText controlKey,a
+		TypeText altKey,h,o,a,h,o,i
+		click[961,420]
+		wait 2
+		smartUtil.validate"Type","LHLH"
+		#writing all the colums in the set and after opening the Excel file Coping the all Colums and Comparing the list values with the Copied values
+		set global validations to ["Type","Supplier Name","Part Number","Quantity","Work Week","Demand Type","Escalated Date","Reason","Remarks","Justification","Status","Escalated By","Attachment"]
+		Click text:"Type"
+		repeat 13 times
+			typetext controlKey,"c"
+			Insert RemoteClipboard() into NewList
+			wait .5
+			typetext rightArrow
+		end repeat
+		repeat with each item of NewList
+			insert it into dataList
+		end repeat
+		#Deleted @ Symbol from the text
+		delete every occurrence of "@" in dataList
+		delete every occurrence of newline in dataList
+		repeat with each item of dataList
+			if it is item repeatIndex() of  global validations
+			else
+				set flag to 1
+				insert it into cloumnsNotInSequence
+			end if
+		end repeat
+		if flag is 1 
+			LogError" All the columns  are not in sequence"
+			Log cloumnsNotInSequence
+		else 
+			LogSuccess " All the columns  are in sequence"
+		end if
+		#Close Excel file 
+		excelFileInteractions.closeFileByclickinOnSave
+		smartUtil.closeTab
+		smartUtil.clickText"Clear all","RHRH"
+		smartUtil.closeTab
+		##Filter the PartNumber in the Application and Export the file from the Application and verify that Exported File is filterd with the Correct Part Number
+		smartUtil.clickText"Filter","TH"
+		smartUtil.textField universal data.partNumber
+		#Delete all the Files from the Downloads
+		"SC2_CommonActions/sc2CommonHandlers".deleteAllFilesInDownloads
+		smartUtil.clickUsingImage"icons/exportInForecastView","TRQ"
+		wait 5
+		set the TextStyle to {textDifference:2}
+		--excelFileInteractions.openExcelFromDownloads "PlanningManager"
+		excelFileInteractions.openExcelFromDownloads
+		set the TextStyle to default
+		if ImageFound(text:"Type",searchRectangle:(screenPartition().SUT.("LHLH")),waitFor:5)
+			LogSuccess "Able to export and open the excel File"
+		else 
+			LogError "The Excel file is not opend Yet"
+			exit all
+		end if
+		##Expand all the Rows and Colums in the Excel File
+		TypeText controlKey,a
+		TypeText altKey,h,o,a,h,o,i
+		click[961,420]
+		wait 2
+		##Checking whether the file is Filtered with the Correct PARTNUMBER or not
+		smartUtil.setCustomSearchRectangle"PartNumber",-15,10,100,1000,"TH"
+		if ImageFound(text:universal data.partNumber,searchRectangle:(screenPartition().SUT.("Custompart")))
+			LogSuccess "The Excel have Filtered with  the Part Number"&partNumber
+			smartUtil.validate universal data.partNumber,"Custompart"
+		else
+			LogError "The Excel is not filtered with the Part Number"&partNumber
+		end if
+		excelFileInteractions.closeFileByclickinOnSave
+		smartUtil.closeTab
+		smartUtil.clickText"Clear all","RHRH"
+		smartUtil.closeTab
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+	
+end FCAndPRPOApprovalPageUIAndExportedFileChecking
+
+
+(* SO View UI checking 1*)
+to SOViewUIChecking1
+	try
+		##Navigate to the Pre-Ship Automation page
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu "Pre-Ship Automation","So View"
+		##Validate that the page is in the Pre-ship Automation or not
+		if ImageFound(text:"Advanced Search",searchRectangle:(screenPartition().SUT.("THTH")))
+			LogSuccess"The Application is on the So View Page continue with the Validations"
+		else
+			LogError "The Application is not in the So View Page"
+			exit all
+		end if
+		--Align to Left (Validating the All Icons in Top Left of  the SO View Page)
+		wait until ImageFound(image:"icons/reloadData",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate"icons/reloadData","THTH","Reload Data"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate"icons/BulkUpdateIcon","THTH","Bulk Update"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate"icons/CMB2BView","THTH","CMB2B View Toggle"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate"icons/5GOnly","THTH","5G Only Toggle"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate "icons/HideINCLUDED","THTH","Hide INCLUDED Toggle"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate "icons/SYSTEMView","THTH","SYSTEM View Toggle"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate "icons/AdvancedSearch","THTH","Addvanced Search Button"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate "icons/Search","THTH","Search Bar"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate "icons/Columns","THTH","Columns Button"
+		----Align to Right(Validating the All Icons in the Top Right of the SO View Page )
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate  "icons/reSetAllocation","THTH","Rest Allocation Sequenece"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate "icons/switchToF&CIcon","THTH","Switch to F&C Icon"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate"icons/exportInForecastView","THTH","Export Icon"
+		"SC2_CommonActions/sc2CommonHandlers".moveToImageandValidate  "icons/importInForecastView","THTH","Import Icon"
+		
+		-----Validate the Last Refresh  Location of SGT Time
+		smartUtil.setCustomSearchRectangle"Last refreshed at (SGT)",190,-10,400,20,"TRQ"
+		if ImageFound(text: the year,searchRectangle:(screenPartition().SUT.("Custompart"))) or if ImageFound(text: the year-1,searchRectangle:(screenPartition().SUT.("Custompart")))
+			LogSuccess "The Page Got Refreshed in SGT"
+		else
+			LogError "Th Page is not Refreshed SGT"
+		end if
+		----Validate the Last Refresh  Location of PST Time
+		smartUtil.setCustomSearchRectangle"Last refreshed at (PST)",190,-10,400,20,"TRQ"
+		if ImageFound(text: the year,searchRectangle:(screenPartition().SUT.("Custompart"))) or  if ImageFound(text: the year-1,searchRectangle:(screenPartition().SUT.("Custompart")))
+			LogSuccess "The Page Got Refreshed in PST"
+		else
+			LogError "Th Page is not Refreshed PST"
+		end if
+		--------Validate the Location of Filter
+		
+		if ImageFound(image:"icons/filterIcon",searchRectangle:(screenPartition().SUT.("LHLH")))
+			smartUtil.validateImage"icons/filterIcon","LHLH"
+			LogSuccess "The Filter is Located Below the Refreshed Timings and Filtered with the Degault Settings"
+		else
+			LogError "The Filter is Not Located Below the Refreshed Timings "
+		end if
+		----Validating the CM Location in the Application
+		smartUtil.setCustomSearchRectangle"Supplier",-50,50,600,100,"LHLH"
+		set  universal SupplierList to ["Jabil","Venture","Celestica"]
+		smartUtil.readTextUsingText"Supplier",-50,50,600,100,"LHLH"
+		put  global currLocVal as list into universal Supplier
+		replace every occurrence of newline with "," in universal Supplier
+		--put  universal Suppliers into universal SupplierList
+		repeat with each item of  universal Supplier
+			if  universal Supplier  contains it
+				LogSuccess it&&"Found in the CM tab"
+				Exit repeat
+			else
+				LogError it&&" not Found in the CM tab"
+			end if
+		end repeat
+		-----Validating the Phase Indication 
+		smartUtil.setCustomSearchRectangle"Supplier",-50,50,2500,100,"LHLH"
+		if ImageFound(text:"Forecast phase",searchRectangle:(screenPartition().SUT.("Custompart")))
+			LogSuccess "Forecast phase indication Found in the  CM tab"
+		else
+			LogError "Forecast phase indication not  Found in the CM tab"
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end SOViewUIChecking1
+
+to SOViewUICheckingTwo
+	try
+		##Navigate to the Pre-Ship Automation page
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu "Pre-Ship Automation","So View"
+		##Validate that the page is in the Pre-ship Automation or not
+		if ImageFound(text:"Advanced Search",searchRectangle:(screenPartition().SUT.("THTH")))
+			LogSuccess"The Application is on the So View Page continue with the Validations"
+		else
+			LogError "The Application is not in the So View Page"
+			exit all
+		end if
+		#Wait Until the Complete Screen Load
+		wait until ImageFound(image:"icons/reloadData",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+		##Click on Column button, make sure all fields are checked
+		smartUtil.clickText"Columns","THTH"
+		smartUtil.setCustomSearchRectangle"Advanced Search",380,-100,690,2500,"THTH"
+		smartUtil.validate"SO","Custompart"
+		Repeat until ImageFound(image:"icons/downScrollArrowIcon",searchRectangle:(screenPartition().SUT.("Custompart")))
+			smartUtil.clickUsingImage "icons/downArrow","Custompart"
+			if ImageFound(image:"icons/checkBoxIcon",searchRectangle:(screenPartition().SUT.("Custompart")))
+				repeat 25 times
+					click FoundImageLocation()
+				end repeat
+			end if
+		End Repeat
+		LogSuccess "All the Columns  Are checked Successfully"
+		smartUtil.clickText"Search","THTH"
+		#Validation List
+		set universal  SoViewColumnList to ["Actions","SO Status","VLookup Ref","CON2","SO","SO Status","Order Type","Order Type2","Division","Product Family","Item TOP Model","Flow Status(Order Status)","Customer","Ship To Country/Region","Creation Date","Ordered Date","Booked Date","SSD","RCD","CON3","SO Line","Item Number","Week (WW/YY)","KR Date","Override KR Date","SO QTY","Reserved QTY","Allocated QTY","On Hand Qty","WH","Special Handling","Receiving SI","Shipping SI","Alloc Seq B2B","Auto Allocation","Urgent Flag","FG Serial","CM Input Serial","PO","PO Status","Total USD","Dept Code","Planner Code","TAA Order","Order Priority","SR Date","OP Region","Ship To Region","Header Hold Status","Line Hold Status","ESC Order","RE-ACK Date","RE-ACK Code","RE-ACK Count","Latest SSD","Selling Price","Set Tot Value","Set Tot SOM","Must Ship My Unit","Set Order(Arrival Set/Ship Set)","Planner Name","Ship Per CRD","Earliest Ship Confirm Date","Critical Need By Date","CRDD Type","CRDD Minus TT","Allow Non RoHS","Notes","PL Ship Month","PL Revenue Ship","PL Reason Code","PL Remark","KR Special Opt Cal","SO TOP Model","Planning Priority","Shipping Warehouse","Lot Number","CM Remarks","FOM Reason Code","PO Receipt Date","DN","Sourcing Rule"]
+		--Log the number of items of universal  SoViewColumnList
+		DoubleClick text:"So Status", hotspot:[100,0]
+		Drag MouseLocation()
+		Drop text:"So Status", hotspot:[200,50]
+		typetext controlkey,"c"
+		put RemoteClipboard() into Headers
+		split Headers by newLine 
+		Delete last item of Headers
+		put the unique items of Headers into Headers
+		--Log the number of items of Headers
+		##Columns in the UI 
+		#checking Validation list with the List of columns in the UI
+		Repeat with each item of Headers
+			if it is in universal  SoViewColumnList
+			end if
+		End Repeat
+		LogSuccess "All the Columns are availble in the Application"
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end SOViewUICheckingTwo
+
+to SOViewExportedFileChecking_One fileName
+	
+	try
+		##Navigate to the Pre-Ship Automation page
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu "Pre-Ship Automation","So View"
+		##Validate that the page is in the Pre-ship Automation or not
+		if ImageFound(text:"Advanced Search",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:5)
+			LogSuccess"The Application is on the So View Page continue with the Validations"
+		else
+			LogError "The Application is not in the So View Page"
+			exit all
+		end if
+		##wait until the page load
+		wait until ImageFound(image:"icons/reloadData",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+		#Scroll wheel Down to get the Total count
+		ScrollWheelDown 8
+		--smartUtil.scrollTo 
+		smartUtil.clickText"Supply Chain Collaboration"
+		ScrollWheelDown 5
+		##get the Total Count from the UI
+		smartUtil.readTextUsingText"items per page",232,-15,270,15,"BRQ"
+		put global currLocVal into universal totalSoLines
+		log universal totalSoLines
+		##Scroll Wheel Up to Export the File
+		ScrollWheelUp 8
+		smartUtil.clickText"Actions","LHLH"
+		ScrollWheelUp  8
+		#Export file from the Application
+		wait 3
+		--File Processed Successfully
+		smartUtil.clickUsingImage "icons/exportInForecastView","TRQ"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		excelFileInteractions.openExcelFromDownloads fileName
+		--smartUtil.validate"So Status","LHLH"
+		wait 1
+		excelFileInteractions.getTheCountFromExcel "CON2"
+		excelFileInteractions.closeFileByclickinOnSave
+		smartUtil.closeTab
+		--log universal countFromExcel
+		if universal countFromExcel is universal totalSoLines 
+			LogSuccess "The  Total SoView Lines in the Application are Equal to the Total Lines in the Exported File"
+		else
+			LogError "The  Total SoView Lines in the Application are not  Equal to the Total Lines in the Exported File "
+		end if
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end SOViewExportedFileChecking_One
+
+to SOViewExportedFileChecking_Two fileName
+	
+	try
+		##Navigate to the Pre-Ship Automation page
+		"SC2_CommonActions/sc2CommonHandlers".navigateMenuandSubMenu "Pre-Ship Automation","So View"
+		##Validate that the page is in the Pre-ship Automation or not
+		if ImageFound(text:"Advanced Search",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:5)
+			LogSuccess"The Application is on the So View Page continue with the Validations"
+		else
+			LogError "The Application is not in the So View Page"
+			exit all
+		end if
+		##wait until the page load
+		wait until ImageFound(image:"icons/reloadData",searchRectangle:(screenPartition().SUT.("THTH")),waitFor:universal pageWait)
+		smartUtil.clickText"Columns","THTH"
+		smartUtil.setCustomSearchRectangle"Advanced Search",380,-100,690,2500,"THTH"
+		smartUtil.validate"SO","Custompart"
+		Repeat until ImageFound(image:"icons/downScrollArrowIcon",searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+			smartUtil.clickUsingImage "icons/downArrow","Custompart"
+			if ImageFound(image:"icons/checkBoxIcon",searchRectangle:(screenPartition().SUT.("Custompart")),waitFor:5)
+				repeat 25 times
+					click FoundImageLocation()
+				end repeat
+			end if
+		End Repeat
+		LogSuccess "All the Columns  Are checked Successfully"
+		smartUtil.clickText"Supply Chain","THTH"
+		set  universal validationList to ["SO Status","VLookup Ref","CON2","SO","Order Type","Order Type2","Division","Product Family","Item TOP Model","Flow Status(Order Status)","Customer","Ship To Country/Region","Creation Date","Ordered Date","Booked Date","SSD","RCD","CON3","SO Line","Item Number","Week (WW/YY)","KR Date","Override KR Date","Override KR Date Status","Adjustment Reason","Planner Remarks","SO QTY","Reserved QTY","Allocated QTY","On Hand Qty","WH","Special Handling","Receiving SI","Shipping SI","Alloc Seq B2B","Auto Allocation","Urgent Flag","FG Serial #","CM Input Serial #","PO #","PO Status","Total USD","Dept Code","Planner Code","TAA Order","Order Priority","SR Date","OP Region","Ship To Region","Header Hold Status","Line Hold Status","ESC Order","RE-ACK Date","RE-ACK Code","RE-ACK Count","Latest SSD","Selling Price","Set Tot Value","Set Tot SOM","Must Ship My Unit","Set Order(Arrival Set/Ship Set)","Planner Name","Ship Per CRD","Earliest Ship Confirm Date","Critical Need By Date","CRDD Type","CRDD Minus TT","Allow Non RoHS","Notes","PL Ship Month","PL Revenue Ship","PL Reason Code","PL Remark","KR Special Opt Cal","SO TOP Model","Planning Priority","Shipping Warehouse","Lot Number","CM Remarks","FOM Reason Code","PO Receipt Date","DN #","Sourcing Rule"]
+		log number of items of universal validationList
+		smartUtil.clickUsingImage "icons/exportInForecastView","TRQ"
+		Try
+			smartUtil.validateWithoutTry "File Processed Successfully","TH"
+		Catch 
+			log "File processed pop up not showing in the UI.Hence moving for the next step "
+		End try
+		excelFileInteractions.openExcelFromDownloads fileName
+		wait 1
+		Click [1119,575]
+		smartUtil.clickText"SO Status","THTH"
+		TypeText controlKey,shiftKey,rightArrow
+		TypeText controlKey,c
+		put  RemoteClipboard() into universal columnsInExportedFile
+		split universal columnsInExportedFile by tab
+		log universal columnsInExportedFile
+		delete newline from last item of universal columnsInExportedFile
+		log universal columnsInExportedFile
+		excelFileInteractions.closeFileByclickinOnSave
+		smartUtil.closeTab
+		log number of items of universal columnsInExportedFile
+		log universal columnsInExportedFile
+		Repeat with each item of universal validationList
+			log it
+			log  items repeatindex() of universal columnsInExportedFile
+			if universal columnsInExportedFile  CONTAINS IT
+				LogSuccess it&&"Found in the Exported File"
+			else
+				Logwarning  it&&" Not Found in the Exported File"
+			end if
+		End Repeat
+	Catch theException
+		smartUtil.errorCapture theException
+	End try	
+end SOViewExportedFileChecking_Two
+
+

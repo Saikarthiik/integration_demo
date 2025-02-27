@@ -1,0 +1,11 @@
+﻿set universal testCaseName to "TD_2349_Count Validation"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testCaseName
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"SC2_Login/logInAndLogout_commonHandlers".launchURL
+	"SC2_Login/logInAndLogout_commonHandlers".logInToSC2AsSupplier universal data.userName,universal data.passWord
+	"Planning_F&C/ForeCast/foreCast_commonHandlers".CMLoginDownloadAllCountValidation universal data.controlPhase,universal data.controlPhase1,universal data.businessUnits
+	put "Done" into universal data.run_Status
+	"SC2_Login/logInAndLogout_commonHandlers".logoutToSC2 universal data.profileName
+end repeat
+

@@ -1,0 +1,12 @@
+﻿#NonFYIOnlyEscalationInPlannerHorizontalView
+set universal testcaseName to "TD_2193_NonFYIEscalationInPHV"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1
+repeat number of items of universal data times
+	set universal testData to item repeatIndex() of universal data
+	"review&Commit_F&C/PlannerHorizontalView/forecastHorizontal_commonHandlers".NonFYIOnlyEscalationInPHV universal data.partNumber,universal data.categoryInForecast
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	smartUtil.closeBrowser
+	put "Done" into universal data.run_Status
+end repeat

@@ -1,0 +1,14 @@
+﻿##Before Running the 2060 Test Case We need to Run the 1973 Test case for Raise an Escalaation
+##1973-- F&C Vertical View - Submit Escalation request to get manager approval
+##2060--Manager to approve escalation and view it in F&C Vertical View
+##Test Data Must be Same in both 1973 and 2060 files
+set universal testcaseName to "TD_1973_EscalationWithNoFYI"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1
+repeat number of items of universal data times
+	"review&Commit_F&C/ForeCast/foreCast_commonHandlers".submitEscalationRequestWithManagerApproval universal data.partNumber,universal data.categoryInForecast,universal data.AdjustmentValue,universal data.EscalationReason,universal data.ManagerEMail
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put  "Pass" into universal data.status
+	--put "Done" into universal data.run_Status
+end repeat

@@ -1,0 +1,14 @@
+﻿set universal testCaseName to "TD_1788_Count Validation"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testCaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot 
+--"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase
+repeat number of items of universal data times
+	
+	set universal testData to item repeatIndex() of universal data
+	(*	"SC2_Login/logInAndLogout_commonHandlers".launchURL "Chrome",universal testData.SC2ApplicationURL
+	"SC2_Login/logInAndLogout_commonHandlers".logInToSC2App, universal testData.userName,universal testData.passWord*)
+	"Planning_F&C/ForeCast/foreCast_commonHandlers".downloadAllCountValidation
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat
+

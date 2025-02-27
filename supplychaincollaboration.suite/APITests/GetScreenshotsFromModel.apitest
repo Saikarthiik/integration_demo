@@ -1,0 +1,23 @@
+{
+    URLparameters = (
+	{
+	    checkedNumber = <*BY>;
+	    param = "";
+	    showCheckedNumber = <*BY>;
+	    value = "";
+	}
+    );
+    authenticationType = None;
+    httpVerb = GET;
+    oauth1Token = "";
+    password = "";
+    requestBody = "";
+    requestBodyFormat = "Form Url Encoded";
+    requestHeaders = "<![CDATA[authorization:bearer [[accessToken]]
+]]>";
+    requests = "";
+    testResults = "";
+    testScript = "";
+    url = "[[baseURL]]/ai/runs/[[run_id]]/screenshots";
+    userName = "";
+}

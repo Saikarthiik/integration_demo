@@ -1,0 +1,9 @@
+﻿set universal testcaseName to "TD_1978_EscalationInWorkWeek"
+"SC2_CommonActions/sc2CommonHandlers".readTestData universal testcaseName
+"SC2_CommonActions/sc2CommonHandlers".validateWhetherScreenIsOnDashBoardOrNot
+"SC2_CommonActions/sc2CommonHandlers".validateControlPhase universal data.controlPhase,universal data.controlPhase1
+repeat number of items of universal data times
+	"review&Commit_F&C/ForeCast/foreCast_commonHandlers".forecastEscalationImportExportDataNewPartWorkWeek universal data.supplierName,universal data.AdjustmentPositiveValue,universal data.categoryInForecast
+	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
+	put "Done" into universal data.run_Status
+end repeat

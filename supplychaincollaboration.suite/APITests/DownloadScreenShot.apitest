@@ -1,0 +1,25 @@
+{
+    URLparameters = (
+	{
+	    checkedNumber = <*BY>;
+	    param = "";
+	    showCheckedNumber = <*BY>;
+	    value = "";
+	}
+    );
+    authenticationType = None;
+    httpVerb = GET;
+    oauth1Token = "";
+    password = "";
+    requestBody = "";
+    requestBodyFormat = "Form Url Encoded";
+    requestHeaders = "<![CDATA[Accept:*/*
+Accept-Encoding:gzip,deflate,br
+Connection:keep-alive
+]]>";
+    requests = "";
+    testResults = "";
+    testScript = "";
+    url = "[[baseURL]]/eggplant-dai-ccx/b881ecc2-560c-9a0a-4151-f84d30e1dfc6/b881ecc2-560";
+    userName = "";
+}
