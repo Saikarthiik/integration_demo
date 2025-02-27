@@ -3,7 +3,7 @@ TypeText Chrome, return
 TypeText "https://www.bbc.com/"
 --- you should be adding validations
 TypeText return
-log "Executed Successfully"
+log "Executed Successfully,passed"
 
 //Typetext altkey,f4
 
