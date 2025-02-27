@@ -1,8 +1,0 @@
-﻿set universal testCaseName to "TD_2771_dashboardMenuValidation"
-"SPM/SPM_CommonHandlers".readTestData universal testCaseName
-repeat number of items of universal data times
-	set universal testData to item repeatIndex() of universal data
-	"SPM/SPM_CommonHandlers".dashboardMenuValidationSPM universal data.headers,universal data.submenuofMenuvalue,universal data.supplierProfileMaintenanceOfMenu,universal data.submenuofTransactionHistor,universal data.supplierProfileMaintenanceOfTransactionHistor
-	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard 
-	put "Done" into universal data.run_Status
-end repeat

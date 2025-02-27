@@ -1,2 +1,0 @@
-﻿"SC2_CommonActions/sc2CommonHandlers".readTestData "TD_1777_Login"
-"SC2_Login/logInAndLogout_commonHandlers".logoutToSC2 universal data.requesterName

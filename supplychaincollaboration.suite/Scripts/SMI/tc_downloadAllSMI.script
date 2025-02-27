@@ -1,9 +1,0 @@
-﻿set universal testCaseName to "TD_2756_downloadAllSMI"
-"SMI/SMI_CommonHandlers".readTestData universal testCaseName
-"SMI/SMI_utilities".validateWhetherScreenIsOnDashBoardOrNot
-repeat number of items of universal data times
-	set universal testData to item repeatIndex() of universal data
-	"SMI/SMI_CommonHandlers".downloadAllSMI 
-	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
-	put "Done" into universal data.run_Status
-end repeat 

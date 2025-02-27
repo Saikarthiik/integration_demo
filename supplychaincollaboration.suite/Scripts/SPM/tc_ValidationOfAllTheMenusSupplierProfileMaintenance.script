@@ -1,9 +1,0 @@
-﻿set universal testCaseName to "TD_2772_validationOfMenus"
-"SPM/SPM_CommonHandlers".readTestData universal testCaseName
-"SPM/SPM_utilities".validateWhetherScreenIsOnDashBoardOrNot universal data.titleofModule,universal data.moduleName,universal data.userName,universal data.passWord
-repeat number of items of universal data times
-	set universal testData to item repeatIndex() of universal data
-	"SPM/SPM_CommonHandlers".validationOfAllTheMenusOfSPM universal data.headers,universal data.submenuofMenuvalue,universal data.supplierProfileMaintenanceOfMenu,universal data.submenuofTransactionHistory,universal data.supplierProfileMaintenanceOfTransactionHistory
-	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard 
-	put "Done" into universal data.run_Status
-end repeat

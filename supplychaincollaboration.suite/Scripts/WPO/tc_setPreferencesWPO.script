@@ -1,9 +1,0 @@
-﻿set universal testCaseName to "TD_2738_setPreferencesWPO"
-"WPO/WPO_CommonHandlers".readTestData universal testCaseName
-"WPO/WPO_utilities".validateWhetherScreenIsOnDashBoardOrNot
-repeat number of items of universal data times
-	set universal testData to item repeatIndex() of universal data
-	"WPO/WPO_CommonHandlers".setPreferencesWPO universal data.profileName,universal data.preferenceOne,universal data.preferenceValue,universal data.subMenus
-	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
-	put "Done" into universal data.run_Status
-end repeat 

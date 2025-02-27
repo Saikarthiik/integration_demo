@@ -1,9 +1,0 @@
-﻿set universal testCaseName to "TD_2696_downloadAllPORS"
-"PORS/PORS_CommonHandlers".readTestData universal testCaseName
-"PORS/PORS_utilities".validateWhetherScreenIsOnDashBoardOrNot
-repeat number of items of universal data times
-	set universal testData to item repeatIndex() of universal data
-	"PORS/PORS_CommonHandlers".downloadAllPORS universal data.userName,universal data.passWord,universal data.columnNameInExportedFile
-	"SC2_CommonActions/sc2CommonHandlers".navigateToDashboard
-	put "Done" into universal data.run_Status
-end repeat
