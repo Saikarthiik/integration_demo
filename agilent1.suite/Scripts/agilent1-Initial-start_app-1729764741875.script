@@ -1,0 +1,4 @@
+﻿typetext windowskey,"r"
+wait 5
+typetext "chrome" && "https://stgwww2.agilent.com/"
+typetext return
