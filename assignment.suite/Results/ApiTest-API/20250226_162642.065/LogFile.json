@@ -1,0 +1,20 @@
+{
+	"entries": [
+		{
+				"message": "Running ApiTest.apitest",
+				"identifier": "START",
+				"timestamp": "2025-02-26 16:26:42.077 +0530"
+			},
+		{
+				"message": "(Duration:\"0.732\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2025-02-26 16:26:42 +0530\", Successes:\"1\", TestCase:\"ApiTest.apitest\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2025-02-26 16:26:42.814 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:00 ApiTest.apitest",
+				"identifier": "SUCCESS",
+				"timestamp": "2025-02-26 16:26:42.906 +0530"
+			}
+	],
+	"createdTimestamp": "2025-02-26 16:26:42.082 +0530"
+}

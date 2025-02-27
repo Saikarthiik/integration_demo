@@ -1,0 +1,47 @@
+{
+	"originalcapturelocation": [
+		484,
+		107,
+		124,
+		15
+	],
+	"lastmodifieddate": 1729493132.3070002,
+	"createddate": 1729493132.3070002,
+	"name": "Amazon search bar",
+	"lastfounddate": 1729493133.3140001,
+	"ocrcapturestring": "Search Amazon.in",
+	"lastfoundlocation": [
+		484,
+		107,
+		124,
+		15
+	],
+	"testlocationdata": [
+		{
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[35,7]",
+					"Tolerance": "_43",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Amazon search bar.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					484,
+					107,
+					124,
+					15
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "Search Amazon.in"
+			}
+	]
+}

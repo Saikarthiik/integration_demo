@@ -1,0 +1,31 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2024-10-16 11:34:45.949 +0530,"Failure",0:00:00,1,0,0,"20241016_113445.949/LogFile.txt","","STUnknownMessage -- ERROR: No Such Command: 'enteringwebsite'",0
+2024-10-16 11:35:34.574 +0530,"Failure",0:00:00,1,0,0,"20241016_113534.574/LogFile.txt","","STUnknownMessage -- ERROR: No Such Command: 'enteringwebsite'",0
+2024-10-16 11:36:06.147 +0530,"Success",0:00:02,0,0,0,"20241016_113606.147/LogFile.txt","","",1
+2024-10-16 11:36:52.358 +0530,"Success",0:00:03,0,0,0,"20241016_113652.358/LogFile.txt","","",1
+2024-10-16 11:37:10.447 +0530,"Success",0:00:03,0,0,0,"20241016_113710.447/LogFile.txt","","",1
+2024-10-16 11:43:00.314 +0530,"Failure",0:00:02,1,0,0,"20241016_114300.314/LogFile.txt","","STUnknownMessage -- ERROR: No Such Command: 'selectingproduct'",0
+2024-10-16 11:43:18.745 +0530,"Aborted",0:00:58,1,0,1,"20241016_114318.745/LogFile.txt","","",0
+2024-10-16 11:44:29.077 +0530,"Aborted",0:00:15,1,0,0,"20241016_114429.077/LogFile.txt","","",0
+2024-10-16 11:44:50.349 +0530,"Aborted",0:00:02,1,0,0,"20241016_114450.349/LogFile.txt","","",0
+2024-10-16 11:44:56.791 +0530,"Success",0:00:07,0,0,0,"20241016_114456.791/LogFile.txt","","",1
+2024-10-16 11:45:29.779 +0530,"Aborted",0:00:24,1,0,1,"20241016_114529.779/LogFile.txt","","",0
+2024-10-16 11:46:02.115 +0530,"Aborted",0:01:13,1,0,1,"20241016_114602.115/LogFile.txt","","",0
+2024-10-16 11:47:16.635 +0530,"Success",0:00:07,0,0,0,"20241016_114716.635/LogFile.txt","","",1
+2024-10-16 11:53:10.896 +0530,"Failure",0:00:10,1,0,1,"20241016_115310.896/LogFile.txt","","File Not Found -- imagefound Error - Could Not Open Image: Never",0
+2024-10-16 11:53:55.970 +0530,"Success",0:00:16,0,0,0,"20241016_115355.970/LogFile.txt","","",1
+2024-10-16 11:54:49.563 +0530,"Success",0:00:17,0,0,0,"20241016_115449.563/LogFile.txt","","",1
+2024-10-16 11:58:57.836 +0530,"Failure",0:00:17,1,0,0,"20241016_115857.836/LogFile.txt","","SenseTalk Compiler Exception -- in handler:\nWarning at line 5 (line 33 of script): Non-matching handler name: r",0
+2024-10-16 12:01:43.714 +0530,"Failure",0:00:17,1,0,0,"20241016_120143.714/LogFile.txt","","SenseTalk Compiler Exception -- in demo:\nWarning at line 5 (line 33 of script): Non-matching handler name: r",0
+2024-10-16 12:02:35.014 +0530,"Failure",0:00:17,1,0,0,"20241016_120235.014/LogFile.txt","","SenseTalk Compiler Exception -- in demo:\nWarning at line 5 (line 33 of script): Non-matching handler name: r",0
+2024-10-16 12:03:40.301 +0530,"Success",0:00:19,0,0,0,"20241016_120340.301/LogFile.txt","","",1
+2024-10-16 12:08:52.150 +0530,"Success",0:00:19,0,0,0,"20241016_120852.150/LogFile.txt","","",1
+2024-10-16 12:10:05.474 +0530,"Success",0:00:19,0,0,0,"20241016_121005.474/LogFile.txt","","",1
+2024-10-16 12:13:36.551 +0530,"Success",0:00:19,0,0,0,"20241016_121336.551/LogFile.txt","","",1
+2024-10-16 12:15:33.367 +0530,"Aborted",0:00:03,1,0,0,"20241016_121533.367/LogFile.txt","","",0
+2024-10-16 12:21:35.819 +0530,"Failure",0:00:49,1,0,1,"20241016_122135.819/LogFile.txt","","File Not Found -- swipedown Error - Could Not Open Image: scroll",0
+2024-10-16 12:27:53.477 +0530,"Aborted",0:00:06,1,0,1,"20241016_122753.477/LogFile.txt","","",0
+2024-10-16 16:23:12.440 +0530,"Aborted",0:00:51,1,0,1,"20241016_162312.440/LogFile.txt","","",0
+2024-10-16 16:24:15.093 +0530,"Failure",0:01:02,1,0,1,"20241016_162415.093/LogFile.txt","","Invalid Point -- click Error - Invalid Point (950, 1099) is off screen",0
+2024-10-16 16:26:19.434 +0530,"Failure",0:01:05,1,0,0,"20241016_162619.434/LogFile.txt","","STUnknownMessage -- ERROR: No Such Command: 'demo2'",0
+2024-10-16 16:28:15.928 +0530,"Failure",0:01:06,1,0,0,"20241016_162815.928/LogFile.txt","","STUnknownMessage -- ERROR: No Such Command: 'demo2'",0

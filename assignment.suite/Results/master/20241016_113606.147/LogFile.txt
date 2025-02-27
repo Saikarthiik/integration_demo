@@ -1,0 +1,6 @@
+﻿2024-10-16 11:36:06.151 +0530	START		Running master.script
+2024-10-16 11:36:06.386 +0530	typetext		[windowsKey]r 	2	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:36:07.340 +0530	typetext		chrome[return]	3	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:36:08.196 +0530	typetext		sai[return]	4	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:36:08.246 +0530	EndTestCase		(Duration:"2.089", Errors:"0", Exceptions:"0", StartTime:"2024-10-16 11:36:06 +0530", Successes:"1", TestCase:"master.script", Warnings:"0")
+2024-10-16 11:36:08.375 +0530	SUCCESS		Execution Time 0:00:02 master.script

@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running dataconnection.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 14:45:43.460 +0530"
+			},
+		{
+				"message": "(Duration:\"0.257\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 14:45:43 +0530\", Successes:\"0\", TestCase:\"dataconnection.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 14:45:43.723 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Unknown Property or Function: Unable to access global property or function 'NEWENTRIES' -- Execution Time 0:00:00 dataconnection.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 14:45:44.402 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 14:45:43.464 +0530"
+}

@@ -1,0 +1,189 @@
+{
+	"entries": [
+		{
+				"message": "Running Script, Image and Debugging.script",
+				"identifier": "START",
+				"timestamp": "2024-10-14 15:23:44.406 +0530"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:44.660 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:45.559 +0530",
+				"message": "chrome",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:46.315 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:47.886 +0530",
+				"message": "https://demo.nopcommerce.com/",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:48.629 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 6,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:50.726 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1279, 108)",
+				"image": "(TEXT:\"Log in\")",
+				"handlerLine": 7,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:50.748 +0530",
+				"message": "Set Text:saikarthikdasari8899@gmail.com",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 8,
+				"identifier": "setremoteclipboard"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:52.733 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1051, 528)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 9,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:53.482 +0530",
+				"message": "[controlKey]v",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:55.483 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1038, 583)",
+				"image": "(TEXT:\"Password\")",
+				"handlerLine": 11,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:56.542 +0530",
+				"message": "India@8899",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 12,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:58.459 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1038, 583)",
+				"image": "(TEXT:\"Password\")",
+				"handlerLine": 13,
+				"identifier": "imagelocation"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:58.566 +0530",
+				"message": "at (1238, 733)",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 13,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:59.486 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "found at (1250, 454)",
+				"image": "Usernotfound",
+				"handlerLine": 14,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:23:59.545 +0530",
+				"message": "User details already exists",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 16,
+				"identifier": "Log"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:24:00.748 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1208, 108)",
+				"image": "(TEXT:\"Register\")",
+				"handlerLine": 17,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:24:01.663 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (291, 20)",
+				"image": "Newtab",
+				"handlerLine": 24,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:24:03.211 +0530",
+				"message": "https://tablepress.org/demo/",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 25,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 15:24:03.967 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 26,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_clickelement",
+				"timestamp": "2024-10-14 15:24:04.041 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "Could Not Open Image: name",
+				"image": "name",
+				"handlerLine": 2,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"19.697\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-14 15:23:44 +0530\", Successes:\"0\", TestCase:\"Script, Image and Debugging.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-14 15:24:04.108 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "File Not Found: click Error - Could Not Open Image: name -- Execution Time 0:00:19 Script, Image and Debugging.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-14 15:24:04.497 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-14 15:23:44.408 +0530"
+}

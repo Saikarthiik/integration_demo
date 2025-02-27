@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="BBc1_script" package="assignment.suite" timestamp="2024-10-21 11:28:35.796 +0530"
+ tests="1"  failures="1" errors="0" time="0.009000">
+  <properties>
+   <property name="RunDate" value="2024-10-21 11:28:35.796 +0530"/>
+   <property name="Status" value="Failure"/>
+  </properties>
+  <testcase name="BBc1.script" assertions="1" status="failure"  time="0.001">
+    <failure type="FAILURE" message="SenseTalk Compiler Exception: in bbc1:\nSyntax Error at line 18: can&apos;t understand [matching quote not found] at character 7 -- Execution Time 0:00:00 BBc1.script" />
+  </testcase>
+ </testsuite>
+</testsuites>

@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running dataconnection.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 14:46:09.220 +0530"
+			},
+		{
+				"message": "(Duration:\"0.288\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 14:46:09 +0530\", Successes:\"0\", TestCase:\"dataconnection.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 14:46:09.514 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "STDatabaseException: Can't Add records a non-Writable database connection -- Execution Time 0:00:00 dataconnection.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 14:46:10.206 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 14:46:09.226 +0530"
+}

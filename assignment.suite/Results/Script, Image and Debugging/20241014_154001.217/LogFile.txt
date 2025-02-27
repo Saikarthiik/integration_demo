@@ -1,0 +1,20 @@
+﻿2024-10-14 15:40:01.224 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 15:40:03.399 +0530	typetext		[windowsKey]r 	2	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:04.291 +0530	typetext		chrome	3	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:24.372 +0530	typetext		[return]	4	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:25.828 +0530	typetext		https://demo.nopcommerce.com/	5	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:26.565 +0530	typetext		[return]	6	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:28.621 +0530	click	(TEXT:"Log in")	at (1279, 108)	7	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:29.970 +0530	setremoteclipboard		Set Text:saikarthikdasari8899@gmail.com	8	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:31.370 +0530	click	(TEXT:"Email")	at (1051, 528)	9	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:32.113 +0530	typetext		[controlKey]v	10	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:34.128 +0530	click	(TEXT:"Password")	at (1038, 583)	11	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:35.137 +0530	typetext		India@8899	12	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:37.033 +0530	imagelocation	(TEXT:"Password")	at (1038, 583)	13	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:37.137 +0530	click		at (1238, 733)	13	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:38.001 +0530	imagefound	Usernotfound	found at (1250, 454)	14	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:38.050 +0530	Log		User details already exists	16	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:39.248 +0530	click	(TEXT:"Register")	at (1208, 108)	17	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:40:40.154 +0530	click	Electronics	at (671, 287)	3	on_clickelement	Script, Image and Debugging.script
+2024-10-14 15:40:40.300 +0530	EndTestCase		(Duration:"39.071", Errors:"0", Exceptions:"0", StartTime:"2024-10-14 15:40:01 +0530", Successes:"1", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 15:40:40.421 +0530	SUCCESS		Execution Time 0:00:39 Script, Image and Debugging.script

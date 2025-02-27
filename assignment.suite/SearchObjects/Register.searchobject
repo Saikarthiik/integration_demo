@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		1185,
+		101,
+		47,
+		15
+	],
+	"lastmodifieddate": 1729060996.622,
+	"createddate": 1729060996.622,
+	"name": "Register",
+	"lastfounddate": 1729247572.8299999,
+	"ocrcapturestring": "Register",
+	"lastfoundlocation": [
+		1185,
+		101,
+		47,
+		15
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 61238,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[33,3]",
+					"Tolerance": "_41",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Register.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					1185,
+					101,
+					47,
+					15
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "Register"
+			}
+	]
+}

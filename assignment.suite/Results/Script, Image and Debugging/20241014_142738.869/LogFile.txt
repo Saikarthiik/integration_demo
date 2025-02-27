@@ -1,0 +1,4 @@
+﻿2024-10-14 14:27:38.874 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 14:27:41.066 +0530	typetext		[windowsKey]r 	2	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 15:19:10.891 +0530	EndTestCase		(Duration:"3092.013", Errors:"1", Exceptions:"0", StartTime:"2024-10-14 14:27:38 +0530", Successes:"0", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 15:19:10.905 +0530	ABORTED		Execution Time 0:51:32 Script, Image and Debugging.script

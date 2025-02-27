@@ -1,0 +1,73 @@
+{
+	"originalcapturelocation": [
+		16,
+		148,
+		56,
+		37
+	],
+	"lastmodifieddate": 1729492603.7020001,
+	"createddate": 1729492563.822,
+	"name": "Amazon Menu",
+	"lastfounddate": 1730274600.2360001,
+	"ocrcapturestring": "AU",
+	"lastfoundlocation": [
+		17,
+		149,
+		54,
+		35
+	],
+	"testlocationdata": [
+		{
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[21,17]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Amazon Menu.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					16,
+					148,
+					56,
+					37
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "AU"
+			},
+		{
+				"properties": {
+					"CropRectangle": "[1,1,55,36]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[20,16]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Amazon Menu.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					16,
+					148,
+					54,
+					35
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "E AU"
+			}
+	]
+}

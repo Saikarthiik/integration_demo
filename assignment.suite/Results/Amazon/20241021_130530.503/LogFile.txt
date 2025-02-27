@@ -1,0 +1,21 @@
+﻿2024-10-21 13:05:30.509 +0530	START		Running Amazon.script
+2024-10-21 13:05:30.629 +0530	typetext		[windowsKey]r	1	on_amazon	Amazon.script
+2024-10-21 13:05:32.446 +0530	typetext		Chrome https://www.amazon.in/[return]	2	on_amazon	Amazon.script
+2024-10-21 13:05:34.669 +0530	click	Amazon Menu	at (37, 165)	4	on_amazon	Amazon.script
+2024-10-21 13:05:49.632 +0530	waitfor	(TEXT:"Trending")	found at (73, 169)	5	on_amazon	Amazon.script
+2024-10-21 13:05:51.483 +0530	click	(TEXT:"Best Sellers")	at (72, 208)	6	on_amazon	Amazon.script
+2024-10-21 13:07:35.920 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	Unable to Find Image (TEXT:"OnePlus Nord CE4"). Text not found.	9	on_amazon	Amazon.script
+2024-10-21 13:07:40.295 +0530	typetext		[pageDown]	10	on_amazon	Amazon.script
+2024-10-21 13:09:03.509 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	Unable to Find Image (TEXT:"OnePlus Nord CE4"). Text not found.	11	on_amazon	Amazon.script
+2024-10-21 13:09:05.236 +0530	typetext		[pageDown]	10	on_amazon	Amazon.script
+2024-10-21 13:10:58.442 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	Unable to Find Image (TEXT:"OnePlus Nord CE4"). Text not found.	11	on_amazon	Amazon.script
+2024-10-21 13:11:00.356 +0530	typetext		[pageDown]	10	on_amazon	Amazon.script
+2024-10-21 13:12:47.678 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	Unable to Find Image (TEXT:"OnePlus Nord CE4"). Text not found.	11	on_amazon	Amazon.script
+2024-10-21 13:12:50.048 +0530	typetext		[pageDown]	10	on_amazon	Amazon.script
+2024-10-21 13:12:54.782 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	found at (505, 338)	11	on_amazon	Amazon.script
+2024-10-21 13:12:58.774 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	found at (505, 338)	12	on_amazon	Amazon.script
+2024-10-21 13:13:02.850 +0530	click	(TEXT:"OnePlus Nord CE4")	at (505, 338)	13	on_amazon	Amazon.script
+2024-10-21 13:13:13.208 +0530	moveto	(TEXT:"Add to Cart")	at (1496, 713)	20	on_amazon	Amazon.script
+2024-10-21 13:13:17.353 +0530	click	(TEXT:"Add to Cart")	at (1496, 713)	21	on_amazon	Amazon.script
+2024-10-21 13:17:05.362 +0530	EndTestCase		(Duration:"694.844", Errors:"1", Exceptions:"0", StartTime:"2024-10-21 13:05:30 +0530", Successes:"0", TestCase:"Amazon.script", Warnings:"0")
+2024-10-21 13:17:05.416 +0530	ABORTED		Execution Time 0:11:34 Amazon.script

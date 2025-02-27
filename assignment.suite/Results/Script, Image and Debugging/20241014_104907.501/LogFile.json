@@ -1,0 +1,104 @@
+{
+	"entries": [
+		{
+				"message": "Running Script, Image and Debugging.script",
+				"identifier": "START",
+				"timestamp": "2024-10-14 10:49:07.507 +0530"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:07.603 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:08.424 +0530",
+				"message": "chrome",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:09.170 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:10.703 +0530",
+				"message": "https://demo.nopcommerce.com/",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 6,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:11.452 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 7,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:13.450 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1279, 108)",
+				"image": "(TEXT:\"Log in\")",
+				"handlerLine": 8,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:15.385 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1051, 528)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 9,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:16.821 +0530",
+				"message": "saikarthikdasari8899@gmail.com",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:18.786 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1038, 583)",
+				"image": "(TEXT:\"Password\")",
+				"handlerLine": 11,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 10:49:19.737 +0530",
+				"message": "India@8899",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 12,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"12.257\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-14 10:49:07 +0530\", Successes:\"0\", TestCase:\"Script, Image and Debugging.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-14 10:49:19.768 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "SenseTalk Runtime Exception: Invalid operands for addition: expected numbers, dates and/or lists; got '[200,150]' and 'Password' -- Execution Time 0:00:12 Script, Image and Debugging.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-14 10:49:20.121 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-14 10:49:07.510 +0530"
+}

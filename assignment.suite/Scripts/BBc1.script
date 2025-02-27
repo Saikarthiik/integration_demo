@@ -1,0 +1,18 @@
+﻿typetext windowskey, "r"
+typetext "Chrome https://www.bbc.com/",return
+Click "Menu"
+wait 2
+set the SearchRectangle to[21,300,62,312]
+Click text:"News"
+set the SearchRectangle to []
+Click text:"Asia"
+Click text: "India"
+
+if url is "https://www.bbc.com/news/world/asia/india"
+	
+	Log "true"
+else
+	
+	log "false"
+	
+end if

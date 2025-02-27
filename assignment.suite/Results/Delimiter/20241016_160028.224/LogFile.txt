@@ -1,0 +1,4 @@
+﻿2024-10-16 16:00:28.230 +0530	START		Running Delimiter.script
+2024-10-16 16:00:28.308 +0530	Log		[{@"0":3, _pk_:1003, age:36, country:"France", date:"21/05/2015", @"first name":"Philip", gender:"Male", id:2587, @"last name":"Gent"},{@"0":6, _pk_:1006, age:24, country:"United States", date:"21/05/2015", @"first name":"Gaston", gender:"Male", id:2554, @"last name":"Brumm"}]	5	on_delimiter	Delimiter.script
+2024-10-16 16:00:28.410 +0530	EndTestCase		(Duration:"0.175", Errors:"0", Exceptions:"0", StartTime:"2024-10-16 16:00:28 +0530", Successes:"1", TestCase:"Delimiter.script", Warnings:"0")
+2024-10-16 16:00:28.518 +0530	SUCCESS		Execution Time 0:00:00 Delimiter.script

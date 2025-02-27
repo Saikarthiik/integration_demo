@@ -1,0 +1,5 @@
+﻿2024-10-14 09:59:39.604 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 09:59:39.739 +0530	typetext		[windowsKey]r	1	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 09:59:40.673 +0530	typetext		Chrome	2	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 09:59:40.748 +0530	EndTestCase		(Duration:"1.131", Errors:"0", Exceptions:"0", StartTime:"2024-10-14 09:59:39 +0530", Successes:"1", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 09:59:40.895 +0530	SUCCESS		Execution Time 0:00:01 Script, Image and Debugging.script

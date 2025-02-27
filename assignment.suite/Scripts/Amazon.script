@@ -1,0 +1,74 @@
+﻿typetext windowskey, "r"
+typetext "Chrome https://www.amazon.in/",return
+wait 2
+Click imageName:"Amazon Menu"
+waitfor 5 ,text:"Trending"
+Click text:"Best Sellers"
+//MoveTo text:"Hello,sign in"
+//Click text:"Sign in"
+Repeat until ImageFound(text:"The Pyschology of Money")
+	typetext pageDown
+End Repeat
+if ImageFound(text:"The Pyschology of Money")
+	click FoundImageLocation()
+else
+	Click "Amazon search bar"
+	Typetext "OnePlus Nord CE4",returnKey
+	repeat until ImageFound("OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)")
+		typetext pageDown
+	end repeat
+	if ImageFound(text:"OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)")then
+		
+		
+		Click FoundImageLocation()
+		
+	end if
+end if 	
+if ImageFound(text:"In Stock")
+then
+	Click text:"Add to Cart"
+	Click text :"Proceed to checkout"
+	waitfor 5 ,text:"Sign in"
+	ask "Email or Phone" title "Sign in" message "Enter Email or Phone" 
+	put it into user
+	Typetext user,returnKey
+	
+	Click text:"Get an OTP on your phone"
+	Click ImageLocation(text:"Enter OTP")+ [0,30]
+	Ask password "OTP"  title "One Time Password" message "Enter One Time Password"
+	put it into user1
+	Typetext user1, returnkey
+	Click text:"Add a new adderess"
+	set the ScriptLogging to silent
+	Click text:"Full name"
+	Typetext "Saikarthik"
+	Click text :"Mobile number"
+	Typetext "9618107126"
+	Click text:" Pincode"
+	Typetext  "500076"
+	Click text: "Flat,House no"
+	Typetext "C-210"
+	Click text:"Area, suite"
+	Typetext "Mallapur"
+	Click text: "Town/City"
+	Typetext "Hyderabad"
+	Click text:"Choose a State"
+	Click text :"Telangana"
+	Click text: "Use this address"
+	Click text:" Cash on Delivery"
+	
+	set the ScriptLogging to On
+	
+	
+	
+else
+	
+	
+	
+	log "Product Out of Stock"
+	set the SearchRectangle to [154,47,1791,81]
+	repeat until ImageFound(text:"amazon.in   ")
+		Click "backarrow1"
+	end repeat
+	
+end if

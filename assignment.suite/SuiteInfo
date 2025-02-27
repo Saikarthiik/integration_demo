@@ -1,0 +1,3 @@
+﻿{EPVersionNumber = 202501181258; Schedules = ({ChangeCount = 17; Name = "Schedule 1"; Schedule = ({Num = 3; Parameters = ""; Run = YES; Script = "BBc.script"; Status = SUCCESS; }); }); ScriptMetaData = {}; SuiteEncodedTextKey = "uCDai;^@)6&pPCp-"; SuiteVariables = "{
+ url:@\"https://reqres.in/api/users\"
+}"; helpedSuitesInfo = (); helperSuitesInfo = (); }

@@ -1,0 +1,8 @@
+﻿TypeText windowskey,"r"
+TypeText Chrome, return
+TypeText "https://www.bbc.com/"
+--- you should be adding validations
+TypeText return
+
+//Typetext altkey,f4
+

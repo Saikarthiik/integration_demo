@@ -1,0 +1,111 @@
+{
+	"entries": [
+		{
+				"message": "Running Script, Image and Debugging.script",
+				"identifier": "START",
+				"timestamp": "2024-10-14 12:55:59.738 +0530"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:00.002 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:00.929 +0530",
+				"message": "chrome",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:01.686 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:03.239 +0530",
+				"message": "https://demo.nopcommerce.com/",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:03.985 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 6,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:06.136 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1279, 108)",
+				"image": "(TEXT:\"Log in\")",
+				"handlerLine": 7,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:06.145 +0530",
+				"message": "Set Text:saikarthikdasari8899@gmailcom",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 8,
+				"identifier": "setremoteclipboard"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:08.124 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1051, 528)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 9,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:08.899 +0530",
+				"message": "[controlKey]v",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:10.924 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1038, 583)",
+				"image": "(TEXT:\"Password\")",
+				"handlerLine": 11,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:56:11.950 +0530",
+				"message": "India@8899",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 12,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"14.33\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-14 12:55:59 +0530\", Successes:\"0\", TestCase:\"Script, Image and Debugging.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-14 12:56:14.078 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:14 Script, Image and Debugging.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-14 12:56:14.086 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-14 12:55:59.744 +0530"
+}

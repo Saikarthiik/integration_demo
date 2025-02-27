@@ -1,0 +1,60 @@
+﻿
+to handle Enteringwebsite website 
+	TypeText windowsKey,"r "
+	TypeText "chrome",return
+	TypeText website, return
+end Enteringwebsite
+
+
+
+
+to handle Selectingproduct task,task2
+	moveto text: task
+	click text: task2
+end Selectingproduct
+
+to handle Login user,password
+	Click text:"Log In"
+	Click text:"Email"
+	Typetext user
+	set the Scriptlogging to silent
+	Click text:"Password"
+	Typetext password
+	set the Scriptlogging to On
+	Log "User logged In"
+end Login
+
+//generic handlers
+to handle Demo
+	Click "Register"
+end Demo
+on details gender,firstname1,lastname1,day1,month1,year1,email1,company
+	Click text : Gender
+	
+	Click text: "First Name"
+	Typetext firstname1
+	Click text: "Last Name"
+	Typetext lastname1
+	Click text: "Day"
+	Click text: day1
+	Click text:"Month"
+	Click text: month1
+	Click text: "Year"
+	Click text: year1
+	Click text: "email"
+	TypeText email1
+	Click text: "Company Name"
+	TypeText company
+	ScrollWheelDown 10
+	
+	
+end details
+function Demo2
+	Click imagelocation(text:"Your Password")+ [0,80] 
+	TypeText "India@8899"
+	Click text:"Confirm Password"
+	TypeText "India@8899"
+	Click imagelocation(text:"Password")+ [0,260]
+	return 4
+end Demo2
+

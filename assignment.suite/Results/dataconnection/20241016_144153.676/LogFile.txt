@@ -1,0 +1,3 @@
+﻿2024-10-16 14:41:53.683 +0530	START		Running dataconnection.script
+2024-10-16 14:41:54.000 +0530	EndTestCase		(Duration:"0.31", Errors:"1", Exceptions:"0", StartTime:"2024-10-16 14:41:53 +0530", Successes:"0", TestCase:"dataconnection.script", Warnings:"0")
+2024-10-16 14:41:54.638 +0530	FAILURE	Screen_Error.png	SenseTalk Runtime Exception: Invalid operands for addition: expected numbers, dates and/or lists; got '[{answers:"D"}]' and '{database:{file:@"C:\\Users...' -- Execution Time 0:00:00 dataconnection.script

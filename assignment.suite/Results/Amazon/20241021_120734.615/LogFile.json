@@ -1,0 +1,54 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 12:07:34.624 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:07:34.743 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:07:36.520 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:07:38.773 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (37, 165)",
+				"image": "Amazon Menu",
+				"handlerLine": 4,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:07:41.740 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (61, 208)",
+				"image": "(TEXT:\"Best sellers\")",
+				"handlerLine": 5,
+				"identifier": "click"
+			},
+		{
+				"message": "(Duration:\"7.518\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-21 12:07:34 +0530\", Successes:\"1\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 12:07:42.162 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:07 Amazon.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-21 12:07:42.370 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 12:07:34.632 +0530"
+}

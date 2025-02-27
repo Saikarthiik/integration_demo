@@ -1,0 +1,31 @@
+﻿2024-10-16 16:24:15.097 +0530	START		Running master.script
+2024-10-16 16:24:15.399 +0530	typetext		[windowsKey]r 	2	on_enteringwebsite	Handlerpractice.script
+2024-10-16 16:24:16.344 +0530	typetext		chrome[return]	3	on_enteringwebsite	Handlerpractice.script
+2024-10-16 16:24:17.916 +0530	typetext		https://demo.nopcommerce.com/[return]	4	on_enteringwebsite	Handlerpractice.script
+2024-10-16 16:24:23.570 +0530	moveto	(TEXT:"Electronics")	at (675, 292)	2	on_selectingproduct	Handlerpractice.script
+2024-10-16 16:24:26.095 +0530	click	(TEXT:"Camera & Photo")	at (702, 337)	3	on_selectingproduct	Handlerpractice.script
+2024-10-16 16:24:29.001 +0530	click	(TEXT:"Log In")	at (1279, 108)	2	on_login	Handlerpractice.script
+2024-10-16 16:24:35.520 +0530	click	(TEXT:"Email")	at (1051, 528)	3	on_login	Handlerpractice.script
+2024-10-16 16:24:37.177 +0530	typetext		saikarthikdasari8899@gmail.com	4	on_login	Handlerpractice.script
+2024-10-16 16:24:40.461 +0530	Log		User logged In	9	on_login	Handlerpractice.script
+2024-10-16 16:24:41.382 +0530	click	Register	at (1218, 104)	2	on_demo	Handlerpractice.script
+2024-10-16 16:24:44.135 +0530	click	(TEXT:"Male")	at (784, 524)	2	on_details	Handlerpractice.script
+2024-10-16 16:24:47.070 +0530	click	(TEXT:"First Name")	at (704, 575)	4	on_details	Handlerpractice.script
+2024-10-16 16:24:48.084 +0530	typetext		saikartki	5	on_details	Handlerpractice.script
+2024-10-16 16:24:50.476 +0530	click	(TEXT:"Last Name")	at (704, 630)	6	on_details	Handlerpractice.script
+2024-10-16 16:24:51.349 +0530	typetext		disndi	7	on_details	Handlerpractice.script
+2024-10-16 16:24:53.638 +0530	click	(TEXT:"Day")	at (774, 686)	8	on_details	Handlerpractice.script
+2024-10-16 16:24:56.290 +0530	click	(TEXT:"19")	at (770, 652)	9	on_details	Handlerpractice.script
+2024-10-16 16:24:58.498 +0530	click	(TEXT:"Month")	at (918, 685)	10	on_details	Handlerpractice.script
+2024-10-16 16:25:01.146 +0530	click	(TEXT:"May")	at (912, 839)	11	on_details	Handlerpractice.script
+2024-10-16 16:25:03.376 +0530	click	(TEXT:"Year")	at (1050, 685)	12	on_details	Handlerpractice.script
+2024-10-16 16:25:06.816 +0530	click	(TEXT:"1926")	at (1052, 508)	13	on_details	Handlerpractice.script
+2024-10-16 16:25:09.409 +0530	click	(TEXT:"email")	at (719, 740)	14	on_details	Handlerpractice.script
+2024-10-16 16:25:10.733 +0530	typetext		soimxksk@gmail.com	15	on_details	Handlerpractice.script
+2024-10-16 16:25:13.177 +0530	click	(TEXT:"Company Name")	at (687, 935)	16	on_details	Handlerpractice.script
+2024-10-16 16:25:14.193 +0530	typetext		Ideabytes	17	on_details	Handlerpractice.script
+2024-10-16 16:25:14.903 +0530	scrollwheeldown		moved 2	18	on_details	Handlerpractice.script
+2024-10-16 16:25:17.179 +0530	imagelocation	(TEXT:"Your Password")	at (950, 1019)	2	function_demo2	Handlerpractice.script
+2024-10-16 16:25:17.179 +0530	Exception		Invalid Point (950, 1099) is off screen	2	function_demo2	Handlerpractice.script
+2024-10-16 16:25:17.346 +0530	EndTestCase		(Duration:"62.244", Errors:"1", Exceptions:"1", StartTime:"2024-10-16 16:24:15 +0530", Successes:"0", TestCase:"master.script", Warnings:"0")
+2024-10-16 16:25:17.699 +0530	FAILURE	Screen_Error.png	Invalid Point: click Error - Invalid Point (950, 1099) is off screen -- Execution Time 0:01:02 master.script

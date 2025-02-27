@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<runHistory script="master">
+ <run>
+  <RunDate>2024-10-16 11:34:45.949 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.248000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_113445.949/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>STUnknownMessage -- ERROR: No Such Command: &#x27;enteringwebsite&#x27;</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:35:34.574 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.201000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_113534.574/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>STUnknownMessage -- ERROR: No Such Command: &#x27;enteringwebsite&#x27;</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:36:06.147 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>2.099000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_113606.147/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:36:52.358 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>3.059000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_113652.358/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:37:10.447 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>3.053000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_113710.447/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:43:00.314 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>2.944000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_114300.314/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>STUnknownMessage -- ERROR: No Such Command: &#x27;selectingproduct&#x27;</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:43:18.745 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>58.160000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_114318.745/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:44:29.077 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>15.017000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_114429.077/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:44:50.349 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>2.678000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_114450.349/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:44:56.791 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>7.974000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_114456.791/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:45:29.779 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>24.276000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_114529.779/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:46:02.115 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>73.618000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_114602.115/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:47:16.635 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>7.926000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_114716.635/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:53:10.896 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>10.019000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_115310.896/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>File Not Found -- imagefound Error - Could Not Open Image: Never</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:53:55.970 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>16.876000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_115355.970/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:54:49.563 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>17.880000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_115449.563/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 11:58:57.836 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>17.427000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_115857.836/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>SenseTalk Compiler Exception -- in handler:
+Warning at line 5 (line 33 of script): Non-matching handler name: r</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:01:43.714 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>17.518000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_120143.714/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>SenseTalk Compiler Exception -- in demo:
+Warning at line 5 (line 33 of script): Non-matching handler name: r</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:02:35.014 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>17.075000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_120235.014/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>SenseTalk Compiler Exception -- in demo:
+Warning at line 5 (line 33 of script): Non-matching handler name: r</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:03:40.301 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>19.632000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_120340.301/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:08:52.150 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>19.762000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_120852.150/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:10:05.474 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>19.760000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_121005.474/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:13:36.551 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>19.376000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_121336.551/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:15:33.367 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>3.452000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_121533.367/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:21:35.819 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>49.571000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_122135.819/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>File Not Found -- swipedown Error - Could Not Open Image: scroll</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 12:27:53.477 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>6.668000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_122753.477/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 16:23:12.440 +0530</RunDate>
+  <Status>Aborted</Status>
+  <Duration>51.881000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_162312.440/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 16:24:15.093 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>62.253000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_162415.093/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Invalid Point -- click Error - Invalid Point (950, 1099) is off screen</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 16:26:19.434 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>65.935000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_162619.434/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>STUnknownMessage -- ERROR: No Such Command: &#x27;demo2&#x27;</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 16:28:15.928 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>66.571000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_162815.928/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>STUnknownMessage -- ERROR: No Such Command: &#x27;demo2&#x27;</ErrorMessage>
+ </run>
+</runHistory>

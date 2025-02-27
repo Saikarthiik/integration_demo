@@ -1,0 +1,62 @@
+{
+	"entries": [
+		{
+				"message": "Running master.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 11:46:02.122 +0530"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:46:02.436 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:46:03.399 +0530",
+				"message": "chrome[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:46:04.934 +0530",
+				"message": "https://demo.nopcommerce.com/[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:46:12.051 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (676, 292)",
+				"image": "(TEXT:\"Electronics\")",
+				"handlerLine": 2,
+				"identifier": "moveto"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:47:15.105 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "No Text Found On Screen: \"(TEXT:\"CameraPhoto\")\". Text not found.",
+				"image": "(TEXT:\"CameraPhoto\")",
+				"handlerLine": 3,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"73.607\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-16 11:46:02 +0530\", Successes:\"0\", TestCase:\"master.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 11:47:15.735 +0530"
+			},
+		{
+				"message": "Execution Time 0:01:13 master.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-16 11:47:15.746 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 11:46:02.126 +0530"
+}

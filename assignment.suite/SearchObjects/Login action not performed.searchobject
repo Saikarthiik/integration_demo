@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		1178,
+		453,
+		158,
+		17
+	],
+	"lastmodifieddate": 1728883308.2620001,
+	"createddate": 1728883308.2620001,
+	"name": "Login action not performed",
+	"lastfounddate": 1728883309.5009999,
+	"ocrcapturestring": "No customer account found",
+	"lastfoundlocation": [
+		1178,
+		453,
+		158,
+		17
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 51851,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[79,8]",
+					"Tolerance": "_60",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Login action not performed.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					1178,
+					453,
+					158,
+					17
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "No customer account found"
+			}
+	]
+}

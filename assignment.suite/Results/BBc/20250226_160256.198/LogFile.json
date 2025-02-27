@@ -1,0 +1,52 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc.script",
+				"identifier": "START",
+				"timestamp": "2025-02-26 16:02:56.207 +0530"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:02:56.321 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:02:57.350 +0530",
+				"message": "Chrome[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:02:58.809 +0530",
+				"message": "https://www.bbc.com/",
+				"scriptName": "BBc.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:02:59.565 +0530",
+				"message": "[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"3.369\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2025-02-26 16:02:56 +0530\", Successes:\"1\", TestCase:\"BBc.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2025-02-26 16:02:59.586 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:03 BBc.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2025-02-26 16:02:59.747 +0530"
+			}
+	],
+	"createdTimestamp": "2025-02-26 16:02:56.214 +0530"
+}

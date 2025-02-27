@@ -1,0 +1,13 @@
+﻿2025-02-26 16:00:29.451 +0530	START		Running BBc.script
+2025-02-26 16:00:29.784 +0530	typetext		[windowsKey]r	1	on_bbc	BBc.script
+2025-02-26 16:00:30.807 +0530	typetext		Chrome[return]	2	on_bbc	BBc.script
+2025-02-26 16:00:32.282 +0530	typetext		https://www.bbc.com/	3	on_bbc	BBc.script
+2025-02-26 16:00:33.034 +0530	typetext		[return]	5	on_bbc	BBc.script
+2025-02-26 16:00:41.769 +0530	click	Search	at (614, 402)	6	on_bbc	BBc.script
+2025-02-26 16:00:43.109 +0530	typetext		News About India	7	on_bbc	BBc.script
+2025-02-26 16:00:43.874 +0530	typetext		[return]	8	on_bbc	BBc.script
+2025-02-26 16:00:45.551 +0530	moveto	(TEXT:"India")	at (148, 19)	9	on_bbc	BBc.script
+2025-02-26 16:00:48.607 +0530	imagefound	India	Unable to Find Image India	10	on_bbc	BBc.script
+2025-02-26 16:00:48.614 +0530	Log		Error	14	on_bbc	BBc.script
+2025-02-26 16:00:48.636 +0530	EndTestCase		(Duration:"19.173", Errors:"0", Exceptions:"0", StartTime:"2025-02-26 16:00:29 +0530", Successes:"1", TestCase:"BBc.script", Warnings:"0")
+2025-02-26 16:00:48.799 +0530	SUCCESS		Execution Time 0:00:19 BBc.script

@@ -1,0 +1,14 @@
+﻿2024-10-16 16:23:12.445 +0530	START		Running master.script
+2024-10-16 16:23:12.696 +0530	typetext		[windowsKey]r 	2	on_enteringwebsite	Handlerpractice.script
+2024-10-16 16:23:13.623 +0530	typetext		chrome[return]	3	on_enteringwebsite	Handlerpractice.script
+2024-10-16 16:23:15.414 +0530	typetext		https://demo.nopcommerce.com/[return]	4	on_enteringwebsite	Handlerpractice.script
+2024-10-16 16:23:24.502 +0530	moveto	(TEXT:"Electronics")	at (675, 292)	2	on_selectingproduct	Handlerpractice.script
+2024-10-16 16:23:27.276 +0530	click	(TEXT:"Camera & Photo")	at (702, 337)	3	on_selectingproduct	Handlerpractice.script
+2024-10-16 16:23:29.643 +0530	click	(TEXT:"Log In")	at (1279, 108)	2	on_login	Handlerpractice.script
+2024-10-16 16:23:32.050 +0530	click	(TEXT:"Email")	at (1051, 528)	3	on_login	Handlerpractice.script
+2024-10-16 16:23:33.735 +0530	typetext		saikarthikdasari8899@gmail.com	4	on_login	Handlerpractice.script
+2024-10-16 16:23:37.086 +0530	Log		User logged In	9	on_login	Handlerpractice.script
+2024-10-16 16:23:37.846 +0530	typetext		[windowsAltKey][F4]	10	on_login	Handlerpractice.script
+2024-10-16 16:24:03.631 +0530	Exception	Register	No Image Found On Screen: "Register"	2	on_demo	Handlerpractice.script
+2024-10-16 16:24:04.325 +0530	EndTestCase		(Duration:"51.872", Errors:"1", Exceptions:"1", StartTime:"2024-10-16 16:23:12 +0530", Successes:"0", TestCase:"master.script", Warnings:"0")
+2024-10-16 16:24:04.467 +0530	ABORTED		Execution Time 0:00:51 master.script

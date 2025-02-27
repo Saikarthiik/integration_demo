@@ -1,0 +1,88 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:22:49.697 +0530"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:22:49.801 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc1.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:22:51.381 +0530",
+				"message": "Chrome https://www.bbc.com/[return]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:22:53.676 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (34, 117)",
+				"image": "Menu",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:22:55.691 +0530",
+				"message": "SEARCHRECTANGLE = [21,300,62,312]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 5,
+				"identifier": "set"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:22:55.976 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (42, 306)",
+				"image": "(TEXT:\"News\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:22:55.990 +0530",
+				"message": "SEARCHRECTANGLE = []",
+				"scriptName": "BBc1.script",
+				"handlerLine": 7,
+				"identifier": "set"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:22:58.783 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (81, 19)",
+				"image": "(TEXT:\"Asia\")",
+				"handlerLine": 8,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:23:02.631 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (609, 549)",
+				"image": "(TEXT:\"India\")",
+				"handlerLine": 9,
+				"identifier": "click"
+			},
+		{
+				"message": "(Duration:\"12.984\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-21 11:22:49 +0530\", Successes:\"1\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:23:02.689 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:12 BBc1.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-21 11:23:02.952 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:22:49.703 +0530"
+}

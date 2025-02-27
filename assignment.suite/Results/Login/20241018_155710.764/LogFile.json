@@ -1,0 +1,54 @@
+{
+	"entries": [
+		{
+				"message": "Running Login.script",
+				"identifier": "START",
+				"timestamp": "2024-10-18 15:57:10.771 +0530"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:57:12.616 +0530",
+				"scriptName": "Login.script",
+				"message": "at (1284, 108)",
+				"image": "(TEXT:\"Log out\")",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:57:12.627 +0530",
+				"message": "Set Text:saikarthikdasar8899@gmail.com",
+				"scriptName": "Login.script",
+				"handlerLine": 3,
+				"identifier": "setremoteclipboard"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:57:15.212 +0530",
+				"scriptName": "Login.script",
+				"message": "at (1323, 892)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 4,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:57:15.961 +0530",
+				"message": "[controlKey]v",
+				"scriptName": "Login.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"41.951\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-18 15:57:10 +0530\", Successes:\"0\", TestCase:\"Login.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-18 15:57:52.726 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:41 Login.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-18 15:57:52.736 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-18 15:57:10.775 +0530"
+}

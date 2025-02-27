@@ -1,0 +1,20 @@
+{
+	"entries": [
+		{
+				"message": "Running Script, Image and Debugging.script",
+				"identifier": "START",
+				"timestamp": "2024-10-14 12:49:26.257 +0530"
+			},
+		{
+				"message": "(Duration:\"16.727\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-14 12:49:26 +0530\", Successes:\"0\", TestCase:\"Script, Image and Debugging.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-14 12:49:42.990 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:16 Script, Image and Debugging.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-14 12:49:42.999 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-14 12:49:26.263 +0530"
+}

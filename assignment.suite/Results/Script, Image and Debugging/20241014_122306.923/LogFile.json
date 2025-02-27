@@ -1,0 +1,179 @@
+{
+	"entries": [
+		{
+				"message": "Running Script, Image and Debugging.script",
+				"identifier": "START",
+				"timestamp": "2024-10-14 12:23:06.930 +0530"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:09.797 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:10.691 +0530",
+				"message": "chrome",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:11.439 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:13.065 +0530",
+				"message": "https://demo.nopcommerce.com/",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 6,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:13.811 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 7,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:15.745 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1279, 108)",
+				"image": "(TEXT:\"Log in\")",
+				"handlerLine": 8,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:21.282 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1051, 528)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 9,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:22.940 +0530",
+				"message": "saikarthikdasari8899@gmail.com",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:24.888 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1038, 583)",
+				"image": "(TEXT:\"Password\")",
+				"handlerLine": 11,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:25.947 +0530",
+				"message": "India@8899",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 12,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:27.760 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1038, 583)",
+				"image": "(TEXT:\"Password\")",
+				"handlerLine": 13,
+				"identifier": "imagelocation"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:27.883 +0530",
+				"message": "at (1238, 733)",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 13,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:28.749 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "found at (1250, 454)",
+				"image": "Usernotfound",
+				"handlerLine": 14,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:28.796 +0530",
+				"message": "User details already exists",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 16,
+				"identifier": "Log"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:29.948 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (1208, 108)",
+				"image": "(TEXT:\"Register\")",
+				"handlerLine": 17,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:30.894 +0530",
+				"scriptName": "Script, Image and Debugging.script",
+				"message": "at (291, 20)",
+				"image": "Newtab",
+				"handlerLine": 24,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:32.480 +0530",
+				"message": "https://tablepress.org/demo/",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 25,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:33.214 +0530",
+				"message": "[return]",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 26,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_script__image_and_debugging",
+				"timestamp": "2024-10-14 12:23:34.602 +0530",
+				"message": "(464,582,1445,1039)",
+				"scriptName": "Script, Image and Debugging.script",
+				"handlerLine": 28,
+				"identifier": "readtext"
+			},
+		{
+				"message": "(Duration:\"27.768\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-14 12:23:06 +0530\", Successes:\"1\", TestCase:\"Script, Image and Debugging.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-14 12:23:34.702 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:27 Script, Image and Debugging.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-14 12:23:34.761 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-14 12:23:06.933 +0530"
+}

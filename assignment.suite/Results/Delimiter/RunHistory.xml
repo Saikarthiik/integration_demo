@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<runHistory script="Delimiter">
+ <run>
+  <RunDate>2024-10-16 15:54:49.421 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.180000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_155449.421/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Invalid Property -- Cannot set global property &#x27;DELIMITER&#x27;</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 15:55:10.085 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>0.216000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_155510.085/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 15:59:23.578 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.195000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_155923.578/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Invalid Property -- Cannot set global property &#x27;IWORDDELIMITER&#x27;</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 15:59:34.713 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>0.164000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_155934.713/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 16:00:28.224 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>0.185000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_160028.224/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 16:01:23.897 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>0.248000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20241016_160123.897/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2024-10-16 16:02:07.008 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.227000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20241016_160207.008/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>STUnknownMessage -- ERROR: No Such Function: &#x27;item1&#x27;</ErrorMessage>
+ </run>
+</runHistory>

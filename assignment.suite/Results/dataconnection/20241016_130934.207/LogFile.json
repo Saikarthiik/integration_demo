@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running dataconnection.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 13:09:34.216 +0530"
+			},
+		{
+				"message": "(Duration:\"0.23\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 13:09:34 +0530\", Successes:\"0\", TestCase:\"dataconnection.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 13:09:34.451 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Workbook Error: Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Desktop -- Execution Time 0:00:00 dataconnection.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 13:09:35.165 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 13:09:34.218 +0530"
+}

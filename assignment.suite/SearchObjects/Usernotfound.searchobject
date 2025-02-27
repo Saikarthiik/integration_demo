@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		1060,
+		434,
+		381,
+		40
+	],
+	"lastmodifieddate": 1728884799.503,
+	"createddate": 1728884799.503,
+	"name": "Usernotfound",
+	"lastfounddate": 1728902600.497,
+	"ocrcapturestring": "Login was unsuccessful. Please correct the errors and try again. No customer account found",
+	"lastfoundlocation": [
+		1060,
+		434,
+		381,
+		40
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 51851,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[190,20]",
+					"Tolerance": "_55",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Usernotfound.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					1060,
+					434,
+					381,
+					40
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "Login was unsuccessful. Please correct the errors and try again. No customer account found"
+			}
+	]
+}

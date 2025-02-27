@@ -1,0 +1,81 @@
+{
+	"entries": [
+		{
+				"message": "Running master.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 11:53:10.896 +0530"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:53:11.139 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:53:11.985 +0530",
+				"message": "chrome[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:53:13.381 +0530",
+				"message": "https://demo.nopcommerce.com/[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:53:15.936 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (675, 292)",
+				"image": "(TEXT:\"Electronics\")",
+				"handlerLine": 2,
+				"identifier": "moveto"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:53:18.367 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (702, 337)",
+				"image": "(TEXT:\"Camera & Photo\")",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 11:53:20.841 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1279, 108)",
+				"image": "(TEXT:\"Log In\")",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 11:53:20.872 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "Could Not Open Image: Never",
+				"image": "Never",
+				"handlerLine": 3,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"10.019\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-16 11:53:10 +0530\", Successes:\"0\", TestCase:\"master.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 11:53:20.916 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "File Not Found: imagefound Error - Could Not Open Image: Never -- Execution Time 0:00:10 master.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 11:53:21.231 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 11:53:10.896 +0530"
+}

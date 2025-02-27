@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running Untitled.apitest",
+				"identifier": "START",
+				"timestamp": "2025-02-26 13:18:02.367 +0530"
+			},
+		{
+				"message": "(Duration:\"1.216\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2025-02-26 13:18:02 +0530\", Successes:\"0\", TestCase:\"Untitled.apitest\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2025-02-26 13:18:03.588 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "STUnknownMessage: ERROR: No Such Function: 'apitest1' -- Execution Time 0:00:01 Untitled.apitest",
+				"identifier": "FAILURE",
+				"timestamp": "2025-02-26 13:18:04.192 +0530"
+			}
+	],
+	"createdTimestamp": "2025-02-26 13:18:02.371 +0530"
+}

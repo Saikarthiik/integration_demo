@@ -1,0 +1,4 @@
+﻿2025-02-25 15:10:52.523 +0530	START		Running Script, Image and Debugging.script
+2025-02-25 15:10:52.609 +0530	Exception		Remote Connection Unavailable	2	on_script__image_and_debugging	Script, Image and Debugging.script
+2025-02-25 15:10:52.638 +0530	EndTestCase		(Duration:"0.102", Errors:"1", Exceptions:"1", StartTime:"2025-02-25 15:10:52 +0530", Successes:"0", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2025-02-25 15:10:52.767 +0530	FAILURE		No Remote Connection: typetext Error - Remote Connection Unavailable -- Execution Time 0:00:00 Script, Image and Debugging.script

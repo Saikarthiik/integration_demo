@@ -1,0 +1,52 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc.script",
+				"identifier": "START",
+				"timestamp": "2024-10-18 16:18:00.074 +0530"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:18:00.219 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:18:01.160 +0530",
+				"message": "Chrome[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:18:02.709 +0530",
+				"message": "https://demo.nopcommerce.com/",
+				"scriptName": "BBc.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:18:03.455 +0530",
+				"message": "[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"3.449\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-18 16:18:00 +0530\", Successes:\"1\", TestCase:\"BBc.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-18 16:18:03.529 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:03 BBc.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-18 16:18:03.712 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-18 16:18:00.077 +0530"
+}

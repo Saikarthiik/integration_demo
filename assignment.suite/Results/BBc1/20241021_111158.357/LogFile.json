@@ -1,0 +1,54 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:11:58.361 +0530"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:11:58.489 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc1.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:12:00.189 +0530",
+				"message": "Chrome https://www.bbc.com/[return]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:12:01.095 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (34, 117)",
+				"image": "Menu",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:12:04.968 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (203, 19)",
+				"image": "(TEXT:\"News\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"message": "(Duration:\"6.626\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-21 11:11:58 +0530\", Successes:\"1\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:12:04.994 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:06 BBc1.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-21 11:12:05.135 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:11:58.367 +0530"
+}

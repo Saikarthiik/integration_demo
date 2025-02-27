@@ -1,0 +1,4 @@
+﻿2024-10-21 11:03:32.055 +0530	START		Running BBc1.script
+2024-10-21 11:03:32.132 +0530	Exception		Remote Connection Unavailable	1	on_bbc1	BBc1.script
+2024-10-21 11:03:32.169 +0530	EndTestCase		(Duration:"0.109", Errors:"1", Exceptions:"1", StartTime:"2024-10-21 11:03:32 +0530", Successes:"0", TestCase:"BBc1.script", Warnings:"0")
+2024-10-21 11:03:32.264 +0530	FAILURE		No Remote Connection: typetext Error - Remote Connection Unavailable -- Execution Time 0:00:00 BBc1.script

@@ -1,0 +1,56 @@
+﻿
+TypeText windowsKey,"r "
+TypeText "chrome"
+TypeText return
+TypeText "https://demo.nopcommerce.com/"
+TypeText return
+Click {text:"Log in" ,waitfor:5} 
+Set the remoteClipboard to "saikarthikdasari8899@gmail.com"
+Click text:"Email"
+typeText controlKey, "v" 
+Click {text:"Password",waitfor: 5}
+Typetext  "India@8899" 
+Click ImageLocation(text:"Password") +[200,150]
+if ImageFound("Usernotfound")
+then
+	log "User details already exists"
+	Click text: "Register"
+else
+	log "User loggedin"
+End if
+Clickelement "Electronics"
+
+
+Click "Newtab"
+Typetext "https://tablepress.org/demo/"
+Typetext return
+
+put ReadText(460,577,1442,1045) ,waitfor:5
+Typetext controlKey, "a"
+Typetext controlKey,  "c"
+log RemoteClipboard()
+Typetext windowsKey,"r"
+typetext notepad, return
+typetext controlKey, "v"
+if temp contains "Warren"
+then 
+	log "Correct Entry"
+else
+	log "Wrong Entry"
+end if 
+PauseScript
+
+
+HighlightRectangle[461,668,1439,713]
+
+to handle Clickelement name 
+	Try
+		click name
+	Catch 
+		click text: name
+	End try
+end Clickelement 
+
+set the SearchRectangle to [805,204,1104,314]
+wait 10
+

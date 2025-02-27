@@ -1,0 +1,28 @@
+{
+    URLparameters = (
+	{
+	    checkedNumber = <*BY>;
+	    param = "";
+	    showCheckedNumber = <*BY>;
+	    value = "";
+	}
+    );
+    authenticationType = None;
+    httpVerb = PUT;
+    oauth1Token = "";
+    password = "";
+    requestBody = "{
+\"first_name\":\"Sai Karthik\"
+}";
+    requestBodyFormat = "JSON (application/json)";
+    requestHeaders = "<![CDATA[]]>";
+    requests = "";
+    testResults = "";
+    testScript = "Demo
+put api().responsebody into TimeVar
+log TimeVar
+put TimeVar.name() into test
+log test";
+    url = "[[url]]";
+    userName = "";
+}

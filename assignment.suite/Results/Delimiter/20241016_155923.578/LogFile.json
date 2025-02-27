@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running Delimiter.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 15:59:23.584 +0530"
+			},
+		{
+				"message": "(Duration:\"0.187\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 15:59:23 +0530\", Successes:\"0\", TestCase:\"Delimiter.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 15:59:23.775 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Invalid Property: Cannot set global property 'IWORDDELIMITER' -- Execution Time 0:00:00 Delimiter.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 15:59:24.388 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 15:59:23.587 +0530"
+}

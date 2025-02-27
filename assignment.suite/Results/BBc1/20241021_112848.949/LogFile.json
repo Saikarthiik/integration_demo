@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:28:48.955 +0530"
+			},
+		{
+				"message": "(Duration:\"0.002\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-21 11:28:48 +0530\", Successes:\"0\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:28:48.964 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "SenseTalk Compiler Exception: in bbc1:\\nSyntax Error at line 18: can't understand [matching quote not found] at character 7 -- Execution Time 0:00:00 BBc1.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-21 11:28:49.620 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:28:48.959 +0530"
+}

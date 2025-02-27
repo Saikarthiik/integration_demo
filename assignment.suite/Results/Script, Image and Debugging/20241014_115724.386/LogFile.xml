@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="Script, Image and Debugging_script" package="assignment.suite" timestamp="2024-10-14 11:57:24.386 +0530"
+ tests="1"  failures="1" errors="0" time="0.014000">
+  <properties>
+   <property name="RunDate" value="2024-10-14 11:57:24.386 +0530"/>
+   <property name="Status" value="Failure"/>
+  </properties>
+  <testcase name="Script, Image and Debugging.script" assertions="1" status="failure"  time="0.002">
+    <failure type="FAILURE" message="SenseTalk Compiler Exception: in script__image_and_debugging:\nSyntax Error at line 29: can&apos;t understand &quot;temp&quot; at character 10 -- Execution Time 0:00:00 Script, Image and Debugging.script" />
+  </testcase>
+ </testsuite>
+</testsuites>

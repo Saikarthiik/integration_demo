@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<statistics>
+ <script name="Handlerpractice">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>2</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2024-10-16 16:25:49 +0530</FirstRun>
+  <LastRun>2024-10-16 16:26:07 +0530</LastRun>
+  <TotalTimeOnSuccess>0.540000</TotalTimeOnSuccess>
+ </script>
+ <script name="dataconnection">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>30</NumberOfRuns>
+  <NumberOfFails>17</NumberOfFails>
+  <FirstRun>2024-10-16 12:54:29 +0530</FirstRun>
+  <LastRun>2024-10-16 15:03:05 +0530</LastRun>
+  <TotalTimeOnSuccess>3.354000</TotalTimeOnSuccess>
+ </script>
+ <script name="Login">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2024-10-18 15:56:33 +0530</FirstRun>
+  <LastRun>2024-10-18 15:56:33 +0530</LastRun>
+  <TotalTimeOnSuccess>9.398000</TotalTimeOnSuccess>
+ </script>
+ <script name="Register">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2024-10-18 15:47:51 +0530</FirstRun>
+  <LastRun>2024-10-18 15:47:51 +0530</LastRun>
+  <TotalTimeOnSuccess>30.990000</TotalTimeOnSuccess>
+ </script>
+ <script name="openapp">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2024-10-18 15:06:57 +0530</FirstRun>
+  <LastRun>2024-10-18 15:06:57 +0530</LastRun>
+  <TotalTimeOnSuccess>1.870000</TotalTimeOnSuccess>
+ </script>
+ <script name="BBc1">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>30</NumberOfRuns>
+  <NumberOfFails>11</NumberOfFails>
+  <FirstRun>2024-10-21 10:51:39 +0530</FirstRun>
+  <LastRun>2024-10-21 11:51:56 +0530</LastRun>
+  <TotalTimeOnSuccess>131.287000</TotalTimeOnSuccess>
+ </script>
+ <script name="Amazon">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2024-10-21 11:57:16 +0530</FirstRun>
+  <LastRun>2024-10-21 12:16:14 +0530</LastRun>
+  <TotalTimeOnSuccess>238.302000</TotalTimeOnSuccess>
+ </script>
+ <script name="BBc">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>28</NumberOfRuns>
+  <NumberOfFails>4</NumberOfFails>
+  <FirstRun>2024-10-18 16:18:00 +0530</FirstRun>
+  <LastRun>2025-02-26 16:03:27 +0530</LastRun>
+  <TotalTimeOnSuccess>163.892000</TotalTimeOnSuccess>
+ </script>
+ <script name="ApiTest-API">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>40</NumberOfRuns>
+  <NumberOfFails>11</NumberOfFails>
+  <FirstRun>2025-02-26 12:56:24 +0530</FirstRun>
+  <LastRun>2025-02-26 17:12:34 +0530</LastRun>
+  <TotalTimeOnSuccess>41.820000</TotalTimeOnSuccess>
+ </script>
+ <script name="master">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>22</NumberOfRuns>
+  <NumberOfFails>11</NumberOfFails>
+  <FirstRun>2024-10-16 11:34:45 +0530</FirstRun>
+  <LastRun>2024-10-16 16:28:15 +0530</LastRun>
+  <TotalTimeOnSuccess>137.397000</TotalTimeOnSuccess>
+ </script>
+ <script name="Demo-API">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>2</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2025-02-26 14:17:38 +0530</FirstRun>
+  <LastRun>2025-02-26 16:37:19 +0530</LastRun>
+  <TotalTimeOnSuccess>2.487000</TotalTimeOnSuccess>
+ </script>
+ <script name="Script, Image and Debugging">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>55</NumberOfRuns>
+  <NumberOfFails>13</NumberOfFails>
+  <FirstRun>2024-10-14 09:55:35 +0530</FirstRun>
+  <LastRun>2025-02-25 15:10:52 +0530</LastRun>
+  <TotalTimeOnSuccess>895.267000</TotalTimeOnSuccess>
+ </script>
+ <script name="Delimiter">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>7</NumberOfRuns>
+  <NumberOfFails>3</NumberOfFails>
+  <FirstRun>2024-10-16 15:54:49 +0530</FirstRun>
+  <LastRun>2024-10-16 16:02:07 +0530</LastRun>
+  <TotalTimeOnSuccess>0.813000</TotalTimeOnSuccess>
+ </script>
+</statistics>

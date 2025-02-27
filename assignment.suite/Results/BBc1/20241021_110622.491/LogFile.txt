@@ -1,0 +1,6 @@
+﻿2024-10-21 11:06:22.495 +0530	START		Running BBc1.script
+2024-10-21 11:06:22.629 +0530	typetext		[windowsKey]r	1	on_bbc1	BBc1.script
+2024-10-21 11:06:24.295 +0530	typetext		Chrome https://www.bbc.com/[return]	2	on_bbc1	BBc1.script
+2024-10-21 11:09:30.745 +0530	Exception	Menu	No Image Found On Screen: "Menu"	3	on_bbc1	BBc1.script
+2024-10-21 11:09:30.911 +0530	EndTestCase		(Duration:"188.415", Errors:"1", Exceptions:"1", StartTime:"2024-10-21 11:06:22 +0530", Successes:"0", TestCase:"BBc1.script", Warnings:"0")
+2024-10-21 11:09:30.918 +0530	ABORTED		Execution Time 0:03:08 BBc1.script

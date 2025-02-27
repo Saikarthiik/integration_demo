@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="openapp_script" package="assignment.suite" timestamp="2024-10-18 15:06:57.375 +0530"
+ tests="1"  failures="0" errors="0" time="1.870000">
+  <properties>
+   <property name="RunDate" value="2024-10-18 15:06:57.375 +0530"/>
+   <property name="Status" value="Success"/>
+  </properties>
+  <testcase name="openapp.script" assertions="1" status="success"  time="1.858">
+  </testcase>
+ </testsuite>
+</testsuites>

@@ -1,0 +1,44 @@
+{
+	"entries": [
+		{
+				"message": "Running master.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 11:36:52.362 +0530"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:36:52.600 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:36:53.536 +0530",
+				"message": "chrome[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:36:55.283 +0530",
+				"message": "https://demo.nopcommerce.com/[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"3.05\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-16 11:36:52 +0530\", Successes:\"1\", TestCase:\"master.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 11:36:55.418 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:03 master.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-16 11:36:55.527 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 11:36:52.366 +0530"
+}

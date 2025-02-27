@@ -1,0 +1,45 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 10:58:29.688 +0530"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 10:58:29.807 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc1.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 10:58:31.514 +0530",
+				"message": "Chrome https://www.bbc.com/[return]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 10:58:31.521 +0530",
+				"message": "Image Property List did not contain \"ImageName\" property",
+				"scriptName": "BBc1.script",
+				"handlerLine": 3,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"1.882\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-21 10:58:29 +0530\", Successes:\"0\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 10:58:31.578 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Error Running Script Command: click Error - Image Property List did not contain \"ImageName\" property -- Execution Time 0:00:01 BBc1.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-21 10:58:32.173 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 10:58:29.695 +0530"
+}

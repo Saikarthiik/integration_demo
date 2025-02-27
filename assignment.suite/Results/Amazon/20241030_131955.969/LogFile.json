@@ -1,0 +1,258 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2024-10-30 13:19:55.985 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:19:56.174 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:19:58.100 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:20:00.337 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (37, 165)",
+				"image": "Amazon Menu",
+				"handlerLine": 4,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:20:12.497 +0530",
+				"scriptName": "Amazon.script",
+				"message": "found at (73, 169)",
+				"image": "(TEXT:\"Trending\")",
+				"handlerLine": 5,
+				"identifier": "waitfor"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:20:14.682 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (72, 208)",
+				"image": "(TEXT:\"Best Sellers\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:21:48.230 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 9,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:21:50.041 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:23:56.984 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:23:59.016 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:25:31.991 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:25:33.868 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:26:35.462 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:26:36.452 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:27:04.336 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:27:04.926 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:27:32.564 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:27:33.174 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:28:00.420 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:28:01.060 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:28:28.362 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:28:28.974 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:28:56.410 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:28:56.991 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:29:24.301 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:29:24.903 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:29:53.172 +0530",
+				"scriptName": "Amazon.script",
+				"message": "Unable to Find Image (TEXT:\"The Pyschology of Money\"). Text not found.",
+				"image": "(TEXT:\"The Pyschology of Money\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:29:53.758 +0530",
+				"message": "[pageDown]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-30 13:30:09.817 +0530",
+				"message": "Searching For Image: OCR Error: Operation was aborted",
+				"scriptName": "Amazon.script",
+				"handlerLine": 11,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"614.066\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-30 13:19:55 +0530\", Successes:\"0\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-30 13:30:10.060 +0530"
+			},
+		{
+				"message": "Execution Time 0:10:14 Amazon.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-30 13:30:10.071 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-30 13:19:55.985 +0530"
+}

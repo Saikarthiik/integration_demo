@@ -1,0 +1,8 @@
+﻿2024-10-21 12:59:35.600 +0530	START		Running Amazon.script
+2024-10-21 12:59:35.724 +0530	typetext		[windowsKey]r	1	on_amazon	Amazon.script
+2024-10-21 12:59:37.789 +0530	typetext		Chrome https://www.amazon.in/[return]	2	on_amazon	Amazon.script
+2024-10-21 12:59:40.463 +0530	click	Amazon Menu	at (37, 165)	4	on_amazon	Amazon.script
+2024-10-21 12:59:44.652 +0530	click	(TEXT:"Best sellers")	at (330, 165)	5	on_amazon	Amazon.script
+2024-10-21 13:00:22.567 +0530	Exception		Searching For Image: OCR Error: Operation was aborted	8	on_amazon	Amazon.script
+2024-10-21 13:00:22.857 +0530	EndTestCase		(Duration:"47.254", Errors:"1", Exceptions:"1", StartTime:"2024-10-21 12:59:35 +0530", Successes:"0", TestCase:"Amazon.script", Warnings:"0")
+2024-10-21 13:00:22.888 +0530	ABORTED		Execution Time 0:00:47 Amazon.script

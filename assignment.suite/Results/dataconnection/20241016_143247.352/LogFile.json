@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running dataconnection.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 14:32:47.358 +0530"
+			},
+		{
+				"message": "(Duration:\"0.001\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 14:32:47 +0530\", Successes:\"0\", TestCase:\"dataconnection.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 14:32:47.364 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "SenseTalk Compiler Exception: in dataconnection:\\nSyntax Error at line 5: can't understand \"columnsToFetch\" at character 10 -- Execution Time 0:00:00 dataconnection.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 14:32:48.033 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 14:32:47.362 +0530"
+}

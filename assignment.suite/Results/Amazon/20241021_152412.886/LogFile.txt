@@ -1,0 +1,13 @@
+﻿2024-10-21 15:24:12.892 +0530	START		Running Amazon.script
+2024-10-21 15:24:13.038 +0530	typetext		[windowsKey]r	1	on_amazon	Amazon.script
+2024-10-21 15:24:14.834 +0530	typetext		Chrome https://www.amazon.in/[return]	2	on_amazon	Amazon.script
+2024-10-21 15:24:17.015 +0530	click	Amazon Menu	at (37, 165)	4	on_amazon	Amazon.script
+2024-10-21 15:24:30.232 +0530	waitfor	(TEXT:"Trending")	found at (73, 169)	5	on_amazon	Amazon.script
+2024-10-21 15:24:32.414 +0530	click	(TEXT:"Best Sellers")	at (72, 208)	6	on_amazon	Amazon.script
+2024-10-21 15:25:43.124 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	Unable to Find Image (TEXT:"OnePlus Nord CE4"). Text not found.	9	on_amazon	Amazon.script
+2024-10-21 15:25:44.799 +0530	typetext		[pageDown]	10	on_amazon	Amazon.script
+2024-10-21 15:26:59.947 +0530	imagefound	(TEXT:"OnePlus Nord CE4")	Unable to Find Image (TEXT:"OnePlus Nord CE4"). Text not found.	11	on_amazon	Amazon.script
+2024-10-21 15:27:01.533 +0530	typetext		[pageDown]	10	on_amazon	Amazon.script
+2024-10-21 15:28:25.543 +0530	Exception		Searching For Image: OCR Error: Operation was aborted	11	on_amazon	Amazon.script
+2024-10-21 15:28:26.775 +0530	EndTestCase		(Duration:"253.879", Errors:"1", Exceptions:"1", StartTime:"2024-10-21 15:24:12 +0530", Successes:"0", TestCase:"Amazon.script", Warnings:"0")
+2024-10-21 15:28:26.787 +0530	ABORTED		Execution Time 0:04:13 Amazon.script

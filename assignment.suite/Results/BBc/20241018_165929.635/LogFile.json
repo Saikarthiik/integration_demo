@@ -1,0 +1,111 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc.script",
+				"identifier": "START",
+				"timestamp": "2024-10-18 16:59:29.642 +0530"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:29.743 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:30.713 +0530",
+				"message": "Chrome[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:32.008 +0530",
+				"message": "https://www.bbc.com/",
+				"scriptName": "BBc.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:32.744 +0530",
+				"message": "[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:34.626 +0530",
+				"scriptName": "BBc.script",
+				"message": "at (79, 113)",
+				"image": "Search",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:35.782 +0530",
+				"message": "News About India",
+				"scriptName": "BBc.script",
+				"handlerLine": 7,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:36.541 +0530",
+				"message": "[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 8,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:39.316 +0530",
+				"scriptName": "BBc.script",
+				"message": "at (783, 400)",
+				"image": "(TEXT:\"India \")",
+				"handlerLine": 9,
+				"identifier": "moveto"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:40.159 +0530",
+				"scriptName": "BBc.script",
+				"message": "found at (428, 366)",
+				"image": "India",
+				"handlerLine": 10,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:40.166 +0530",
+				"message": "Success",
+				"scriptName": "BBc.script",
+				"handlerLine": 12,
+				"identifier": "Log"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2024-10-18 16:59:40.233 +0530",
+				"message": "[windowsAltKey][F4]",
+				"scriptName": "BBc.script",
+				"handlerLine": 17,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"10.777\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-18 16:59:29 +0530\", Successes:\"1\", TestCase:\"BBc.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-18 16:59:40.423 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:10 BBc.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-18 16:59:40.672 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-18 16:59:29.646 +0530"
+}

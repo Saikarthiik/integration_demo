@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="master_script" package="assignment.suite" timestamp="2024-10-16 11:46:02.115 +0530"
+ tests="1"  failures="0" errors="0" time="73.618000">
+  <properties>
+   <property name="RunDate" value="2024-10-16 11:46:02.115 +0530"/>
+   <property name="Status" value="Aborted"/>
+  </properties>
+  <testcase name="master.script" assertions="1" status="error"  time="73.607">
+    <error type="Exception" message="No Text Found On Screen: &quot;(TEXT:&quot;CameraPhoto&quot;)&quot;. Text not found." />
+  </testcase>
+ </testsuite>
+</testsuites>

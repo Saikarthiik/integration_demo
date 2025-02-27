@@ -1,0 +1,44 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:58:37.516 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 11:58:37.642 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 11:58:39.423 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 11:59:13.318 +0530",
+				"message": "Searching For Image: OCR Error: Operation was aborted",
+				"scriptName": "Amazon.script",
+				"handlerLine": 3,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"35.958\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-21 11:58:37 +0530\", Successes:\"0\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:59:13.474 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:35 Amazon.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-21 11:59:13.490 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:58:37.516 +0530"
+}

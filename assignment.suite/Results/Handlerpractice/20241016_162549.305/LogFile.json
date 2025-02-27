@@ -1,0 +1,20 @@
+{
+	"entries": [
+		{
+				"message": "Running Handlerpractice.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 16:25:49.324 +0530"
+			},
+		{
+				"message": "(Duration:\"0.268\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-16 16:25:49 +0530\", Successes:\"1\", TestCase:\"Handlerpractice.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 16:25:49.602 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:00 Handlerpractice.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-16 16:25:49.759 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 16:25:49.332 +0530"
+}

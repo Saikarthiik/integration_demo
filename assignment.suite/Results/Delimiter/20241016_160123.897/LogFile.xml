@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="Delimiter_script" package="assignment.suite" timestamp="2024-10-16 16:01:23.897 +0530"
+ tests="1"  failures="0" errors="0" time="0.248000">
+  <properties>
+   <property name="RunDate" value="2024-10-16 16:01:23.897 +0530"/>
+   <property name="Status" value="Success"/>
+  </properties>
+  <testcase name="Delimiter.script" assertions="1" status="success"  time="0.238">
+  </testcase>
+ </testsuite>
+</testsuites>

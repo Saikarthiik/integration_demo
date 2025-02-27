@@ -1,0 +1,71 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:17:54.693 +0530"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:17:54.820 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc1.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:17:56.560 +0530",
+				"message": "Chrome https://www.bbc.com/[return]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:17:57.496 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (34, 117)",
+				"image": "Menu",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:17:59.514 +0530",
+				"message": "SEARCHRECTANGLE = [21,300,62,312]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 5,
+				"identifier": "set"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:17:59.811 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (42, 306)",
+				"image": "(TEXT:\"News\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:18:31.499 +0530",
+				"scriptName": "BBc1.script",
+				"message": "No Text Found On Screen: \"(TEXT:\"Africa\")\". Text not found.",
+				"image": "(TEXT:\"Africa\")",
+				"handlerLine": 7,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"36.975\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-21 11:17:54 +0530\", Successes:\"0\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:18:31.673 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:36 BBc1.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-21 11:18:31.736 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:17:54.696 +0530"
+}

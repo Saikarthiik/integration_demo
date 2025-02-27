@@ -1,0 +1,26 @@
+﻿set myDB to{type:"excel",file:["C:\Users\saikarthik.dasari\Desktop\saai.xlsx"]}
+put the records of myDB
+
+put recordInfo of myDB
+//set myDB columnsToFetch to ["answers"]
+put the first record of myDB
+
+
+
+set myDB to{type:"excel",file:ResourcePath("basic.xls"),writable:yes}
+put table "Sheet1" of myDB into demo 
+
+set demoiterator to iterate over the records of demo
+put demoiterator's nextValue into currentMember
+put the records of demo
+put the records of demo where gender is "Male" into demo2
+put demo2
+set  newEntries to [{ age:89,country:"India",date:"18/09/98"
+	}]
+
+
+add records newEntries to demo
+put the records of demo
+put demo2 into file "C:\Users\saikarthik.dasari\Desktop\training.txt" 
+//insert demo2 after line 5 of file "C:\Users\saikarthik.dasari\Desktop\traninig.txt"
+delete  record from demo where country is "India"

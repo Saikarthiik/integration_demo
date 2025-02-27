@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="master_script" package="assignment.suite" timestamp="2024-10-16 11:58:57.836 +0530"
+ tests="1"  failures="1" errors="0" time="17.427000">
+  <properties>
+   <property name="RunDate" value="2024-10-16 11:58:57.836 +0530"/>
+   <property name="Status" value="Failure"/>
+  </properties>
+  <testcase name="master.script" assertions="1" status="failure"  time="17.419">
+    <failure type="FAILURE" message="SenseTalk Compiler Exception: in handler:\nWarning at line 5 (line 33 of script): Non-matching handler name: r -- Execution Time 0:00:17 master.script" />
+  </testcase>
+ </testsuite>
+</testsuites>

@@ -1,0 +1,13 @@
+﻿2024-10-18 16:29:48.618 +0530	START		Running BBc.script
+2024-10-18 16:29:48.725 +0530	typetext		[windowsKey]r	1	on_bbc	BBc.script
+2024-10-18 16:29:49.720 +0530	typetext		Chrome[return]	2	on_bbc	BBc.script
+2024-10-18 16:29:51.027 +0530	typetext		https://www.bbc.com/	3	on_bbc	BBc.script
+2024-10-18 16:29:51.775 +0530	typetext		[return]	5	on_bbc	BBc.script
+2024-10-18 16:29:52.743 +0530	click	Search	at (79, 114)	6	on_bbc	BBc.script
+2024-10-18 16:29:53.998 +0530	typetext		News About India	7	on_bbc	BBc.script
+2024-10-18 16:29:54.750 +0530	typetext		[return]	8	on_bbc	BBc.script
+2024-10-18 16:29:57.397 +0530	moveto	(TEXT:"India ")	at (783, 400)	9	on_bbc	BBc.script
+2024-10-18 16:29:58.259 +0530	imagefound	India	found at (428, 366)	10	on_bbc	BBc.script
+2024-10-18 16:29:58.264 +0530	Log		Success	12	on_bbc	BBc.script
+2024-10-18 16:29:58.287 +0530	EndTestCase		(Duration:"9.665", Errors:"0", Exceptions:"0", StartTime:"2024-10-18 16:29:48 +0530", Successes:"1", TestCase:"BBc.script", Warnings:"0")
+2024-10-18 16:29:58.360 +0530	SUCCESS		Execution Time 0:00:09 BBc.script

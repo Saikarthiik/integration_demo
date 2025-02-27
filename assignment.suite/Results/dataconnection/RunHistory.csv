@@ -1,0 +1,31 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2024-10-16 12:54:29.949 +0530,"Success",0:00:00,0,0,0,"20241016_125429.949/LogFile.txt","","",1
+2024-10-16 12:55:58.959 +0530,"Failure",0:00:00,1,0,0,"20241016_125558.959/LogFile.txt","","Workbook Error -- Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Documents/assignment.suite/Resources/Users/saikarthik.dasari/Desktop",0
+2024-10-16 12:57:24.184 +0530,"Failure",0:00:00,1,0,0,"20241016_125724.184/LogFile.txt","","Workbook Error -- Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Desktop",0
+2024-10-16 12:59:21.781 +0530,"Success",0:00:00,0,0,0,"20241016_125921.781/LogFile.txt","","",1
+2024-10-16 13:00:10.239 +0530,"Failure",0:00:00,1,0,0,"20241016_130010.239/LogFile.txt","","STTableError -- Value can't become a database table: ",0
+2024-10-16 13:00:58.821 +0530,"Success",0:00:00,0,0,0,"20241016_130058.821/LogFile.txt","","",1
+2024-10-16 13:01:56.628 +0530,"Failure",0:00:00,1,0,0,"20241016_130156.628/LogFile.txt","","STTableError -- Value can't become a database table: ",0
+2024-10-16 13:06:54.638 +0530,"Failure",0:00:00,1,0,0,"20241016_130654.638/LogFile.txt","","Workbook Error -- Worksheet saai doesn't exist",0
+2024-10-16 13:08:30.884 +0530,"Success",0:00:00,0,0,0,"20241016_130830.884/LogFile.txt","","",1
+2024-10-16 13:09:19.295 +0530,"Failure",0:00:00,1,0,0,"20241016_130919.295/LogFile.txt","","Workbook Error -- Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Desktop",0
+2024-10-16 13:09:34.207 +0530,"Failure",0:00:00,1,0,0,"20241016_130934.207/LogFile.txt","","Workbook Error -- Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Desktop",0
+2024-10-16 13:10:02.838 +0530,"Failure",0:00:00,1,0,0,"20241016_131002.838/LogFile.txt","","Workbook Error -- Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Desktop",0
+2024-10-16 13:13:57.072 +0530,"Success",0:00:00,0,0,0,"20241016_131357.072/LogFile.txt","","",1
+2024-10-16 13:14:05.344 +0530,"Success",0:00:00,0,0,0,"20241016_131405.344/LogFile.txt","","",1
+2024-10-16 13:17:48.820 +0530,"Success",0:00:00,0,0,0,"20241016_131748.820/LogFile.txt","","",1
+2024-10-16 13:19:39.684 +0530,"Success",0:00:00,0,0,0,"20241016_131939.684/LogFile.txt","","",1
+2024-10-16 13:20:10.375 +0530,"Success",0:00:00,0,0,0,"20241016_132010.375/LogFile.txt","","",1
+2024-10-16 13:20:17.900 +0530,"Success",0:00:00,0,0,0,"20241016_132017.900/LogFile.txt","","",1
+2024-10-16 13:21:57.126 +0530,"Failure",0:00:00,1,0,0,"20241016_132157.126/LogFile.txt","","SenseTalk Compiler Exception -- in dataconnection:\nSyntax Error at line 5: can't understand ""columnsToFetch"" at character 10",0
+2024-10-16 14:32:47.352 +0530,"Failure",0:00:00,1,0,0,"20241016_143247.352/LogFile.txt","","SenseTalk Compiler Exception -- in dataconnection:\nSyntax Error at line 5: can't understand ""columnsToFetch"" at character 10",0
+2024-10-16 14:32:59.390 +0530,"Success",0:00:00,0,0,0,"20241016_143259.390/LogFile.txt","","",1
+2024-10-16 14:41:53.676 +0530,"Failure",0:00:00,1,0,0,"20241016_144153.676/LogFile.txt","","SenseTalk Runtime Exception -- Invalid operands for addition: expected numbers, dates and/or lists; got '[{answers:""D""}]' and '{database:{file:@""C:\\\\Users...'",0
+2024-10-16 14:42:52.459 +0530,"Failure",0:00:00,1,0,0,"20241016_144252.459/LogFile.txt","","SenseTalk Runtime Exception -- Invalid operands for addition: expected numbers, dates and/or lists; got '[{answers:""D"", @""q.no"":87}]' and '{database:{file:@""C:\\\\Users...'",0
+2024-10-16 14:44:03.915 +0530,"Failure",0:00:00,1,0,0,"20241016_144403.915/LogFile.txt","","SenseTalk Runtime Exception -- Invalid operands for addition: expected numbers, dates and/or lists; got '[{answers:""D"", @""q.no"":89}]' and '{database:{file:@""C:\\\\Users...'",0
+2024-10-16 14:45:43.454 +0530,"Failure",0:00:00,1,0,0,"20241016_144543.454/LogFile.txt","","Unknown Property or Function -- Unable to access global property or function 'NEWENTRIES'",0
+2024-10-16 14:46:09.210 +0530,"Failure",0:00:00,1,0,0,"20241016_144609.210/LogFile.txt","","STDatabaseException -- Can't Add records a non-Writable database connection",0
+2024-10-16 14:46:44.146 +0530,"Failure",0:00:00,1,0,0,"20241016_144644.146/LogFile.txt","","Workbook Error -- Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Desktop/saai.xlsx{writable:""Yes""}",0
+2024-10-16 14:50:43.505 +0530,"Success",0:00:00,0,0,0,"20241016_145043.505/LogFile.txt","","",1
+2024-10-16 14:51:00.926 +0530,"Success",0:00:00,0,0,0,"20241016_145100.926/LogFile.txt","","",1
+2024-10-16 15:03:05.070 +0530,"Failure",0:00:00,1,0,0,"20241016_150305.070/LogFile.txt","","SenseTalk Compiler Exception -- in dataconnection:\nSyntax Error at line 14: can't understand [matching quote not found] at character 48",0

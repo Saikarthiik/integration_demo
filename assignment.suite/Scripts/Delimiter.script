@@ -1,0 +1,7 @@
+﻿set the wordDelimiter to ","
+put file ResourcePath("test.txt") into files
+//put "" into line 2 of file resourcePath("Country.txt")
+repeat with each line of files
+	log it
+	put item 1 of it
+end repeat

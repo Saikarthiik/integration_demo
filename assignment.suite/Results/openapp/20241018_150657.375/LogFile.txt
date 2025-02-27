@@ -1,0 +1,6 @@
+﻿2024-10-18 15:06:57.382 +0530	START		Running openapp.script
+2024-10-18 15:06:57.520 +0530	typetext		[windowsKey]r 	1	on_openapp	openapp.script
+2024-10-18 15:06:58.461 +0530	typetext		chrome	2	on_openapp	openapp.script
+2024-10-18 15:06:59.220 +0530	typetext		[return]	3	on_openapp	openapp.script
+2024-10-18 15:06:59.246 +0530	EndTestCase		(Duration:"1.858", Errors:"0", Exceptions:"0", StartTime:"2024-10-18 15:06:57 +0530", Successes:"1", TestCase:"openapp.script", Warnings:"0")
+2024-10-18 15:06:59.367 +0530	SUCCESS		Execution Time 0:00:01 openapp.script

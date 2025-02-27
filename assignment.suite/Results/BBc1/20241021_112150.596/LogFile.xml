@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="BBc1_script" package="assignment.suite" timestamp="2024-10-21 11:21:50.596 +0530"
+ tests="1"  failures="0" errors="0" time="8.968000">
+  <properties>
+   <property name="RunDate" value="2024-10-21 11:21:50.596 +0530"/>
+   <property name="Status" value="Success"/>
+  </properties>
+  <testcase name="BBc1.script" assertions="1" status="success"  time="8.935">
+  </testcase>
+ </testsuite>
+</testsuites>

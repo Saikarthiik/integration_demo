@@ -1,0 +1,13 @@
+﻿2024-10-16 12:02:35.020 +0530	START		Running master.script
+2024-10-16 12:02:35.341 +0530	typetext		[windowsKey]r 	2	on_enteringwebsite	Handlerpractice.script
+2024-10-16 12:02:36.243 +0530	typetext		chrome[return]	3	on_enteringwebsite	Handlerpractice.script
+2024-10-16 12:02:37.744 +0530	typetext		https://demo.nopcommerce.com/[return]	4	on_enteringwebsite	Handlerpractice.script
+2024-10-16 12:02:39.623 +0530	moveto	(TEXT:"Electronics")	at (675, 292)	2	on_selectingproduct	Handlerpractice.script
+2024-10-16 12:02:41.893 +0530	click	(TEXT:"Camera & Photo")	at (702, 337)	3	on_selectingproduct	Handlerpractice.script
+2024-10-16 12:02:44.017 +0530	click	(TEXT:"Log In")	at (1279, 108)	2	on_login	Handlerpractice.script
+2024-10-16 12:02:46.587 +0530	click	(TEXT:"Email")	at (1051, 528)	3	on_login	Handlerpractice.script
+2024-10-16 12:02:47.928 +0530	typetext		saikarthikdasari8899@gmail.com	4	on_login	Handlerpractice.script
+2024-10-16 12:02:51.248 +0530	Log		User logged In	9	on_login	Handlerpractice.script
+2024-10-16 12:02:51.978 +0530	typetext		[windowsAltKey][F4]	10	on_login	Handlerpractice.script
+2024-10-16 12:02:52.093 +0530	EndTestCase		(Duration:"17.066", Errors:"1", Exceptions:"0", StartTime:"2024-10-16 12:02:35 +0530", Successes:"0", TestCase:"master.script", Warnings:"0")
+2024-10-16 12:02:52.427 +0530	FAILURE	Screen_Error.png	SenseTalk Compiler Exception: in demo:\nWarning at line 5 (line 33 of script): Non-matching handler name: r -- Execution Time 0:00:17 master.script

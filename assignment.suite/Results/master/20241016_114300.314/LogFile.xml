@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="master_script" package="assignment.suite" timestamp="2024-10-16 11:43:00.314 +0530"
+ tests="1"  failures="1" errors="0" time="2.944000">
+  <properties>
+   <property name="RunDate" value="2024-10-16 11:43:00.314 +0530"/>
+   <property name="Status" value="Failure"/>
+  </properties>
+  <testcase name="master.script" assertions="1" status="failure"  time="2.935">
+    <failure type="FAILURE" message="STUnknownMessage: ERROR: No Such Command: &apos;selectingproduct&apos; -- Execution Time 0:00:02 master.script" />
+  </testcase>
+ </testsuite>
+</testsuites>

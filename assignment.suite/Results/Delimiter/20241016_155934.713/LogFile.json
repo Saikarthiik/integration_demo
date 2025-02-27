@@ -1,0 +1,20 @@
+{
+	"entries": [
+		{
+				"message": "Running Delimiter.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 15:59:34.719 +0530"
+			},
+		{
+				"message": "(Duration:\"0.155\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-16 15:59:34 +0530\", Successes:\"1\", TestCase:\"Delimiter.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 15:59:34.879 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:00 Delimiter.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-16 15:59:34.993 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 15:59:34.722 +0530"
+}

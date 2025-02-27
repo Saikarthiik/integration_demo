@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		396,
+		358,
+		64,
+		17
+	],
+	"lastmodifieddate": 1729249153.7189999,
+	"createddate": 1729249153.7189999,
+	"name": "India",
+	"lastfounddate": 1729487935.3769999,
+	"ocrcapturestring": "India-",
+	"lastfoundlocation": [
+		396,
+		358,
+		64,
+		17
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 52773,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[32,8]",
+					"Tolerance": "_65",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "India.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					396,
+					358,
+					64,
+					17
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "India-"
+			}
+	]
+}

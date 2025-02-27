@@ -1,0 +1,7 @@
+﻿2025-02-26 16:03:27.843 +0530	START		Running BBc.script
+2025-02-26 16:03:28.378 +0530	typetext		[windowsKey]r	1	on_bbc	BBc.script
+2025-02-26 16:03:29.401 +0530	typetext		Chrome[return]	2	on_bbc	BBc.script
+2025-02-26 16:03:30.911 +0530	typetext		https://www.bbc.com/	3	on_bbc	BBc.script
+2025-02-26 16:03:31.671 +0530	typetext		[return]	5	on_bbc	BBc.script
+2025-02-26 16:03:31.720 +0530	EndTestCase		(Duration:"3.873", Errors:"0", Exceptions:"0", StartTime:"2025-02-26 16:03:27 +0530", Successes:"1", TestCase:"BBc.script", Warnings:"0")
+2025-02-26 16:03:31.899 +0530	SUCCESS		Execution Time 0:00:03 BBc.script

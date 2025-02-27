@@ -1,0 +1,6 @@
+﻿2024-10-21 10:52:45.902 +0530	START		Running BBc1.script
+2024-10-21 10:52:46.020 +0530	typetext		[windowsKey]r	1	on_bbc1	BBc1.script
+2024-10-21 10:52:47.720 +0530	typetext		Chrome https://www.bbc.com/[return]	2	on_bbc1	BBc1.script
+2024-10-21 10:52:49.566 +0530	click	Menu	at (34, 117)	3	on_bbc1	BBc1.script
+2024-10-21 10:52:49.592 +0530	EndTestCase		(Duration:"3.685", Errors:"0", Exceptions:"0", StartTime:"2024-10-21 10:52:45 +0530", Successes:"1", TestCase:"BBc1.script", Warnings:"0")
+2024-10-21 10:52:49.790 +0530	SUCCESS		Execution Time 0:00:03 BBc1.script

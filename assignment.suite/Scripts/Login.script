@@ -1,0 +1,10 @@
+﻿
+Click {text:"Log out" ,waitfor:5} 
+
+Click {text:"Log in" ,waitfor:5} 
+
+Set the remoteClipboard to "saikarthikda8899@gmail.com"
+Click text:"Email"
+typeText controlKey, "v" 
+Click {text:"Password",waitfor: 5}
+Typetext  "India@8899"

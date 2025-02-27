@@ -1,0 +1,45 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:06:22.495 +0530"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:06:22.629 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc1.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:06:24.295 +0530",
+				"message": "Chrome https://www.bbc.com/[return]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:09:30.745 +0530",
+				"scriptName": "BBc1.script",
+				"message": "No Image Found On Screen: \"Menu\"",
+				"image": "Menu",
+				"handlerLine": 3,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"188.415\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-21 11:06:22 +0530\", Successes:\"0\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:09:30.911 +0530"
+			},
+		{
+				"message": "Execution Time 0:03:08 BBc1.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-21 11:09:30.918 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:06:22.495 +0530"
+}

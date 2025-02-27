@@ -1,0 +1,26 @@
+﻿
+TypeText "https://demo.nopcommerce.com/"
+TypeText return
+Click "Register"
+Click text : Male
+
+Click text: "First Name"
+Typetext "Sai Karthik"
+Click text: "Last Name"
+Typetext "Dasari"
+Click text: "Day"
+Click text: 19
+Click text:"Month"
+Click text: "May"
+Click text: "Year"
+Click text: "1926"
+Click text: "email"
+TypeText "saikarthikda8899@gmail.com"
+Click text: "Company Name"
+TypeText "Ideabytes"
+ScrollWheelDown 10
+Click imagelocation(text:"Your Password")+ [0,80] 
+TypeText "India@8899"
+Click text:"Confirm Password"
+TypeText "India@8899"
+Click imagelocation(text:"Password")+ [0,260]

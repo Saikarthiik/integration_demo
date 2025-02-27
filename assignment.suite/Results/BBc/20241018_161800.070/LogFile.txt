@@ -1,0 +1,7 @@
+﻿2024-10-18 16:18:00.074 +0530	START		Running BBc.script
+2024-10-18 16:18:00.219 +0530	typetext		[windowsKey]r	1	on_bbc	BBc.script
+2024-10-18 16:18:01.160 +0530	typetext		Chrome[return]	2	on_bbc	BBc.script
+2024-10-18 16:18:02.709 +0530	typetext		https://demo.nopcommerce.com/	3	on_bbc	BBc.script
+2024-10-18 16:18:03.455 +0530	typetext		[return]	4	on_bbc	BBc.script
+2024-10-18 16:18:03.529 +0530	EndTestCase		(Duration:"3.449", Errors:"0", Exceptions:"0", StartTime:"2024-10-18 16:18:00 +0530", Successes:"1", TestCase:"BBc.script", Warnings:"0")
+2024-10-18 16:18:03.712 +0530	SUCCESS		Execution Time 0:00:03 BBc.script

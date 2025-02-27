@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="BBc1_script" package="assignment.suite" timestamp="2024-10-21 11:16:46.217 +0530"
+ tests="1"  failures="0" errors="0" time="65.807000">
+  <properties>
+   <property name="RunDate" value="2024-10-21 11:16:46.217 +0530"/>
+   <property name="Status" value="Aborted"/>
+  </properties>
+  <testcase name="BBc1.script" assertions="1" status="error"  time="65.799">
+    <error type="Exception" message="No Text Found On Screen: &quot;(TEXT:&quot;Asia&quot;)&quot;. Text not found." />
+  </testcase>
+ </testsuite>
+</testsuites>

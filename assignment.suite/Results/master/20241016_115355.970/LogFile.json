@@ -1,0 +1,103 @@
+{
+	"entries": [
+		{
+				"message": "Running master.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 11:53:55.976 +0530"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:53:56.283 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:53:57.161 +0530",
+				"message": "chrome[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:53:58.740 +0530",
+				"message": "https://demo.nopcommerce.com/[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:54:01.027 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (675, 292)",
+				"image": "(TEXT:\"Electronics\")",
+				"handlerLine": 2,
+				"identifier": "moveto"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:54:03.467 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (702, 337)",
+				"image": "(TEXT:\"Camera & Photo\")",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 11:54:05.819 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1279, 108)",
+				"image": "(TEXT:\"Log In\")",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 11:54:08.157 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1051, 528)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 11:54:08.858 +0530",
+				"scriptName": "Handlerpractice.script",
+				"identifier": "typetext",
+				"handlerLine": 4
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 11:54:12.013 +0530",
+				"message": "User logged In",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 9,
+				"identifier": "Log"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 11:54:12.744 +0530",
+				"message": "[windowsAltKey][F4]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 10,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"16.867\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-16 11:53:55 +0530\", Successes:\"1\", TestCase:\"master.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 11:54:12.848 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:16 master.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-16 11:54:12.918 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 11:53:55.980 +0530"
+}

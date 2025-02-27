@@ -1,0 +1,28 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:09:39.030 +0530"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:09:39.104 +0530",
+				"message": "Remote Connection Unavailable",
+				"scriptName": "BBc1.script",
+				"handlerLine": 1,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"0.09\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-21 11:09:39 +0530\", Successes:\"0\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:09:39.131 +0530"
+			},
+		{
+				"message": "No Remote Connection: typetext Error - Remote Connection Unavailable -- Execution Time 0:00:00 BBc1.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-21 11:09:39.202 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:09:39.037 +0530"
+}

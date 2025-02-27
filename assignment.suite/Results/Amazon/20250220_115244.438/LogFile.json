@@ -1,0 +1,45 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2025-02-20 11:52:44.447 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2025-02-20 11:52:44.666 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2025-02-20 11:52:46.432 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2025-02-20 11:53:28.072 +0530",
+				"scriptName": "Amazon.script",
+				"message": "No Image Found On Screen: \"Amazon Menu\"",
+				"image": "Amazon Menu",
+				"handlerLine": 4,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"43.813\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2025-02-20 11:52:44 +0530\", Successes:\"0\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2025-02-20 11:53:28.267 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:43 Amazon.script",
+				"identifier": "ABORTED",
+				"timestamp": "2025-02-20 11:53:28.267 +0530"
+			}
+	],
+	"createdTimestamp": "2025-02-20 11:52:44.447 +0530"
+}

@@ -1,0 +1,4 @@
+﻿2025-02-26 14:19:36.702 +0530	START		Running ApiTest.apitest
+2025-02-26 14:19:39.107 +0530	Log		1.139	3	on_apitest	C:/Users/saikarthik.dasari/OneDrive - Ideabytes/Documents/assignment.suite/APITests/ApiTest.apitest
+2025-02-26 14:19:39.148 +0530	EndTestCase		(Duration:"2.446", Errors:"0", Exceptions:"0", StartTime:"2025-02-26 14:19:36 +0530", Successes:"1", TestCase:"ApiTest.apitest", Warnings:"0")
+2025-02-26 14:19:39.227 +0530	SUCCESS		Execution Time 0:00:02 ApiTest.apitest

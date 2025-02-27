@@ -1,0 +1,9 @@
+﻿2024-10-14 12:21:43.940 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 12:21:44.131 +0530	typetext		[windowsKey]r	3	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:21:45.031 +0530	typetext		chrome	4	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:21:45.776 +0530	typetext		[return]	5	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:21:47.404 +0530	typetext		https://demo.nopcommerce.com/	6	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:21:48.149 +0530	typetext		[return]	7	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:22:01.792 +0530	Exception		Searching For Image: OCR Error: Operation was aborted	8	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:22:01.828 +0530	EndTestCase		(Duration:"17.884", Errors:"1", Exceptions:"1", StartTime:"2024-10-14 12:21:43 +0530", Successes:"0", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 12:22:01.837 +0530	ABORTED		Execution Time 0:00:17 Script, Image and Debugging.script

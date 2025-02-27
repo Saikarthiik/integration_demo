@@ -1,0 +1,79 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:21:50.618 +0530"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:21:50.747 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc1.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:21:52.601 +0530",
+				"message": "Chrome https://www.bbc.com/[return]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:21:54.418 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (34, 117)",
+				"image": "Menu",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:21:56.429 +0530",
+				"message": "SEARCHRECTANGLE = [21,300,62,312]",
+				"scriptName": "BBc1.script",
+				"handlerLine": 5,
+				"identifier": "set"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:21:56.631 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (42, 306)",
+				"image": "(TEXT:\"News\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:21:56.642 +0530",
+				"message": "SEARCHRECTANGLE = []",
+				"scriptName": "BBc1.script",
+				"handlerLine": 7,
+				"identifier": "set"
+			},
+		{
+				"handlerName": "on_bbc1",
+				"timestamp": "2024-10-21 11:21:59.530 +0530",
+				"scriptName": "BBc1.script",
+				"message": "at (53, 588)",
+				"image": "(TEXT:\"Asia\")",
+				"handlerLine": 8,
+				"identifier": "click"
+			},
+		{
+				"message": "(Duration:\"8.935\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-21 11:21:50 +0530\", Successes:\"1\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:21:59.568 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:08 BBc1.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-21 11:21:59.736 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:21:50.618 +0530"
+}

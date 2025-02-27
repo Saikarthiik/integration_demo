@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="dataconnection_script" package="assignment.suite" timestamp="2024-10-16 13:09:34.207 +0530"
+ tests="1"  failures="1" errors="0" time="0.244000">
+  <properties>
+   <property name="RunDate" value="2024-10-16 13:09:34.207 +0530"/>
+   <property name="Status" value="Failure"/>
+  </properties>
+  <testcase name="dataconnection.script" assertions="1" status="failure"  time="0.23">
+    <failure type="FAILURE" message="Workbook Error: Wrong file type (must be &apos;xls&apos;, &apos;xlsx&apos;, or &apos;xlsm&apos; file): C:/Users/saikarthik.dasari/Desktop -- Execution Time 0:00:00 dataconnection.script" />
+  </testcase>
+ </testsuite>
+</testsuites>

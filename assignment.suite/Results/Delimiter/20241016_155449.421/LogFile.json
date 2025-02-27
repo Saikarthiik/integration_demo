@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running Delimiter.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 15:54:49.426 +0530"
+			},
+		{
+				"message": "(Duration:\"0.172\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 15:54:49 +0530\", Successes:\"0\", TestCase:\"Delimiter.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 15:54:49.603 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Invalid Property: Cannot set global property 'DELIMITER' -- Execution Time 0:00:00 Delimiter.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 15:54:50.233 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 15:54:49.429 +0530"
+}

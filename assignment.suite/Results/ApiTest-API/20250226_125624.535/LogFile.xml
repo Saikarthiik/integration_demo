@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="Untitled_apitest" package="assignment.suite" timestamp="2025-02-26 12:56:24.535 +0530"
+ tests="1"  failures="0" errors="0" time="1.919000">
+  <properties>
+   <property name="RunDate" value="2025-02-26 12:56:24.535 +0530"/>
+   <property name="Status" value="Success"/>
+  </properties>
+  <testcase name="Untitled.apitest" assertions="1" status="success"  time="1.895">
+  </testcase>
+ </testsuite>
+</testsuites>

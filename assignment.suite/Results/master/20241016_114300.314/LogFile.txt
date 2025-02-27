@@ -1,0 +1,6 @@
+﻿2024-10-16 11:43:00.320 +0530	START		Running master.script
+2024-10-16 11:43:00.596 +0530	typetext		[windowsKey]r 	2	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:43:01.530 +0530	typetext		chrome[return]	3	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:43:03.180 +0530	typetext		https://demo.nopcommerce.com/[return]	4	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:43:03.260 +0530	EndTestCase		(Duration:"2.935", Errors:"1", Exceptions:"0", StartTime:"2024-10-16 11:43:00 +0530", Successes:"0", TestCase:"master.script", Warnings:"0")
+2024-10-16 11:43:03.742 +0530	FAILURE	Screen_Error.png	STUnknownMessage: ERROR: No Such Command: 'selectingproduct' -- Execution Time 0:00:02 master.script

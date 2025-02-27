@@ -1,0 +1,8 @@
+﻿2024-10-21 12:00:52.713 +0530	START		Running Amazon.script
+2024-10-21 12:00:52.862 +0530	typetext		[windowsKey]r	1	on_amazon	Amazon.script
+2024-10-21 12:00:54.651 +0530	typetext		Chrome https://www.amazon.in/[return]	2	on_amazon	Amazon.script
+2024-10-21 12:02:42.551 +0530	OCRUpdateWarning	(TEXT:"Hello,sign in")	Found Text -- Using TextDifference:1
+2024-10-21 12:02:55.800 +0530	moveto	(TEXT:"Hello,sign in")	at (1626, 109)	4	on_amazon	Amazon.script
+2024-10-21 12:02:59.614 +0530	click	(TEXT:"Sign in")	at (1644, 109)	5	on_amazon	Amazon.script
+2024-10-21 12:02:59.640 +0530	EndTestCase		(Duration:"126.922", Errors:"0", Exceptions:"0", StartTime:"2024-10-21 12:00:52 +0530", Successes:"1", TestCase:"Amazon.script", Warnings:"0")
+2024-10-21 12:02:59.759 +0530	SUCCESS		Execution Time 0:02:06 Amazon.script

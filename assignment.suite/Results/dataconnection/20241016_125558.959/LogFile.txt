@@ -1,0 +1,3 @@
+﻿2024-10-16 12:55:58.966 +0530	START		Running dataconnection.script
+2024-10-16 12:55:59.247 +0530	EndTestCase		(Duration:"0.274", Errors:"1", Exceptions:"0", StartTime:"2024-10-16 12:55:58 +0530", Successes:"0", TestCase:"dataconnection.script", Warnings:"0")
+2024-10-16 12:55:59.988 +0530	FAILURE	Screen_Error.png	Workbook Error: Wrong file type (must be 'xls', 'xlsx', or 'xlsm' file): C:/Users/saikarthik.dasari/Documents/assignment.suite/Resources/Users/saikarthik.dasari/Desktop -- Execution Time 0:00:00 dataconnection.script

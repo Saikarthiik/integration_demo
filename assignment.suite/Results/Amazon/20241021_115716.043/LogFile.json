@@ -1,0 +1,36 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:57:16.050 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 11:57:16.189 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 11:57:17.955 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"2.035\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-21 11:57:16 +0530\", Successes:\"1\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:57:18.094 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:02 Amazon.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-21 11:57:18.190 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:57:16.053 +0530"
+}

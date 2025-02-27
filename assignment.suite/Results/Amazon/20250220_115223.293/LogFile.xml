@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="Amazon_script" package="assignment.suite" timestamp="2025-02-20 11:52:23.293 +0530"
+ tests="1"  failures="0" errors="0" time="20.561000">
+  <properties>
+   <property name="RunDate" value="2025-02-20 11:52:23.293 +0530"/>
+   <property name="Status" value="Aborted"/>
+  </properties>
+  <testcase name="Amazon.script" assertions="1" status="error"  time="20.532">
+    <error type="Exception" message="No Image Found On Screen: &quot;Amazon Menu&quot;" />
+  </testcase>
+ </testsuite>
+</testsuites>

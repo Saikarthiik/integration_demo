@@ -1,0 +1,26 @@
+{
+	"entries": [
+		{
+				"message": "Running ApiTest.apitest",
+				"identifier": "START",
+				"timestamp": "2025-02-26 14:31:42.878 +0530"
+			},
+		{
+				"message": "Validation Error: Failed to parse JSON request body. Unexpected character 2 at index 9. {\"id\":\"\"20\"}",
+				"identifier": "LogError",
+				"timestamp": "2025-02-26 14:31:42.878 +0530"
+			},
+		{
+				"message": "(Duration:\"0.169\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2025-02-26 14:31:42 +0530\", Successes:\"0\", TestCase:\"ApiTest.apitest\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2025-02-26 14:31:43.047 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Script Error: Number of Errors logged: 1 -- Execution Time 0:00:00 ApiTest.apitest",
+				"identifier": "FAILURE",
+				"timestamp": "2025-02-26 14:31:43.638 +0530"
+			}
+	],
+	"createdTimestamp": "2025-02-26 14:31:42.878 +0530"
+}

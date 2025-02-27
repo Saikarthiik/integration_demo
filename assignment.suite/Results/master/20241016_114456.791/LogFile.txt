@@ -1,0 +1,8 @@
+﻿2024-10-16 11:44:56.801 +0530	START		Running master.script
+2024-10-16 11:44:57.435 +0530	typetext		[windowsKey]r 	2	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:44:58.315 +0530	typetext		chrome[return]	3	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:44:59.969 +0530	typetext		https://demo.nopcommerce.com/[return]	4	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:45:02.110 +0530	moveto	(TEXT:"Electronics")	at (676, 292)	2	on_selectingproduct	Handlerpractice.script
+2024-10-16 11:45:04.673 +0530	click	(TEXT:"Camera & Photo")	at (702, 337)	3	on_selectingproduct	Handlerpractice.script
+2024-10-16 11:45:04.768 +0530	EndTestCase		(Duration:"7.959", Errors:"0", Exceptions:"0", StartTime:"2024-10-16 11:44:56 +0530", Successes:"1", TestCase:"master.script", Warnings:"0")
+2024-10-16 11:45:04.911 +0530	SUCCESS		Execution Time 0:00:07 master.script

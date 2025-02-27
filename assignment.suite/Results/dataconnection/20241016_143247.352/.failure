@@ -1,0 +1,1 @@
+2024-10-16 14:32:47.352 +0530,Failure,0:00:00,1,0,0,20241016_143247.352/LogFile.txt,"","SenseTalk Compiler Exception -- in dataconnection:\nSyntax Error at line 5: can't understand ""columnsToFetch"" at character 10",0

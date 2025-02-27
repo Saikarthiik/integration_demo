@@ -1,0 +1,70 @@
+{
+	"lastmodifieddate": 1729494948.402,
+	"lastfoundlocation": [
+		15,
+		57,
+		11,
+		11
+	],
+	"originalcapturelocation": [
+		14,
+		54,
+		18,
+		18
+	],
+	"createddate": 1729494289.55,
+	"lastfounddate": 1729495639.23,
+	"testlocationdata": [
+		{
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[9,7]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "backarrow.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"capturerect": [
+					14,
+					54,
+					18,
+					18
+				],
+				"connectiontype": "Single System",
+				"connectionserverid": "127.0.0.1"
+			},
+		{
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": " 0.65",
+					"HotSpot": "[5,4]",
+					"Tolerance": "_53",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "backarrow.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"capturerect": [
+					14,
+					54,
+					11,
+					11
+				],
+				"connectiontype": "Single System",
+				"connectionserverid": "127.0.0.1"
+			}
+	],
+	"name": "backarrow"
+}

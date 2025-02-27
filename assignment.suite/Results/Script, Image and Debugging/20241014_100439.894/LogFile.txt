@@ -1,0 +1,8 @@
+﻿2024-10-14 10:04:39.904 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 10:04:40.076 +0530	typetext		[windowsKey]r	1	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:04:41.037 +0530	typetext		chrome	2	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:04:41.810 +0530	typetext		[return]	3	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:04:43.456 +0530	typetext		https://demo.nopcommerce.com/	4	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:04:44.202 +0530	typetext		[return]	5	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:04:44.237 +0530	EndTestCase		(Duration:"4.326", Errors:"0", Exceptions:"0", StartTime:"2024-10-14 10:04:39 +0530", Successes:"1", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 10:04:44.293 +0530	SUCCESS		Execution Time 0:00:04 Script, Image and Debugging.script

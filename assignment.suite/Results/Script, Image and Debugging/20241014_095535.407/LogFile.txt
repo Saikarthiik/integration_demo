@@ -1,0 +1,4 @@
+﻿2024-10-14 09:55:35.412 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 09:55:35.538 +0530	Exception		Could Not Open Image: 	1	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 09:55:47.337 +0530	EndTestCase		(Duration:"11.89", Errors:"1", Exceptions:"1", StartTime:"2024-10-14 09:55:35 +0530", Successes:"0", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 09:55:47.802 +0530	FAILURE	Screen_Error.png	File Not Found: click Error - Could Not Open Image:  -- Execution Time 0:00:11 Script, Image and Debugging.script

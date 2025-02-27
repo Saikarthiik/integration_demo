@@ -1,0 +1,9 @@
+﻿2024-10-21 11:17:54.693 +0530	START		Running BBc1.script
+2024-10-21 11:17:54.820 +0530	typetext		[windowsKey]r	1	on_bbc1	BBc1.script
+2024-10-21 11:17:56.560 +0530	typetext		Chrome https://www.bbc.com/[return]	2	on_bbc1	BBc1.script
+2024-10-21 11:17:57.496 +0530	click	Menu	at (34, 117)	3	on_bbc1	BBc1.script
+2024-10-21 11:17:59.514 +0530	set		SEARCHRECTANGLE = [21,300,62,312]	5	on_bbc1	BBc1.script
+2024-10-21 11:17:59.811 +0530	click	(TEXT:"News")	at (42, 306)	6	on_bbc1	BBc1.script
+2024-10-21 11:18:31.499 +0530	Exception	(TEXT:"Africa")	No Text Found On Screen: "(TEXT:"Africa")". Text not found.	7	on_bbc1	BBc1.script
+2024-10-21 11:18:31.673 +0530	EndTestCase		(Duration:"36.975", Errors:"1", Exceptions:"1", StartTime:"2024-10-21 11:17:54 +0530", Successes:"0", TestCase:"BBc1.script", Warnings:"0")
+2024-10-21 11:18:31.736 +0530	ABORTED		Execution Time 0:00:36 BBc1.script

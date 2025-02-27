@@ -1,0 +1,72 @@
+{
+	"entries": [
+		{
+				"message": "Running Register.script",
+				"identifier": "START",
+				"timestamp": "2024-10-18 15:46:44.393 +0530"
+			},
+		{
+				"handlerName": "on_register",
+				"timestamp": "2024-10-18 15:46:44.719 +0530",
+				"scriptName": "Register.script",
+				"message": "at (902, 122)",
+				"image": "Register",
+				"handlerLine": 1,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_register",
+				"timestamp": "2024-10-18 15:46:52.432 +0530",
+				"scriptName": "Register.script",
+				"message": "at (577, 542)",
+				"image": "(TEXT:\"Male\")",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_register",
+				"timestamp": "2024-10-18 15:46:54.797 +0530",
+				"scriptName": "Register.script",
+				"message": "at (498, 593)",
+				"image": "(TEXT:\"First Name\")",
+				"handlerLine": 4,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_register",
+				"timestamp": "2024-10-18 15:46:55.908 +0530",
+				"message": "Sai Karthik",
+				"scriptName": "Register.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_register",
+				"timestamp": "2024-10-18 15:46:58.231 +0530",
+				"scriptName": "Register.script",
+				"message": "at (498, 648)",
+				"image": "(TEXT:\"Last Name\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_register",
+				"timestamp": "2024-10-18 15:46:59.153 +0530",
+				"message": "Dasari",
+				"scriptName": "Register.script",
+				"handlerLine": 7,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"56.871\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-18 15:46:44 +0530\", Successes:\"0\", TestCase:\"Register.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-18 15:47:41.287 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:56 Register.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-18 15:47:41.296 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-18 15:46:44.410 +0530"
+}

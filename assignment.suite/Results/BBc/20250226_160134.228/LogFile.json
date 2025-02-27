@@ -1,0 +1,86 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc.script",
+				"identifier": "START",
+				"timestamp": "2025-02-26 16:01:34.242 +0530"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:34.366 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "BBc.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:35.377 +0530",
+				"message": "Chrome[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:36.939 +0530",
+				"message": "https://www.bbc.com/",
+				"scriptName": "BBc.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:37.695 +0530",
+				"message": "[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:38.557 +0530",
+				"scriptName": "BBc.script",
+				"message": "at (143, 140)",
+				"image": "Search",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:39.943 +0530",
+				"message": "News About India",
+				"scriptName": "BBc.script",
+				"handlerLine": 7,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:40.715 +0530",
+				"message": "[return]",
+				"scriptName": "BBc.script",
+				"handlerLine": 8,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_bbc",
+				"timestamp": "2025-02-26 16:01:42.645 +0530",
+				"scriptName": "BBc.script",
+				"message": "at (1349, 697)",
+				"image": "(TEXT:\"India\")",
+				"handlerLine": 9,
+				"identifier": "moveto"
+			},
+		{
+				"message": "(Duration:\"9.15\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2025-02-26 16:01:34 +0530\", Successes:\"0\", TestCase:\"BBc.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2025-02-26 16:01:43.401 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:09 BBc.script",
+				"identifier": "ABORTED",
+				"timestamp": "2025-02-26 16:01:43.433 +0530"
+			}
+	],
+	"createdTimestamp": "2025-02-26 16:01:34.247 +0530"
+}

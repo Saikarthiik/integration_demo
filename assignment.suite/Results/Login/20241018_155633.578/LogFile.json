@@ -1,0 +1,71 @@
+{
+	"entries": [
+		{
+				"message": "Running Login.script",
+				"identifier": "START",
+				"timestamp": "2024-10-18 15:56:33.584 +0530"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:56:36.056 +0530",
+				"scriptName": "Login.script",
+				"message": "at (1284, 108)",
+				"image": "(TEXT:\"Log out\")",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:56:36.064 +0530",
+				"message": "Set Text:saikarthikdasar8899@gmail.com",
+				"scriptName": "Login.script",
+				"handlerLine": 3,
+				"identifier": "setremoteclipboard"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:56:38.732 +0530",
+				"scriptName": "Login.script",
+				"message": "at (1323, 892)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 4,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:56:39.501 +0530",
+				"message": "[controlKey]v",
+				"scriptName": "Login.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:56:41.795 +0530",
+				"scriptName": "Login.script",
+				"message": "at (886, 235)",
+				"image": "(TEXT:\"Password\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-18 15:56:42.935 +0530",
+				"message": "India@8899",
+				"scriptName": "Login.script",
+				"handlerLine": 7,
+				"identifier": "typetext"
+			},
+		{
+				"message": "(Duration:\"9.385\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-18 15:56:33 +0530\", Successes:\"1\", TestCase:\"Login.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-18 15:56:42.976 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:09 Login.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-18 15:56:43.040 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-18 15:56:33.590 +0530"
+}

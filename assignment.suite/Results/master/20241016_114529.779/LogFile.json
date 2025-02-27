@@ -1,0 +1,61 @@
+{
+	"entries": [
+		{
+				"message": "Running master.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 11:45:29.785 +0530"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:45:30.001 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:45:30.868 +0530",
+				"message": "chrome[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 11:45:32.379 +0530",
+				"message": "https://demo.nopcommerce.com/[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:45:34.655 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (675, 292)",
+				"image": "(TEXT:\"Electronics\")",
+				"handlerLine": 2,
+				"identifier": "moveto"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 11:45:53.844 +0530",
+				"message": "Searching For Image: OCR Error: Operation was aborted",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 3,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"24.266\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-16 11:45:29 +0530\", Successes:\"0\", TestCase:\"master.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 11:45:54.059 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:24 master.script",
+				"identifier": "ABORTED",
+				"timestamp": "2024-10-16 11:45:54.075 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 11:45:29.789 +0530"
+}

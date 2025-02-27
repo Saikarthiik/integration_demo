@@ -1,0 +1,20 @@
+{
+	"entries": [
+		{
+				"message": "Running dataconnection.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 13:00:58.827 +0530"
+			},
+		{
+				"message": "(Duration:\"0.258\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-16 13:00:58 +0530\", Successes:\"1\", TestCase:\"dataconnection.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 13:00:59.093 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:00 dataconnection.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-16 13:00:59.238 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 13:00:58.833 +0530"
+}

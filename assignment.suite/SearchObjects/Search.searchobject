@@ -1,0 +1,75 @@
+{
+	"originalcapturelocation": [
+		69,
+		108,
+		24,
+		24
+	],
+	"lastmodifieddate": 1740565841.536,
+	"createddate": 1729248569.9590001,
+	"name": "Search",
+	"lastfounddate": 1740565898.4460001,
+	"ocrcapturestring": "Q",
+	"lastfoundlocation": [
+		137,
+		137,
+		15,
+		15
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 52773,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[10,6]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Search.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					69,
+					108,
+					24,
+					24
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "Q"
+			},
+		{
+				"connectionportnum": 3389,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": " 0.65",
+					"HotSpot": "[6,3]",
+					"Tolerance": "_70",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown RDP"
+				},
+				"name": "Search.png",
+				"connectionname": "10.4.114.33",
+				"type": 1,
+				"connectionserverid": "10.4.114.33",
+				"capturerect": [
+					69,
+					108,
+					15,
+					15
+				],
+				"connectiontype": "RDP",
+				"capturedocrtext": "Q"
+			}
+	]
+}

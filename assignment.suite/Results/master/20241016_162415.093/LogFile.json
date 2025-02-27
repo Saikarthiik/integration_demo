@@ -1,0 +1,262 @@
+{
+	"entries": [
+		{
+				"message": "Running master.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 16:24:15.097 +0530"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 16:24:15.399 +0530",
+				"message": "[windowsKey]r ",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 16:24:16.344 +0530",
+				"message": "chrome[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 3,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_enteringwebsite",
+				"timestamp": "2024-10-16 16:24:17.916 +0530",
+				"message": "https://demo.nopcommerce.com/[return]",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 16:24:23.570 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (675, 292)",
+				"image": "(TEXT:\"Electronics\")",
+				"handlerLine": 2,
+				"identifier": "moveto"
+			},
+		{
+				"handlerName": "on_selectingproduct",
+				"timestamp": "2024-10-16 16:24:26.095 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (702, 337)",
+				"image": "(TEXT:\"Camera & Photo\")",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 16:24:29.001 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1279, 108)",
+				"image": "(TEXT:\"Log In\")",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 16:24:35.520 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1051, 528)",
+				"image": "(TEXT:\"Email\")",
+				"handlerLine": 3,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 16:24:37.177 +0530",
+				"message": "saikarthikdasari8899@gmail.com",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 4,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_login",
+				"timestamp": "2024-10-16 16:24:40.461 +0530",
+				"message": "User logged In",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 9,
+				"identifier": "Log"
+			},
+		{
+				"handlerName": "on_demo",
+				"timestamp": "2024-10-16 16:24:41.382 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1218, 104)",
+				"image": "Register",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:44.135 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (784, 524)",
+				"image": "(TEXT:\"Male\")",
+				"handlerLine": 2,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:47.070 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (704, 575)",
+				"image": "(TEXT:\"First Name\")",
+				"handlerLine": 4,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:48.084 +0530",
+				"message": "saikartki",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 5,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:50.476 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (704, 630)",
+				"image": "(TEXT:\"Last Name\")",
+				"handlerLine": 6,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:51.349 +0530",
+				"message": "disndi",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 7,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:53.638 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (774, 686)",
+				"image": "(TEXT:\"Day\")",
+				"handlerLine": 8,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:56.290 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (770, 652)",
+				"image": "(TEXT:\"19\")",
+				"handlerLine": 9,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:24:58.498 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (918, 685)",
+				"image": "(TEXT:\"Month\")",
+				"handlerLine": 10,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:01.146 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (912, 839)",
+				"image": "(TEXT:\"May\")",
+				"handlerLine": 11,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:03.376 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1050, 685)",
+				"image": "(TEXT:\"Year\")",
+				"handlerLine": 12,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:06.816 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (1052, 508)",
+				"image": "(TEXT:\"1926\")",
+				"handlerLine": 13,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:09.409 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (719, 740)",
+				"image": "(TEXT:\"email\")",
+				"handlerLine": 14,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:10.733 +0530",
+				"message": "soimxksk@gmail.com",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 15,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:13.177 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (687, 935)",
+				"image": "(TEXT:\"Company Name\")",
+				"handlerLine": 16,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:14.193 +0530",
+				"message": "Ideabytes",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 17,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_details",
+				"timestamp": "2024-10-16 16:25:14.903 +0530",
+				"message": "moved 2",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 18,
+				"identifier": "scrollwheeldown"
+			},
+		{
+				"handlerName": "function_demo2",
+				"timestamp": "2024-10-16 16:25:17.179 +0530",
+				"scriptName": "Handlerpractice.script",
+				"message": "at (950, 1019)",
+				"image": "(TEXT:\"Your Password\")",
+				"handlerLine": 2,
+				"identifier": "imagelocation"
+			},
+		{
+				"handlerName": "function_demo2",
+				"timestamp": "2024-10-16 16:25:17.179 +0530",
+				"message": "Invalid Point (950, 1099) is off screen",
+				"scriptName": "Handlerpractice.script",
+				"handlerLine": 2,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"62.244\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-16 16:24:15 +0530\", Successes:\"0\", TestCase:\"master.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 16:25:17.346 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Invalid Point: click Error - Invalid Point (950, 1099) is off screen -- Execution Time 0:01:02 master.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 16:25:17.699 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 16:24:15.102 +0530"
+}

@@ -1,0 +1,8 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2024-10-16 15:54:49.421 +0530,"Failure",0:00:00,1,0,0,"20241016_155449.421/LogFile.txt","","Invalid Property -- Cannot set global property 'DELIMITER'",0
+2024-10-16 15:55:10.085 +0530,"Success",0:00:00,0,0,0,"20241016_155510.085/LogFile.txt","","",1
+2024-10-16 15:59:23.578 +0530,"Failure",0:00:00,1,0,0,"20241016_155923.578/LogFile.txt","","Invalid Property -- Cannot set global property 'IWORDDELIMITER'",0
+2024-10-16 15:59:34.713 +0530,"Success",0:00:00,0,0,0,"20241016_155934.713/LogFile.txt","","",1
+2024-10-16 16:00:28.224 +0530,"Success",0:00:00,0,0,0,"20241016_160028.224/LogFile.txt","","",1
+2024-10-16 16:01:23.897 +0530,"Success",0:00:00,0,0,0,"20241016_160123.897/LogFile.txt","","",1
+2024-10-16 16:02:07.008 +0530,"Failure",0:00:00,1,0,0,"20241016_160207.008/LogFile.txt","","STUnknownMessage -- ERROR: No Such Function: 'item1'",0

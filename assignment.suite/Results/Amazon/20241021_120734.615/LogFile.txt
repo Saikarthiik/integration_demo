@@ -1,0 +1,7 @@
+﻿2024-10-21 12:07:34.624 +0530	START		Running Amazon.script
+2024-10-21 12:07:34.743 +0530	typetext		[windowsKey]r	1	on_amazon	Amazon.script
+2024-10-21 12:07:36.520 +0530	typetext		Chrome https://www.amazon.in/[return]	2	on_amazon	Amazon.script
+2024-10-21 12:07:38.773 +0530	click	Amazon Menu	at (37, 165)	4	on_amazon	Amazon.script
+2024-10-21 12:07:41.740 +0530	click	(TEXT:"Best sellers")	at (61, 208)	5	on_amazon	Amazon.script
+2024-10-21 12:07:42.162 +0530	EndTestCase		(Duration:"7.518", Errors:"0", Exceptions:"0", StartTime:"2024-10-21 12:07:34 +0530", Successes:"1", TestCase:"Amazon.script", Warnings:"0")
+2024-10-21 12:07:42.370 +0530	SUCCESS		Execution Time 0:00:07 Amazon.script

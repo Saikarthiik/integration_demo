@@ -1,0 +1,25 @@
+{
+	"entries": [
+		{
+				"message": "Running ApiTest.apitest",
+				"identifier": "START",
+				"timestamp": "2025-02-26 14:30:11.929 +0530"
+			},
+		{
+				"message": "Validation Warning: Empty request body.",
+				"identifier": "LogWarning",
+				"timestamp": "2025-02-26 14:30:11.934 +0530"
+			},
+		{
+				"message": "(Duration:\"0.583\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2025-02-26 14:30:11 +0530\", Successes:\"1\", TestCase:\"ApiTest.apitest\", Warnings:\"1\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2025-02-26 14:30:12.517 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:00 ApiTest.apitest",
+				"identifier": "SUCCESS",
+				"timestamp": "2025-02-26 14:30:12.586 +0530"
+			}
+	],
+	"createdTimestamp": "2025-02-26 14:30:11.933 +0530"
+}

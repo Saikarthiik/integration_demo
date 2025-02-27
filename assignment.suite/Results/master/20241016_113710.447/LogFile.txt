@@ -1,0 +1,6 @@
+﻿2024-10-16 11:37:10.454 +0530	START		Running master.script
+2024-10-16 11:37:10.707 +0530	typetext		[windowsKey]r 	2	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:37:11.639 +0530	typetext		chrome[return]	3	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:37:13.434 +0530	typetext		https://demo.nopcommerce.com/[return]	4	on_enteringwebsite	Handlerpractice.script
+2024-10-16 11:37:13.503 +0530	EndTestCase		(Duration:"3.044", Errors:"0", Exceptions:"0", StartTime:"2024-10-16 11:37:10 +0530", Successes:"1", TestCase:"master.script", Warnings:"0")
+2024-10-16 11:37:13.576 +0530	SUCCESS		Execution Time 0:00:03 master.script

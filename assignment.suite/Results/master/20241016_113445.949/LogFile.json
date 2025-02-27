@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running master.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 11:34:45.955 +0530"
+			},
+		{
+				"message": "(Duration:\"0.231\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 11:34:45 +0530\", Successes:\"0\", TestCase:\"master.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 11:34:46.197 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "STUnknownMessage: ERROR: No Such Command: 'enteringwebsite' -- Execution Time 0:00:00 master.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 11:34:46.973 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 11:34:45.966 +0530"
+}

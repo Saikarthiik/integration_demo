@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running BBc1.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 11:26:08.242 +0530"
+			},
+		{
+				"message": "(Duration:\"0.002\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-21 11:26:08 +0530\", Successes:\"0\", TestCase:\"BBc1.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 11:26:08.248 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "SenseTalk Compiler Exception: in bbc1:\\nSyntax Error at line 11: can't understand [end of script] at character 54 -- Execution Time 0:00:00 BBc1.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-21 11:26:08.775 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 11:26:08.246 +0530"
+}

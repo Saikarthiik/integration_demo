@@ -1,0 +1,81 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 12:16:14.320 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:16:14.446 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:16:16.273 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:16:18.488 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (37, 165)",
+				"image": "Amazon Menu",
+				"handlerLine": 4,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:16:23.311 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (330, 165)",
+				"image": "(TEXT:\"Best sellers\")",
+				"handlerLine": 5,
+				"identifier": "click"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:16:26.960 +0530",
+				"scriptName": "Amazon.script",
+				"message": "found at (1307, 19)",
+				"image": "(TEXT:\"OnePlus Nord CE4\")",
+				"handlerLine": 8,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:16:30.018 +0530",
+				"scriptName": "Amazon.script",
+				"message": "found at (1307, 19)",
+				"image": "(TEXT:\"OnePlus Nord CE4\")",
+				"handlerLine": 11,
+				"identifier": "imagefound"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:16:33.741 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (1307, 19)",
+				"image": "(TEXT:\"OnePlus Nord CE4\")",
+				"handlerLine": 12,
+				"identifier": "click"
+			},
+		{
+				"message": "(Duration:\"19.517\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-21 12:16:14 +0530\", Successes:\"1\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 12:16:33.837 +0530"
+			},
+		{
+				"message": "Execution Time 0:00:19 Amazon.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-21 12:16:33.914 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 12:16:14.320 +0530"
+}

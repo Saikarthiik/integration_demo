@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running Script, Image and Debugging.script",
+				"identifier": "START",
+				"timestamp": "2024-10-14 11:59:32.748 +0530"
+			},
+		{
+				"message": "(Duration:\"0.002\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-14 11:59:32 +0530\", Successes:\"0\", TestCase:\"Script, Image and Debugging.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-14 11:59:32.755 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "SenseTalk Compiler Exception: in script__image_and_debugging:\\nSyntax Error at line 29: can't understand \"temp\" at character 10 -- Execution Time 0:00:00 Script, Image and Debugging.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-14 11:59:33.082 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-14 11:59:32.752 +0530"
+}

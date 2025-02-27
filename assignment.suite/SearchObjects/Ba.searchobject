@@ -1,0 +1,45 @@
+{
+	"lastmodifieddate": 1729495104.2979999,
+	"lastfoundlocation": [
+		14,
+		54,
+		16,
+		18
+	],
+	"originalcapturelocation": [
+		14,
+		54,
+		16,
+		18
+	],
+	"createddate": 1729495104.2979999,
+	"lastfounddate": 1729571818.5510001,
+	"testlocationdata": [
+		{
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[6,9]",
+					"Tolerance": "_45",
+					"Discrepancy": "_0",
+					"SearchType": "Tolerant of Background"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Ba.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"capturerect": [
+					14,
+					54,
+					16,
+					18
+				],
+				"connectiontype": "Single System",
+				"connectionserverid": "127.0.0.1"
+			}
+	],
+	"name": "Ba"
+}

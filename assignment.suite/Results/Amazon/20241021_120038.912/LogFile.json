@@ -1,0 +1,45 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 12:00:38.917 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:00:39.034 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:00:40.847 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:00:40.847 +0530",
+				"message": "Too Few Parameters, please use waitfor time, image1[, imageX]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 3,
+				"identifier": "Exception"
+			},
+		{
+				"message": "(Duration:\"1.976\", Errors:\"1\", Exceptions:\"1\", StartTime:\"2024-10-21 12:00:38 +0530\", Successes:\"0\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 12:00:40.897 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "Error Running Script Command: waitfor Error - Too Few Parameters, please use waitfor time, image1[, imageX] -- Execution Time 0:00:01 Amazon.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-21 12:00:41.735 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 12:00:38.920 +0530"
+}

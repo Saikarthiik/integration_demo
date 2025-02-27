@@ -1,0 +1,3 @@
+﻿2024-10-16 16:25:49.324 +0530	START		Running Handlerpractice.script
+2024-10-16 16:25:49.602 +0530	EndTestCase		(Duration:"0.268", Errors:"0", Exceptions:"0", StartTime:"2024-10-16 16:25:49 +0530", Successes:"1", TestCase:"Handlerpractice.script", Warnings:"0")
+2024-10-16 16:25:49.759 +0530	SUCCESS		Execution Time 0:00:00 Handlerpractice.script

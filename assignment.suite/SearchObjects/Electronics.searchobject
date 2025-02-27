@@ -1,0 +1,48 @@
+{
+	"originalcapturelocation": [
+		631,
+		284,
+		89,
+		17
+	],
+	"lastmodifieddate": 1728899499.1690001,
+	"createddate": 1728899499.1690001,
+	"name": "Electronics",
+	"lastfounddate": 1729242513.244,
+	"ocrcapturestring": "Electronics",
+	"lastfoundlocation": [
+		455,
+		302,
+		85,
+		16
+	],
+	"testlocationdata": [
+		{
+				"connectionportnum": 51851,
+				"properties": {
+					"CropRectangle": "[0,0,0,0]",
+					"Rotate": 0,
+					"Scale": "    1",
+					"HotSpot": "[40,3]",
+					"Tolerance": "_51",
+					"Discrepancy": "_0",
+					"SearchType": "Smoothed for Text"
+				},
+				"sutinfo": {
+					"type": "Unknown VNC"
+				},
+				"name": "Electronics.png",
+				"connectionname": "Single System",
+				"type": 1,
+				"connectionserverid": "127.0.0.1",
+				"capturerect": [
+					631,
+					284,
+					89,
+					17
+				],
+				"connectiontype": "Single System",
+				"capturedocrtext": "Electronics"
+			}
+	]
+}

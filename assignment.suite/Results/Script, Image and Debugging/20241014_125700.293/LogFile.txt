@@ -1,0 +1,23 @@
+﻿2024-10-14 12:57:00.299 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 12:57:09.643 +0530	typetext		[windowsKey]r 	2	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:10.598 +0530	typetext		chrome	3	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:11.340 +0530	typetext		[return]	4	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:14.286 +0530	typetext		https://demo.nopcommerce.com/	5	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:15.035 +0530	typetext		[return]	6	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:17.326 +0530	click	(TEXT:"Log in")	at (1279, 108)	7	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:17.357 +0530	setremoteclipboard		Set Text:saikarthikdasari8899@gmailcom	8	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:19.341 +0530	click	(TEXT:"Email")	at (1051, 528)	9	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:20.109 +0530	typetext		[controlKey]v	10	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:57:22.191 +0530	click	(TEXT:"Password")	at (1038, 583)	11	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:07.089 +0530	typetext		India@8899	12	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:09.779 +0530	imagelocation	(TEXT:"Password")	at (1038, 603)	13	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:09.891 +0530	click		at (1238, 753)	13	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:13.766 +0530	imagefound	Usernotfound	Unable to Find Image Usernotfound	14	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:13.773 +0530	Log		User loggedin	22	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:13.994 +0530	click	Newtab	at (291, 20)	24	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:15.422 +0530	typetext		https://tablepress.org/demo/	25	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:16.174 +0530	typetext		[return]	26	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:18.077 +0530	readtext		(464,582,1445,1039)	28	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 12:58:24.520 +0530	Log		Correct Entry	32	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 14:23:46.813 +0530	EndTestCase		(Duration:"5206.511", Errors:"1", Exceptions:"0", StartTime:"2024-10-14 12:57:00 +0530", Successes:"0", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 14:23:46.850 +0530	ABORTED		Execution Time 1:26:46 Script, Image and Debugging.script

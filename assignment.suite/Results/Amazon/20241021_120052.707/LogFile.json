@@ -1,0 +1,60 @@
+{
+	"entries": [
+		{
+				"message": "Running Amazon.script",
+				"identifier": "START",
+				"timestamp": "2024-10-21 12:00:52.713 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:00:52.862 +0530",
+				"message": "[windowsKey]r",
+				"scriptName": "Amazon.script",
+				"handlerLine": 1,
+				"identifier": "typetext"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:00:54.651 +0530",
+				"message": "Chrome https://www.amazon.in/[return]",
+				"scriptName": "Amazon.script",
+				"handlerLine": 2,
+				"identifier": "typetext"
+			},
+		{
+				"image": "(TEXT:\"Hello,sign in\")",
+				"message": "Found Text -- Using TextDifference:1",
+				"identifier": "OCRUpdateWarning",
+				"timestamp": "2024-10-21 12:02:42.551 +0530"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:02:55.800 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (1626, 109)",
+				"image": "(TEXT:\"Hello,sign in\")",
+				"handlerLine": 4,
+				"identifier": "moveto"
+			},
+		{
+				"handlerName": "on_amazon",
+				"timestamp": "2024-10-21 12:02:59.614 +0530",
+				"scriptName": "Amazon.script",
+				"message": "at (1644, 109)",
+				"image": "(TEXT:\"Sign in\")",
+				"handlerLine": 5,
+				"identifier": "click"
+			},
+		{
+				"message": "(Duration:\"126.922\", Errors:\"0\", Exceptions:\"0\", StartTime:\"2024-10-21 12:00:52 +0530\", Successes:\"1\", TestCase:\"Amazon.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-21 12:02:59.640 +0530"
+			},
+		{
+				"message": "Execution Time 0:02:06 Amazon.script",
+				"identifier": "SUCCESS",
+				"timestamp": "2024-10-21 12:02:59.759 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-21 12:00:52.716 +0530"
+}

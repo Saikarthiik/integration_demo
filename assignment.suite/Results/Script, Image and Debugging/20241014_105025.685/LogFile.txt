@@ -1,0 +1,15 @@
+﻿2024-10-14 10:50:25.689 +0530	START		Running Script, Image and Debugging.script
+2024-10-14 10:50:25.791 +0530	typetext		[windowsKey]r	3	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:26.633 +0530	typetext		chrome	4	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:27.368 +0530	typetext		[return]	5	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:28.847 +0530	typetext		https://demo.nopcommerce.com/	6	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:29.596 +0530	typetext		[return]	7	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:31.613 +0530	click	(TEXT:"Log in")	at (1279, 108)	8	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:33.661 +0530	click	(TEXT:"Email")	at (1051, 528)	9	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:35.128 +0530	typetext		saikarthikdasari8899@gmail.com	10	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:37.061 +0530	click	(TEXT:"Password")	at (1038, 583)	11	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:38.077 +0530	typetext		India@8899	12	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:39.894 +0530	imagelocation	(TEXT:"Password")	at (1038, 583)	13	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:39.995 +0530	click		at (1238, 733)	13	on_script__image_and_debugging	Script, Image and Debugging.script
+2024-10-14 10:50:40.028 +0530	EndTestCase		(Duration:"14.334", Errors:"0", Exceptions:"0", StartTime:"2024-10-14 10:50:25 +0530", Successes:"1", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2024-10-14 10:50:40.052 +0530	SUCCESS		Execution Time 0:00:14 Script, Image and Debugging.script

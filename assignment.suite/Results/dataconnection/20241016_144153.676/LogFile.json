@@ -1,0 +1,21 @@
+{
+	"entries": [
+		{
+				"message": "Running dataconnection.script",
+				"identifier": "START",
+				"timestamp": "2024-10-16 14:41:53.683 +0530"
+			},
+		{
+				"message": "(Duration:\"0.31\", Errors:\"1\", Exceptions:\"0\", StartTime:\"2024-10-16 14:41:53 +0530\", Successes:\"0\", TestCase:\"dataconnection.script\", Warnings:\"0\")",
+				"identifier": "EndTestCase",
+				"timestamp": "2024-10-16 14:41:54.000 +0530"
+			},
+		{
+				"image": "Screen_Error.png",
+				"message": "SenseTalk Runtime Exception: Invalid operands for addition: expected numbers, dates and/or lists; got '[{answers:\"D\"}]' and '{database:{file:@\"C:\\\\Users...' -- Execution Time 0:00:00 dataconnection.script",
+				"identifier": "FAILURE",
+				"timestamp": "2024-10-16 14:41:54.638 +0530"
+			}
+	],
+	"createdTimestamp": "2024-10-16 14:41:53.687 +0530"
+}

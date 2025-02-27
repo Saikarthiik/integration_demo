@@ -1,0 +1,8 @@
+﻿2025-02-25 15:12:31.853 +0530	START		Running Script, Image and Debugging.script
+2025-02-25 15:12:32.006 +0530	typetext		[windowsKey]r 	2	on_script__image_and_debugging	Script, Image and Debugging.script
+2025-02-25 15:12:32.909 +0530	typetext		chrome	3	on_script__image_and_debugging	Script, Image and Debugging.script
+2025-02-25 15:12:33.649 +0530	typetext		[return]	4	on_script__image_and_debugging	Script, Image and Debugging.script
+2025-02-25 15:12:35.286 +0530	typetext		https://demo.nopcommerce.com/	5	on_script__image_and_debugging	Script, Image and Debugging.script
+2025-02-25 15:12:36.026 +0530	typetext		[return]	6	on_script__image_and_debugging	Script, Image and Debugging.script
+2025-02-25 15:12:39.518 +0530	EndTestCase		(Duration:"7.655", Errors:"1", Exceptions:"0", StartTime:"2025-02-25 15:12:31 +0530", Successes:"0", TestCase:"Script, Image and Debugging.script", Warnings:"0")
+2025-02-25 15:12:39.533 +0530	ABORTED		Execution Time 0:00:07 Script, Image and Debugging.script

@@ -1,0 +1,6 @@
+﻿2024-10-21 10:58:29.688 +0530	START		Running BBc1.script
+2024-10-21 10:58:29.807 +0530	typetext		[windowsKey]r	1	on_bbc1	BBc1.script
+2024-10-21 10:58:31.514 +0530	typetext		Chrome https://www.bbc.com/[return]	2	on_bbc1	BBc1.script
+2024-10-21 10:58:31.521 +0530	Exception		Image Property List did not contain "ImageName" property	3	on_bbc1	BBc1.script
+2024-10-21 10:58:31.578 +0530	EndTestCase		(Duration:"1.882", Errors:"1", Exceptions:"1", StartTime:"2024-10-21 10:58:29 +0530", Successes:"0", TestCase:"BBc1.script", Warnings:"0")
+2024-10-21 10:58:32.173 +0530	FAILURE	Screen_Error.png	Error Running Script Command: click Error - Image Property List did not contain "ImageName" property -- Execution Time 0:00:01 BBc1.script

@@ -1,0 +1,3 @@
+﻿2025-02-26 14:38:47.319 +0530	START		Running ApiTest.apitest
+2025-02-26 14:38:48.047 +0530	EndTestCase		(Duration:"0.728", Errors:"0", Exceptions:"0", StartTime:"2025-02-26 14:38:47 +0530", Successes:"1", TestCase:"ApiTest.apitest", Warnings:"0")
+2025-02-26 14:38:48.116 +0530	SUCCESS		Execution Time 0:00:00 ApiTest.apitest
